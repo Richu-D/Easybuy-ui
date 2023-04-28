@@ -15,6 +15,24 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-CartComponent
+import { CartComponent } from '../components/Cart/Cart.component';
+//CORE_REFERENCE_IMPORT-CustomerListComponent
+import { CustomerListComponent } from '../components/CustomerList/CustomerList.component';
+//CORE_REFERENCE_IMPORT-ProfileComponent
+import { ProfileComponent } from '../components/Profile/Profile.component';
+//CORE_REFERENCE_IMPORT-ScanComponent
+import { ScanComponent } from '../components/Scan/Scan.component';
+//CORE_REFERENCE_IMPORT-BoardingComponent
+import { BoardingComponent } from '../components/Boarding/Boarding.component';
+//CORE_REFERENCE_IMPORT-PageLayoutComponent
+import { PageLayoutComponent } from '../components/Layout/PageLayout.component';
+//CORE_REFERENCE_IMPORT-NavbarComponent
+import { NavbarComponent } from '../components/Components/Navbar/Navbar.component';
+//CORE_REFERENCE_IMPORT-LoginComponent
+import { LoginComponent } from '../components/Login/Login.component';
+//CORE_REFERENCE_IMPORT-HomeComponent
+import { HomeComponent } from '../components/Home/Home.component';
 
 /**
  * Reads datasource object and injects the datasource object into window object
@@ -30,7 +48,7 @@ export function startupServiceFactory(startupService: NDataSourceService) {
         });
       });
     });
-  }
+  };
 }
 
 /**
@@ -47,6 +65,24 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-CartComponent
+  CartComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-CustomerListComponent
+  CustomerListComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-ProfileComponent
+  ProfileComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-ScanComponent
+  ScanComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-BoardingComponent
+  BoardingComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-PageLayoutComponent
+  PageLayoutComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-NavbarComponent
+  NavbarComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-LoginComponent
+  LoginComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-HomeComponent
+  HomeComponent,
 ];
 
 /**
@@ -72,7 +108,20 @@ export const appProviders = [
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  {
+    path: 'ui',
+    component: PageLayoutComponent,
+    children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'scan', component: ScanComponent },
+      { path: 'cart', component: CartComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'customer-list', component: CustomerListComponent },
+    ],
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'boarding', component: BoardingComponent },
+  { path: '', redirectTo: '/ui/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

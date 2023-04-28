@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_LIDAnDbHw9UbxkCR",
+        "type": "tab",
+        "createdDate": "2023-04-28T10:29:11.794Z",
+        "label": "Scan",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "ScanComponent"
+    },
+    {
+        "id": "sd_zrAR33Ye7lx66Zgj",
+        "type": "OnInit",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_zrAR33Ye7lx66Zgj",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_yGxv4THYziNBSaz7"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ScanComponent"
+    },
+    {
+        "id": "sd_yGxv4THYziNBSaz7",
+        "type": "PageVariables",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_yGxv4THYziNBSaz7",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    }
+]

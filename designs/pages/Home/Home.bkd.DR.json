@@ -1,0 +1,63 @@
+{
+    "ff5e3c40-9a82-6a9e-5f08-5accc25bd7ad": {
+        "paletteKey": "NG-button",
+        "commentid": null,
+        "designerReference": [
+            {
+                "_key": "style",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "class",
+                "_value": "",
+                "_type": "dav",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "buttonname",
+                "_value": "Home",
+                "_type": "a",
+                "_attrDef": "p",
+                "_useAsLabel": true
+            },
+            {
+                "_key": "color",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "(click)",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "[disabled]",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "[disableRipple]",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "type",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "routerLink",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            }
+        ]
+    }
+}

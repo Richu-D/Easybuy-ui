@@ -1,9 +1,45 @@
 {
     "routes": [
         {
+            "path": "ui",
+            "component": "PageLayoutComponent",
+            "children": [
+                {
+                    "path": "home",
+                    "component": "HomeComponent"
+                },
+                {
+                    "path": "scan",
+                    "component": "ScanComponent"
+                },
+                {
+                    "path": "cart",
+                    "component": "CartComponent"
+                },
+                {
+                    "path": "profile",
+                    "component": "ProfileComponent"
+                },
+                {
+                    "path": "customer-list",
+                    "component": "CustomerListComponent"
+                }
+            ],
+            "pathMatch": ""
+        },
+        {
+            "path": "login",
+            "component": "LoginComponent"
+        },
+        {
+            "path": "boarding",
+            "component": "BoardingComponent"
+        },
+        {
             "path": "''",
-            "redirectTo": "",
-            "pathMatch": "full"
+            "redirectTo": "/ui/home",
+            "pathMatch": "full",
+            "default": true
         },
         {
             "path": "**",

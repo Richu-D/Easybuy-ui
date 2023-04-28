@@ -2,3 +2,25 @@
 
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #979491;
+    position: relative;
+}
+
+.navbar{
+    background-color: white;
+    position: absolute;
+    height: 45px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 10px 15px;
+    border-radius: 25px 25px 0 0;
+}

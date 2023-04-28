@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_yHq7n4h5khv1JbdZ",
+        "type": "tab",
+        "createdDate": "2023-04-28T10:30:03.160Z",
+        "label": "CustomerList",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "CustomerListComponent"
+    },
+    {
+        "id": "sd_39NrMEvzsFL0i3EB",
+        "type": "OnInit",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_39NrMEvzsFL0i3EB",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_8NOXt2BLdzfCzBKj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CustomerListComponent"
+    },
+    {
+        "id": "sd_8NOXt2BLdzfCzBKj",
+        "type": "PageVariables",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_8NOXt2BLdzfCzBKj",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    }
+]

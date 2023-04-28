@@ -1,0 +1,63 @@
+{
+    "27ac33d2-33f0-9d55-a2ac-6df132d8bc36": {
+        "paletteKey": "NG-button",
+        "commentid": null,
+        "designerReference": [
+            {
+                "_key": "style",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "class",
+                "_value": "",
+                "_type": "dav",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "buttonname",
+                "_value": "Login",
+                "_type": "a",
+                "_attrDef": "p",
+                "_useAsLabel": true
+            },
+            {
+                "_key": "color",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "(click)",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "[disabled]",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "[disableRipple]",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "type",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "routerLink",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            }
+        ]
+    }
+}
