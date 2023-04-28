@@ -1,1 +1,12 @@
-<button mat-button>Login</button>
+<div fxLayout="column wrap" class="login-container" fxLayoutAlign="space-around center" [fxShow]="true">
+  <h1 class="app-title">
+    Jewellery</h1>
+  <div class="shadow-box login-form-container">
+    <div fxLayout="column wrap" style="height:100%" fxLayoutAlign="space-around center" [fxShow]="true">
+      <h2>
+        LOGIN</h2><input placeholder="Employee ID" class="styled-input">
+      <input placeholder="Password" class="styled-input">
+      <button mat-button class="forgotton-btn">Forgotton Password?</button><button mat-button class="styled-button">NEXT</button>
+    </div>
+  </div>
+</div>

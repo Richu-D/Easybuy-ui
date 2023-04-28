@@ -2,6 +2,12 @@
 
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
+@import url('https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Source+Sans+Pro:wght@600;700&display=swap');
+
+:root {
+  --main-color: #E7A960;
+}
 
 *{
     padding: 0px;
@@ -10,8 +16,8 @@
 }
 
 body{
-    background-color: #979491;
     position: relative;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .navbar{
@@ -23,4 +29,79 @@ body{
     right: 0px;
     padding: 10px 15px;
     border-radius: 25px 25px 0 0;
+}
+
+.login-container{
+    height: 100vh;
+    width: 100vw;
+    background-image:url("assets/Web/Resource/loginBackground.jfif"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.app-title{
+    color: white;
+    font-size: 64px;
+    font-family: Seaweed Script;
+    font-weight: 400;
+}
+
+.login-form-container{
+background-color: white;
+width: 90%;
+padding: 30px 40px 60px 40px;
+height: 360px;
+}
+.login-form-container h2{
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.shadow-box{
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.styled-input {
+    border: 1px solid black;
+    width: 100%;
+    padding:14px;
+    padding-left:30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.styled-input::placeholder{
+    color: #B6B6B6;
+}
+
+.styled-input:focus{
+    border-color: transparent;
+    outline: 1px solid var(--main-color);
+}
+
+
+.forgotton-btn{
+    margin-left: auto !important;
+    text-decoration: underline !important;
+    padding-right: 0px !important;
+    margin-bottom: 10px !important;
+}
+
+.styled-button{
+    background-color: var(--main-color);
+    border-radius: 10px !important;
+    width: 100%;
+    color: white;
+    height: 50px;
+}
+
+
+@media (min-width: 768px) {
+  .login-form-container{
+      width: 40%;
+  }
 }

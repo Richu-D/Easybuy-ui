@@ -1,5 +1,12 @@
 {
     "classes": [
-        "navbar"
+        "navbar",
+        "login-container",
+        "app-title",
+        "login-form-container",
+        "shadow-box",
+        "styled-input",
+        "forgotton-btn",
+        "styled-button"
     ]
 }
