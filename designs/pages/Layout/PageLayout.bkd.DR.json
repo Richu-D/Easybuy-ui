@@ -1,4 +1,29 @@
 {
+    "f964708f-f9d3-7e39-a83d-c521d31ea842": {
+        "paletteKey": "NEUTRINOS_VIEW_Navbar",
+        "commentid": null,
+        "designerReference": [
+            {
+                "_key": "componentLabel",
+                "_value": "Navbar",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_useAsLabel": true
+            },
+            {
+                "_key": "style",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "class",
+                "_value": "",
+                "_type": "dav",
+                "_attrDef": "p"
+            }
+        ]
+    },
     "12e97593-b511-4628-f3e5-57794de9fbb3": {
         "paletteKey": "Html5",
         "isAdvancedComponent": true,
@@ -212,30 +237,5 @@
                 }
             ]
         }
-    },
-    "f964708f-f9d3-7e39-a83d-c521d31ea842": {
-        "paletteKey": "NEUTRINOS_VIEW_Navbar",
-        "commentid": null,
-        "designerReference": [
-            {
-                "_key": "componentLabel",
-                "_value": "Navbar",
-                "_type": "kv",
-                "_attrDef": "p",
-                "_useAsLabel": true
-            },
-            {
-                "_key": "style",
-                "_value": "",
-                "_type": "kv",
-                "_attrDef": "p"
-            },
-            {
-                "_key": "class",
-                "_value": "",
-                "_type": "dav",
-                "_attrDef": "p"
-            }
-        ]
     }
 }

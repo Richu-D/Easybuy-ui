@@ -52,7 +52,7 @@ export class HomeComponent {
 
   sd_N2o1h0j7eHq1pLnO(bh) {
     try {
-      bh = this.sd_xXkRTz1m9f0JjOXD(bh);
+      bh = this.sd_JkpIfNfcSWww6PtI(bh);
       //appendnew_next_sd_N2o1h0j7eHq1pLnO
       return bh;
     } catch (e) {
@@ -62,8 +62,62 @@ export class HomeComponent {
 
   //appendnew_flow_HomeComponent_start
 
+  sd_JkpIfNfcSWww6PtI(bh) {
+    try {
+      const page = this.page;
+      bh.local.statistics = [
+        {
+          imageUrl: '/Web/Icons/Earning.svg',
+          fxFlex: '46',
+          details: [
+            {
+              tittle: 'Earning',
+              value: '₹200.00',
+            },
+          ],
+        },
+        {
+          imageUrl: '/Web/Icons/Clients.svg',
+          fxFlex: '46',
+          details: [
+            {
+              tittle: 'Clients',
+              value: '20',
+            },
+          ],
+        },
+        {
+          imageUrl: '/Web/Icons/PriceGraph.svg',
+          fxFlex: '100',
+          details: [
+            {
+              tittle: 'Gold',
+              value: '₹5600',
+            },
+            {
+              tittle: 'Silver',
+              value: '₹5600',
+            },
+            {
+              tittle: 'Platinum',
+              value: '₹5600',
+            },
+          ],
+        },
+      ];
+
+      bh = this.sd_xXkRTz1m9f0JjOXD(bh);
+      //appendnew_next_sd_JkpIfNfcSWww6PtI
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_JkpIfNfcSWww6PtI');
+    }
+  }
+
   sd_xXkRTz1m9f0JjOXD(bh) {
     try {
+      this.page.statistics = bh.local.statistics;
+
       //appendnew_next_sd_xXkRTz1m9f0JjOXD
       return bh;
     } catch (e) {

@@ -13,6 +13,12 @@
         "forgotton-btn",
         "styled-button",
         "boarding-container",
-        "secondary-styled-button"
+        "secondary-styled-button",
+        "dashboard",
+        "statistic",
+        "statistic-title",
+        "statistic-value",
+        "card",
+        "card-content"
     ]
 }

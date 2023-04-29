@@ -23,7 +23,7 @@
         "y": 30,
         "wires": [
             [
-                "sd_xXkRTz1m9f0JjOXD"
+                "sd_JkpIfNfcSWww6PtI"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -40,13 +40,43 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "statistics",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "statistics"
+                }
+            }
+        ],
         "functionName": "sd_xXkRTz1m9f0JjOXD",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 285,
+        "y": 40,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_JkpIfNfcSWww6PtI",
+        "type": "Script",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.statistics = [\n{\n    \"imageUrl\":\"/Web/Icons/Earning.svg\",\n    \"fxFlex\":\"46\",\n    \"details\":[{\n    \"tittle\":\"Earning\",\n    \"value\":\"₹200.00\"\n    }]\n},\n{\n    \"imageUrl\":\"/Web/Icons/Clients.svg\",\n    \"fxFlex\":\"46\",\n    \"details\":[{\n    \"tittle\":\"Clients\",\n    \"value\":\"20\"\n    }]\n},\n{\n    \"imageUrl\":\"/Web/Icons/PriceGraph.svg\",\n    \"fxFlex\":\"100\",\n    \"details\":[\n    {\n    \"tittle\":\"Gold\",\n    \"value\":\"₹5600\"\n    },\n    {\n    \"tittle\":\"Silver\",\n    \"value\":\"₹5600\"\n    },\n    {\n    \"tittle\":\"Platinum\",\n    \"value\":\"₹5600\"\n    }\n\n    ]\n},\n]",
+        "functionName": "sd_JkpIfNfcSWww6PtI",
+        "category": "Function",
+        "x": 185,
+        "y": 40,
+        "wires": [
+            [
+                "sd_xXkRTz1m9f0JjOXD"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
