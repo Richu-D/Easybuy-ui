@@ -52,7 +52,7 @@ export class NavbarComponent {
 
   sd_EoSLicCG1FOqCqz8(bh) {
     try {
-      bh = this.sd_O7EhgFXS8wwZzbto(bh);
+      bh = this.sd_o0r2cCY3XhUbjxJW(bh);
       //appendnew_next_sd_EoSLicCG1FOqCqz8
       return bh;
     } catch (e) {
@@ -62,8 +62,23 @@ export class NavbarComponent {
 
   //appendnew_flow_NavbarComponent_start
 
+  sd_o0r2cCY3XhUbjxJW(bh) {
+    try {
+      const page = this.page;
+      bh.local.svg = `/Web/Icons/Home.svg`;
+
+      bh = this.sd_O7EhgFXS8wwZzbto(bh);
+      //appendnew_next_sd_o0r2cCY3XhUbjxJW
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_o0r2cCY3XhUbjxJW');
+    }
+  }
+
   sd_O7EhgFXS8wwZzbto(bh) {
     try {
+      this.page.svg = bh.local.svg;
+
       //appendnew_next_sd_O7EhgFXS8wwZzbto
       return bh;
     } catch (e) {

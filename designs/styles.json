@@ -1,6 +1,7 @@
 {
     "classes": [
         "navbar",
+        "active",
         "login-container",
         "app-title",
         "login-form-container",
