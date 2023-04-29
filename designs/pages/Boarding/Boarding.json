@@ -52,5 +52,49 @@
         "generateNext": false,
         "serviceName": "BoardingComponent",
         "generated": true
+    },
+    {
+        "id": "sd_A68ZVgO4VkIcVDVe",
+        "type": "PageStart",
+        "z": "sd_DMrNu6GH7tsA8TDg",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "gotoLogin",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "gotoLogin",
+        "category": "General",
+        "x": 45,
+        "y": 140,
+        "wires": [
+            [
+                "sd_ZxwBA3l0IbiNjR71"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "BoardingComponent"
+    },
+    {
+        "id": "sd_ZxwBA3l0IbiNjR71",
+        "type": "Navigation",
+        "z": "sd_DMrNu6GH7tsA8TDg",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/login",
+        "functionName": "sd_ZxwBA3l0IbiNjR71",
+        "category": "Navigation",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "BoardingComponent",
+        "generated": true
     }
 ]
