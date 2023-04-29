@@ -2,6 +2,7 @@
     "11fd0fe3-fb9f-4b86-f2f9-12b6a0f844a3": {
         "paletteKey": "Html5",
         "isAdvancedComponent": true,
+        "isCommented": "false",
         "commentid": null,
         "designerReference": [
             {
@@ -190,6 +191,7 @@
             "paletteKey": "Html5",
             "parentEditorKey": "11fd0fe3-fb9f-4b86-f2f9-12b6a0f844a3",
             "isAdvancedComponent": true,
+            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -379,6 +381,7 @@
             "5767a63c-3e0d-709c-5cc3-91533cafbc95": {
                 "paletteKey": "FlexLayoutRow",
                 "parentEditorKey": "25366d02-0a83-04f6-89d0-ba6a61aa72f1",
+                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {
@@ -441,6 +444,7 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "5767a63c-3e0d-709c-5cc3-91533cafbc95",
                     "isAdvancedComponent": true,
+                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -630,6 +634,7 @@
                         "paletteKey": "html-editor",
                         "parentEditorKey": "2d0e5702-82a7-11d5-18ca-99e0b8065ce6",
                         "isAdvancedChildComponent": true,
+                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -646,7 +651,7 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": "<svg+ width=\"26\" height=\"26\" viewBox=\"0 0 26 26\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n<path d=\"M13.002 20.3409V16.6724M10.6864 1.77805L2.37163 8.56487C1.43577 9.32304 0.835858 10.925 1.03983 12.1234L2.63559 21.8573C2.92354 23.5937 4.5553 25 6.28304 25H19.721C21.4367 25 23.0805 23.5815 23.3685 21.8573L24.9642 12.1234C25.1562 10.925 24.5563 9.32304 23.6324 8.56487L15.3177 1.79027C14.0339 0.738622 11.9582 0.738622 10.6864 1.77805Z\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\r\n</svg>",
+                                "_value": "<svg width=\"26\" height=\"26\" viewBox=\"0 0 26 26\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n<path d=\"M13.002 20.3409V16.6724M10.6864 1.77805L2.37163 8.56487C1.43577 9.32304 0.835858 10.925 1.03983 12.1234L2.63559 21.8573C2.92354 23.5937 4.5553 25 6.28304 25H19.721C21.4367 25 23.0805 23.5815 23.3685 21.8573L24.9642 12.1234C25.1562 10.925 24.5563 9.32304 23.6324 8.56487L15.3177 1.79027C14.0339 0.738622 11.9582 0.738622 10.6864 1.77805Z\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\r\n</svg>",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }
@@ -657,6 +662,7 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "5767a63c-3e0d-709c-5cc3-91533cafbc95",
                     "isAdvancedComponent": true,
+                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -872,6 +878,7 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "5767a63c-3e0d-709c-5cc3-91533cafbc95",
                     "isAdvancedComponent": true,
+                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -1059,6 +1066,7 @@
                         "paletteKey": "html-editor",
                         "parentEditorKey": "45fee68a-b822-f692-9ea3-ed70ed6953ae",
                         "isAdvancedChildComponent": true,
+                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1086,6 +1094,7 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "5767a63c-3e0d-709c-5cc3-91533cafbc95",
                     "isAdvancedComponent": true,
+                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -1273,6 +1282,7 @@
                         "paletteKey": "html-editor",
                         "parentEditorKey": "ed20477b-cc75-b3dc-c5e5-69875d5c2ecf",
                         "isAdvancedChildComponent": true,
+                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
