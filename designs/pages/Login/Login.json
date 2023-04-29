@@ -23,7 +23,7 @@
         "y": 30,
         "wires": [
             [
-                "sd_RY47kgUNHIZKLOjK"
+                "sd_lf5L442puyKyI4Bq"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -40,11 +40,147 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "credentials",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "credentials"
+                }
+            }
+        ],
         "functionName": "sd_RY47kgUNHIZKLOjK",
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lf5L442puyKyI4Bq",
+        "type": "Script",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.credentials = {\n    \"EmployeeId\":\"\",\n    \"Password\":\"\"\n}",
+        "functionName": "sd_lf5L442puyKyI4Bq",
+        "category": "Function",
+        "x": 100,
+        "y": 40,
+        "wires": [
+            [
+                "sd_RY47kgUNHIZKLOjK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ORiy0So4quwGLeD5",
+        "type": "PageStart",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "login",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "event",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "login",
+        "category": "General",
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "sd_bNa4MVXSFaqAsiRy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "LoginComponent"
+    },
+    {
+        "id": "sd_bNa4MVXSFaqAsiRy",
+        "type": "Script",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.credentials,\"credentials\")",
+        "functionName": "sd_bNa4MVXSFaqAsiRy",
+        "category": "Function",
+        "x": 200,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8umBNzFPADbpVCaB",
+        "type": "PageStart",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "logg",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "loginForm",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "logg",
+        "category": "General",
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "sd_0fqvQNcYSeQcDBuU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "LoginComponent"
+    },
+    {
+        "id": "sd_0fqvQNcYSeQcDBuU",
+        "type": "Script",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.loginForm,\"loginForm\")",
+        "functionName": "sd_0fqvQNcYSeQcDBuU",
+        "category": "Function",
+        "x": 220,
+        "y": 280,
         "wires": [
             []
         ],
