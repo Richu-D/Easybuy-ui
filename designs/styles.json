@@ -2,6 +2,7 @@
     "classes": [
         "navbar",
         "active",
+        "subNavbar",
         "login-container",
         "app-title",
         "login-form-container",
@@ -19,6 +20,17 @@
         "statistic-title",
         "statistic-value",
         "card",
-        "card-content"
+        "card-content",
+        "div-ui-container",
+        "dce-video-container",
+        "dce-scanarea",
+        "dce-scanlight",
+        "products-list-container",
+        "product-container",
+        "product-count-container",
+        "product-add-button",
+        "product-remove-button",
+        "button-icon",
+        "close-button"
     ]
 }

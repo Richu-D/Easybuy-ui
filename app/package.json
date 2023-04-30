@@ -37,6 +37,7 @@
         "android-versions": "1.5.0",
         "chart.js": "3.8.0",
         "core-js": "3.8.1",
+        "dynamsoft-javascript-barcode": "9.6.20",
         "firebase": "9.8.2",
         "hammerjs": "2.0.8",
         "localforage": "1.10.0",

@@ -40,11 +40,120 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "pScanner",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "pScanner"
+                }
+            }
+        ],
         "functionName": "sd_yGxv4THYziNBSaz7",
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            [
+                "sd_Ze6OgkGFVrNKCQOj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Ze6OgkGFVrNKCQOj",
+        "type": "UseDependency",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "BarcodeReader",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "BarcodeReader"
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "BarcodeScanner",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "BarcodeScanner"
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "dynamsoft-javascript-barcode",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_Ze6OgkGFVrNKCQOj",
+        "category": "Function",
+        "x": 325,
+        "y": 40,
+        "wires": [
+            [
+                "sd_PqraNVbOFRW0sAWc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_PqraNVbOFRW0sAWc",
+        "type": "Environment",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "BARCODE_READER"
+                },
+                "envProperty": "BARCODE_READER"
+            }
+        ],
+        "functionName": "sd_PqraNVbOFRW0sAWc",
+        "category": "General",
+        "x": 460,
+        "y": 60,
+        "wires": [
+            [
+                "sd_bAn51UN2NmXoPM9Z"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_bAn51UN2NmXoPM9Z",
+        "type": "Script",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// console.log(bh.local.BARCODE_READER,\"BARCODE_READER\")\n// console.log(bh.local.BarcodeReader,\"BarcodeReader\")\n// console.log(bh.local.BarcodeScanner,\"BarcodeScanner\")\nBarcodeReader.license = bh.local.BARCODE_READER;\nBarcodeReader.engineResourcePath = \"https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode/dist/\";\n\nconst scanner = await bh.local.BarcodeScanner.createInstance();\n\n// console.log(scanner,\"scanner\")\nawait scanner.setUIElement(\n        (document.querySelector('.dce-video-container') as HTMLElement).parentElement as HTMLElement\n      );\n      scanner.onFrameRead = (results: any) => {\n        for (const result of results) {\n          console.log(result.barcodeText);\n        }\n      };\n      scanner.onUniqueRead = (txt, result) => {\n        console.log(txt,\"text\");\n         console.log(\"Unique Code Found: \", result);\n      };\nawait scanner.open();\n\n\n// console.clear()\n// const cameras = await scanner.getAllCameras();\n// const currentCamera = await scanner.getCurrentCamera();\n\n// console.log(cameras,\"cameras\",currentCamera,\"currentCamera\")\n\n// if (cameras.length) {\n//   let x = 0\n//  let sampleinterval= setInterval(async ()=>{\n//     await scanner.setCurrentCamera(cameras[x].deviceId);\n//     ++x;\n//     if(x==cameras.length){\n//       // clearInterval(sampleinterval)\n//       // console.log(\"interval stoped\");\n//       x = 0\n//     }\n//   },5000)\n\n// }\n\n// await scanner.turnOnTorch();\n// await scanner.turnOffTorch();\n\n// scanner.barcodeFillStyle = \"red\";\nlet scanSettings = await scanner.getScanSettings();\nscanSettings.whenToPlaySoundforSuccessfulRead = \"unique\";\nawait scanner.updateScanSettings(scanSettings);\n\nscanner.setVideoFit('cover');\nlet region = [20, 20, 80, 40];\nlet settings = await scanner.getRuntimeSettings()\n                settings.region = {\n                    regionLeft: region[0],\n                    regionTop: region[1],\n                    regionRight: region[2],\n                    regionBottom: region[3],\n                    regionMeasuredByPercentage: 1\n                };\nawait scanner.updateRuntimeSettings(settings);\n//center region\n//  let sideLen = Math.min(info.width, info.height) * 0.4;\n//     let precentW = Math.round(sideLen / info.width * 100)\n//     let precentH = Math.round(sideLen / info.height * 100);\n//     let rs = await scanner.getRuntimeSettings();\n//     rs.region.regionLeft = (100 - precentW) / 2;\n//     rs.region.regionRight = (100 + precentW) / 2;\n//     rs.region.regionTop = (100 - precentH) / 2;\n//     rs.region.regionBottom = (100 + precentH) / 2;\n//     rs.region.regionMeasuredByPercentage = 1;\n//     await scanner.updateRuntimeSettings(rs);\n\n\n// scanner.barcodeLineWidth = 5;\n// scanner.barcodeStrokeStyle = \"rgba(73, 245, 73, 1)\";\n\n// Get the RectangleFrame object\n// var rectangleFrame = scanner.dwt.WebTwainEnv.GetWebTwain('dwtcontrolContainer').ui.rectangleFrame;\n\n// // Set the border color to red\n// rectangleFrame.setRectangleFrame({\n//     borderColor: '#000000'\n// });\n\n// // Set the border width to 3 pixels\n// rectangleFrame.setRectangleFrame({\n//     borderWidth: 3\n// });\n\n// // Set the fill color to blue\n// rectangleFrame.setRectangleFrame({\n//     fillColor: '#0000FF'\n// });\n\n// // Set the opacity to 0.5\n// rectangleFrame.setRectangleFrame({\n//     opacity: 0.5\n// });\n\n\nconsole.log(document.querySelector('.dce-video-container'),\".dce-video-containter\")",
+        "functionName": "sd_bAn51UN2NmXoPM9Z",
+        "category": "Function",
+        "x": 580,
+        "y": 60,
         "wires": [
             []
         ],
@@ -52,5 +161,51 @@
         "generateNext": false,
         "serviceName": "ScanComponent",
         "generated": true
+    },
+    {
+        "id": "sd_Tbbl0Bg8Ru7td1Wu",
+        "type": "Script",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.error,\"Error is here\")",
+        "functionName": "sd_Tbbl0Bg8Ru7td1Wu",
+        "category": "Function",
+        "x": 560,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_TLYfDeZqyIClHeDL",
+        "type": "Catch",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": "",
+        "selectCatchType": "allnodes",
+        "masternodeList": "",
+        "ignoreList": [
+            "sd_Tbbl0Bg8Ru7td1Wu"
+        ],
+        "functionName": "sd_TLYfDeZqyIClHeDL",
+        "category": "General",
+        "x": 460,
+        "y": 180,
+        "wires": [
+            [
+                "sd_Tbbl0Bg8Ru7td1Wu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ScanComponent"
     }
 ]

@@ -15,6 +15,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-ProductComponent
+import { ProductComponent } from '../components/Components/Product/Product.component';
+//CORE_REFERENCE_IMPORT-SubNavbarComponent
+import { SubNavbarComponent } from '../components/Components/SubNavbar/SubNavbar.component';
 //CORE_REFERENCE_IMPORT-CartComponent
 import { CartComponent } from '../components/Cart/Cart.component';
 //CORE_REFERENCE_IMPORT-CustomerListComponent
@@ -65,6 +69,10 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-ProductComponent
+  ProductComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-SubNavbarComponent
+  SubNavbarComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-CartComponent
   CartComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-CustomerListComponent
