@@ -17,10 +17,37 @@
         "viewType": "common",
         "nodeType": "start",
         "name": "",
+        "inputVariables": [
+            {
+                "key": "product",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
+        "localVariables": [],
+        "outputVariables": [
+            {
+                "key": "cancelProduct",
+                "defaultValue": {
+                    "type": "any",
+                    "value": null
+                }
+            },
+            {
+                "key": "changeCount",
+                "defaultValue": {
+                    "type": "any",
+                    "value": null
+                }
+            }
+        ],
+        "pageVariables": [],
         "functionName": "sd_DZVhFFFTdM2Fw40e",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 65,
+        "y": 80,
         "wires": [
             [
                 "sd_mqjGan12odfyv6VY"
@@ -43,10 +70,172 @@
         "globalVariables": [],
         "functionName": "sd_mqjGan12odfyv6VY",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 185,
+        "y": 80,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ImRDb7yLMnf49hBE",
+        "type": "PageStart",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "removeProduct",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "productId",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "removeProduct",
+        "category": "General",
+        "x": 65,
+        "y": 180,
+        "wires": [
+            [
+                "sd_qd3hGLzszT4bPJZK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProductComponent"
+    },
+    {
+        "id": "sd_qd3hGLzszT4bPJZK",
+        "type": "Output",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "eventName": "bh.pageOutput.cancelProduct",
+        "data": "bh.input.productId",
+        "functionName": "sd_qd3hGLzszT4bPJZK",
+        "category": "Function",
+        "x": 185,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "eventName": {
+                "type": "bh.pageOutput",
+                "value": "cancelProduct",
+                "constant": false
+            },
+            "data": {
+                "type": "bh.input",
+                "value": "productId",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_FeSgbjcogz1NPICz",
+        "type": "PageStart",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "changeProductCount",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "operation",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "productId",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "changeProductCount",
+        "category": "General",
+        "x": 65,
+        "y": 280,
+        "wires": [
+            [
+                "sd_zayazj7lYbejt51W"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProductComponent"
+    },
+    {
+        "id": "sd_CaKMW7spAdQW572V",
+        "type": "Output",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "eventName": "bh.pageOutput.changeCount",
+        "data": "bh.local.operation",
+        "functionName": "sd_CaKMW7spAdQW572V",
+        "category": "Function",
+        "x": 305,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "eventName": {
+                "type": "bh.pageOutput",
+                "value": "changeCount",
+                "constant": false
+            },
+            "data": {
+                "type": "bh.local",
+                "value": "operation",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProductComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_zayazj7lYbejt51W",
+        "type": "Script",
+        "z": "sd_hILypVC9c1BrngGD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.operation = {\n    \"operation\":bh.input.operation,\n    \"productId\":bh.input.productId\n}",
+        "functionName": "sd_zayazj7lYbejt51W",
+        "category": "Function",
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "sd_CaKMW7spAdQW572V"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

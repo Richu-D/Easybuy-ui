@@ -15,6 +15,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-Scan
+import { Scan } from '../sd-services/Scan';
 //CORE_REFERENCE_IMPORT-ProductComponent
 import { ProductComponent } from '../components/Components/Product/Product.component';
 //CORE_REFERENCE_IMPORT-SubNavbarComponent
@@ -108,6 +110,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-Scan
+Scan,
 ];
 
 /**
@@ -129,7 +133,7 @@ export const appRoutes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'boarding', component: BoardingComponent },
-  { path: '', redirectTo: '/ui/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/boarding', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

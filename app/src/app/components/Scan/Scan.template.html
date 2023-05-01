@@ -8,5 +8,5 @@
   </div>
 </div>
 <div class="products-list-container">
-  <bh-Product></bh-Product>
+  <bh-Product [product]="product" *ngFor="let product of page.products" (cancelProduct)="cancelProduct($event)" (changeCount)="changeCount($event)"></bh-Product>
 </div>

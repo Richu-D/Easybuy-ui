@@ -1,27 +1,25 @@
-<div fxLayout="row wrap" class="product-container" fxLayoutAlign="space-between space-between" [fxShow]="true"><img imgSrc="/Web/Resource/cart1.png" style="height:100px;width:90px;">
+<div fxLayout="row wrap" class="product-container" fxFlex="100" fxLayoutAlign="space-between space-between" [fxShow]="true"><img imgSrc="{{product.imageUrl}}" style="height:100px;width:90px;">
   <div fxLayout="column wrap" style="width:180px" fxLayoutAlign="start stretch" [fxShow]="true">
     <h3>
-      Stone Necklace</h3>
+      {{product.productName}}
+    </h3>
     <p>
-      22ct Gold with Hall Mark Weight:56gm</p><span style="color:var(--main-color);font-size:24px;font-weight:700px;">
-                &#x20B9;125K</span>
+      {{product.description}}Weight:{{product.weight}}
+    </p><span style="color:var(--main-color);font-size:24px;font-weight:700px;">
+    {{product.rate}}</span>
   </div>
   <div fxLayout="column wrap" fxLayoutAlign="space-around stretch" [fxShow]="true">
-    <div fxLayout="row wrap" class="product-count-container" fxLayoutAlign="center center" [fxShow]="true"><button>
-        <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div fxLayout="row wrap" class="product-count-container" fxLayoutAlign="center center" [fxShow]="true"><button mat-button (click)="changeProductCount(&apos;-&apos;,product.productId)" [disabled]="!(product.count-1)"><svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.808594 1H10.705" stroke="#979491" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </button>
+        </svg></button>
       <div>
-        1</div><button>
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {{product.count}}
+      </div><button mat-button (click)="changeProductCount(&apos;+&apos;,product.productId)"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6.2802 1V11" stroke="#979491" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M1.33203 6.00003H11.2284" stroke="#979491" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </button>
+        </svg></button>
     </div><button mat-button class="product-add-button">Add</button>
-  </div><button class="close-button">
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1.73105 1.7838L10.2689 10.2162M1.78375 10.2689L10.2162 1.7311" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  </div><button mat-button class="close-button" (click)="removeProduct(product.productId)"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.73105 1.7838L10.2689 10.2162M1.78375 10.2689L10.2162 1.7311" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg></button>
 </div>

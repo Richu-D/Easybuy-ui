@@ -65,6 +65,7 @@
             "paletteKey": "Html5",
             "parentEditorKey": "2a4c7223-8ae9-962f-1dbd-a2d554331dac",
             "isAdvancedComponent": true,
+            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -255,6 +256,7 @@
                 "paletteKey": "html-editor",
                 "parentEditorKey": "f36d557c-f71f-59fd-fd5c-50e7703e5874",
                 "isAdvancedChildComponent": true,
+                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {
@@ -271,7 +273,7 @@
                     },
                     {
                         "_key": "html",
-                        "_value": "<svg width=\"11\" height=\"20\" viewBox=\"0 0 11 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n<path d=\"M9 18L2.56957 11.4141C1.81014 10.6364 1.81014 9.36364 2.56957 8.58586L9 2\" stroke=\"white\" stroke-width=\"3\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\r\n</svg>",
+                        "_value": "<svg width=\"11\" height=\"20\" viewBox=\"0 0 11 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n<path d=\"M9 18L2.56957 11.4141C1.81014 10.6364 1.81014 9.36364 2.56957 8.58586L9 2\" stroke=\"black\" stroke-width=\"3\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\r\n</svg>",
                         "_type": "a",
                         "_attrDef": "p"
                     }

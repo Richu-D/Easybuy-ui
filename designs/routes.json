@@ -29,7 +29,16 @@
         },
         {
             "path": "login",
-            "component": "LoginComponent"
+            "component": "LoginComponent",
+            "canActivate": {
+                "edited": true,
+                "value": ""
+            },
+            "redirectTo": "",
+            "canDeactivate": {
+                "edited": true,
+                "value": ""
+            }
         },
         {
             "path": "boarding",
@@ -37,7 +46,7 @@
         },
         {
             "path": "''",
-            "redirectTo": "/ui/home",
+            "redirectTo": "/boarding",
             "pathMatch": "full",
             "default": true
         },

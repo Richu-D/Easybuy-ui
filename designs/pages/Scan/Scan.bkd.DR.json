@@ -52,7 +52,9 @@
                 "_attrDef": "p",
                 "_complexity": "advanced",
                 "displayAs": "IconUrl",
-                "attrType": "INPUT"
+                "attrType": "INPUT",
+                "inValid": false,
+                "message": ""
             }
         ]
     },
@@ -248,6 +250,7 @@
             "paletteKey": "Html5",
             "parentEditorKey": "7d275639-0612-366f-e243-20e95f5aa15d",
             "isAdvancedComponent": true,
+            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -1026,6 +1029,61 @@
                     "_value": "",
                     "_type": "dav",
                     "_attrDef": "p"
+                },
+                {
+                    "_key": "[product]",
+                    "_value": "product",
+                    "_type": "kv",
+                    "_attrDef": "c"
+                },
+                {
+                    "_key": "*ngFor",
+                    "_value": "let product of page.products",
+                    "_type": "kv",
+                    "_attrDef": "c"
+                },
+                {
+                    "_key": "(deleteProductEvent)",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_complexity": "advanced",
+                    "displayAs": "deleteProductEvent",
+                    "attrType": "OUTPUT",
+                    "inValid": true,
+                    "message": "Property not available"
+                },
+                {
+                    "_key": "(cancelProduct)",
+                    "_value": "cancelProduct($event)",
+                    "_type": "kv",
+                    "_attrDef": "c",
+                    "_customAttributeFlag": "flowpicker",
+                    "objValue": {
+                        "nodeID": "sd_4loRw6sSG8LPvbVc",
+                        "functionName": "cancelProduct",
+                        "activeTree": "pages",
+                        "z": "sd_LIDAnDbHw9UbxkCR",
+                        "input": [
+                            "$event"
+                        ]
+                    }
+                },
+                {
+                    "_key": "(changeCount)",
+                    "_value": "changeCount($event)",
+                    "_type": "kv",
+                    "_attrDef": "c",
+                    "_customAttributeFlag": "flowpicker",
+                    "objValue": {
+                        "nodeID": "sd_gNobqHCFhYTwWhFO",
+                        "functionName": "changeCount",
+                        "activeTree": "pages",
+                        "z": "sd_LIDAnDbHw9UbxkCR",
+                        "input": [
+                            "$event"
+                        ]
+                    }
                 }
             ]
         }

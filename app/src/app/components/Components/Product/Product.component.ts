@@ -22,6 +22,12 @@ import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.ser
   ],
 })
 export class ProductComponent {
+  @Input('product')
+  public product: any = undefined;
+  @Output('cancelProduct')
+  public cancelProduct: any = new EventEmitter<any>();
+  @Output('changeCount')
+  public changeCount: any = new EventEmitter<any>();
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -60,6 +66,40 @@ export class ProductComponent {
     }
   }
 
+  removeProduct(productId: any = undefined, ...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { productId: productId };
+      bh.local = {};
+
+      bh = this.sd_qd3hGLzszT4bPJZK(bh);
+      //appendnew_next_removeProduct
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ImRDb7yLMnf49hBE');
+    }
+  }
+
+  changeProductCount(
+    operation: any = undefined,
+    productId: any = undefined,
+    ...others
+  ) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { operation: operation, productId: productId };
+      bh.local = {};
+
+      bh = this.sd_zayazj7lYbejt51W(bh);
+      //appendnew_next_changeProductCount
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_FeSgbjcogz1NPICz');
+    }
+  }
+
   //appendnew_flow_ProductComponent_start
 
   sd_mqjGan12odfyv6VY(bh) {
@@ -68,6 +108,44 @@ export class ProductComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_mqjGan12odfyv6VY');
+    }
+  }
+
+  sd_qd3hGLzszT4bPJZK(bh) {
+    try {
+      bh.pageOutput.cancelProduct.emit(bh.input.productId);
+
+      //appendnew_next_sd_qd3hGLzszT4bPJZK
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_qd3hGLzszT4bPJZK');
+    }
+  }
+
+  sd_zayazj7lYbejt51W(bh) {
+    try {
+      const page = this.page;
+      bh.local.operation = {
+        operation: bh.input.operation,
+        productId: bh.input.productId,
+      };
+
+      bh = this.sd_CaKMW7spAdQW572V(bh);
+      //appendnew_next_sd_zayazj7lYbejt51W
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_zayazj7lYbejt51W');
+    }
+  }
+
+  sd_CaKMW7spAdQW572V(bh) {
+    try {
+      bh.pageOutput.changeCount.emit(bh.local.operation);
+
+      //appendnew_next_sd_CaKMW7spAdQW572V
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_CaKMW7spAdQW572V');
     }
   }
 
