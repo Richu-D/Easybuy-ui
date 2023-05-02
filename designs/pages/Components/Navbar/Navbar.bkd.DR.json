@@ -1067,7 +1067,7 @@
                         },
                         {
                             "_key": "routerLink",
-                            "_value": "/ui/customerList",
+                            "_value": "/ui/customer-list",
                             "_type": "kv",
                             "_attrDef": "c"
                         }
