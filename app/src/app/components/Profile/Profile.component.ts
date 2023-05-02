@@ -64,10 +64,29 @@ export class ProfileComponent {
 
   sd_3BHkjd7D1OEblJl1(bh) {
     try {
+      bh = this.profileItems(bh);
       //appendnew_next_sd_3BHkjd7D1OEblJl1
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_3BHkjd7D1OEblJl1');
+    }
+  }
+
+  profileItems(bh) {
+    try {
+      const page = this.page;
+      bh.local.profile = [
+        'Personal Details',
+        'Settings',
+        'Contact',
+        'Help &FAQs',
+        'Sign out',
+      ];
+
+      //appendnew_next_profileItems
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_uQwjFC6hVJHOPmkv');
     }
   }
 
