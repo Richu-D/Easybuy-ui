@@ -17,7 +17,7 @@
 
 body{
     position: relative;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif ;
 }
 
 .navbar{
@@ -104,4 +104,82 @@ height: 360px;
   .login-form-container{
       width: 40%;
   }
+}
+
+.customer-card{
+    margin-top:2rem;
+   box-shadow: 0px 2px 48px rgba(0, 0, 0, 0.04);
+    margin:1rem;
+    border-radius: 10px;
+}
+
+.image-container{
+    background-image: url("/assets/Web/Resource/profile.jfif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    margin-left: 2rem;
+}
+
+.profile-section{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: rgba(230, 169, 96, 0.56);
+    padding: .5rem;
+   
+}
+
+.profile-text{
+    text-align: center;
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-left: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom:1rem;
+    padding-top: 1rem;
+}
+
+ .city{
+    display: block ;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.profile-options{
+    margin-top: 1rem;
+    margin-right: 145px !important;
+}
+
+
+.total-price{
+    position: relative;
+    top: -3rem;
+    font-weight: 700;
+    color: green;
+}
+
+.phone-number{
+    font-weight:600;
+    padding-top: 8px
+}
+
+.payment-methosd{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.time{
+    position: relative;
+    top: -10px;
+}
+
+.list-text{
+    display: block;
+    text-align: center;
+    padding-top: 1rem;
 }

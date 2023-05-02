@@ -17,6 +17,10 @@
         "viewType": "common",
         "nodeType": "start",
         "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
         "functionName": "sd_jZ3OpMvU6kiDwiVE",
         "category": "Lifecycle Events",
         "x": 30,
@@ -45,6 +49,28 @@
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            [
+                "sd_uQwjFC6hVJHOPmkv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_uQwjFC6hVJHOPmkv",
+        "type": "Script",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "profile items",
+        "script": "bh.local.profile=['Personal Details','Settings','Contact','Help &FAQs','Sign out']",
+        "functionName": "profileItems",
+        "category": "Function",
+        "x": 320,
+        "y": 40,
         "wires": [
             []
         ],

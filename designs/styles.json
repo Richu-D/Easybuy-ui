@@ -7,6 +7,17 @@
         "shadow-box",
         "styled-input",
         "forgotton-btn",
-        "styled-button"
+        "styled-button",
+        "customer-card",
+        "image-container",
+        "profile-section",
+        "profile-text",
+        "city",
+        "profile-options",
+        "total-price",
+        "phone-number",
+        "payment-methosd",
+        "time",
+        "list-text"
     ]
 }
