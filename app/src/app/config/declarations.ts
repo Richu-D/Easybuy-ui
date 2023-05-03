@@ -15,6 +15,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-getuserData
+import { getuserData } from '../sd-services/getuserData';
+//CORE_REFERENCE_IMPORT-carrtItemComponent
+import { carrtItemComponent } from '../components/Components/CartItem/carrtItem.component';
 //CORE_REFERENCE_IMPORT-Scan
 import { Scan } from '../sd-services/Scan';
 //CORE_REFERENCE_IMPORT-ProductComponent
@@ -71,6 +75,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-carrtItemComponent
+  carrtItemComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-ProductComponent
   ProductComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-SubNavbarComponent
@@ -110,8 +116,10 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
-//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-Scan
-Scan,
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-getuserData
+getuserData,
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-Scan
+  Scan,
 ];
 
 /**

@@ -8,6 +8,8 @@ import {
   Input,
   Output,
   EventEmitter,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -26,6 +28,10 @@ export class SubNavbarComponent {
   public subNavTitle: any = undefined;
   @Input('IconUrl')
   public IconUrl: any = undefined;
+  @Input('textColor')
+  public textColor: any = undefined;
+  @Input('goto')
+  public goto: any = undefined;
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,

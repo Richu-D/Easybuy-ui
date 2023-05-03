@@ -17,6 +17,10 @@
         "viewType": "common",
         "nodeType": "start",
         "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
         "functionName": "sd_YmaRKlBWymI5tDba",
         "category": "Lifecycle Events",
         "x": 30,
@@ -51,8 +55,8 @@
         ],
         "functionName": "sd_RY47kgUNHIZKLOjK",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 645,
+        "y": 60,
         "wires": [
             []
         ],
@@ -71,8 +75,8 @@
         "script": "bh.local.credentials = {\n    \"EmployeeId\":\"\",\n    \"Password\":\"\"\n}",
         "functionName": "sd_lf5L442puyKyI4Bq",
         "category": "Function",
-        "x": 100,
-        "y": 40,
+        "x": 445,
+        "y": 60,
         "wires": [
             [
                 "sd_RY47kgUNHIZKLOjK"
@@ -109,7 +113,7 @@
         "y": 180,
         "wires": [
             [
-                "sd_bNa4MVXSFaqAsiRy"
+                "sd_Tu4jIqEQTZq2ctV4"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -123,14 +127,14 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(page.credentials,\"credentials\")",
+        "script": "console.log(page.credentials,bh.local.backendUrl,\"credentials\")\nbh.local.body={\n    \"employeeid\":page.credentials.EmployeeId,\n    \"password\":page.credentials.Password\n}\n\nbh.local.url=bh.local.backendUrl+\"/employee/login\"\n\nconsole.log(bh.local.url,\"url\")\n\nconsole.log(bh.local.body,\"body\");\n// {{BASE_URL}}/employee/login ",
         "functionName": "sd_bNa4MVXSFaqAsiRy",
         "category": "Function",
-        "x": 200,
+        "x": 425,
         "y": 180,
         "wires": [
             [
-                "sd_Fcc6zAGpETqlH7SO"
+                "sd_EEUVUARXxR2413YT"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -199,12 +203,264 @@
         "nodeType": "flow",
         "name": "",
         "path": "/ui/home",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_Fcc6zAGpETqlH7SO",
         "category": "Navigation",
-        "x": 340,
+        "x": 1065,
         "y": 180,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Tu4jIqEQTZq2ctV4",
+        "type": "Environment",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "backendUrl"
+                },
+                "envProperty": "backendUrl"
+            }
+        ],
+        "functionName": "sd_Tu4jIqEQTZq2ctV4",
+        "category": "General",
+        "x": 285,
+        "y": 180,
+        "wires": [
+            [
+                "sd_bNa4MVXSFaqAsiRy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_EEUVUARXxR2413YT",
+        "type": "HttpRequest",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.local.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_EEUVUARXxR2413YT",
+        "category": "HTTP",
+        "x": 560,
+        "y": 180,
+        "wires": [
+            [
+                "sd_krSNlEEHEQYLAto7"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_krSNlEEHEQYLAto7",
+        "type": "Script",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.result,\"result\")",
+        "functionName": "sd_krSNlEEHEQYLAto7",
+        "category": "Function",
+        "x": 660,
+        "y": 180,
+        "wires": [
+            [
+                "sd_V0BZYbMwiwddz5Oo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_5LQGOdnshQ7Pv5YZ",
+        "type": "Catch",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_EEUVUARXxR2413YT"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_5LQGOdnshQ7Pv5YZ",
+        "category": "General",
+        "x": 565,
+        "y": 300,
+        "wires": [
+            [
+                "sd_s17i3CpiAPwChwat"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "LoginComponent"
+    },
+    {
+        "id": "sd_s17i3CpiAPwChwat",
+        "type": "Script",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.error.error.message,\"login error\")\n\ndocument.getElementById('loginError').innerText=bh.error.error.message",
+        "functionName": "sd_s17i3CpiAPwChwat",
+        "category": "Function",
+        "x": 720,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_V0BZYbMwiwddz5Oo",
+        "type": "Storage",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "employeeData"
+        },
+        "value": {
+            "type": "bh.local",
+            "value": "result.data"
+        },
+        "resultMapping": {},
+        "functionName": "sd_V0BZYbMwiwddz5Oo",
+        "category": "Storage",
+        "x": 765,
+        "y": 180,
+        "wires": [
+            [
+                "sd_YdxsJJes6d3nl5gC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_YdxsJJes6d3nl5gC",
+        "type": "PageCallService",
+        "z": "sd_MyOuVP6TJQYqaMa9",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_cmZCN81jlvs8Ep2o",
+            "type": "tab",
+            "createdDate": "2023-05-03T15:42:17.080Z",
+            "label": "getuserData",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_7RJyLkLl7kzx7EEv",
+            "flowName": "getUserData"
+        },
+        "inputVariables": [
+            {
+                "key": "userData",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "userData",
+                "valueType": "this.page",
+                "value": "userData",
+                "mapVarName": "userData",
+                "localVar": "this.page.userData"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/getuserData",
+        "startName": "getUserData",
+        "inputParams": [
+            null
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_YdxsJJes6d3nl5gC",
+        "category": "General",
+        "x": 920,
+        "y": 180,
+        "wires": [
+            [
+                "sd_Fcc6zAGpETqlH7SO"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

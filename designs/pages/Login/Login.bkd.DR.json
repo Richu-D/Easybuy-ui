@@ -1237,8 +1237,8 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "e0da7114-4136-0851-91e3-8d86e7f5aee0",
                         "isAdvancedComponent": true,
-                        "isCommented": "true",
-                        "commentid": "1683040348140",
+                        "isCommented": "false",
+                        "commentid": null,
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1419,35 +1419,14 @@
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_visibility": false
+                            },
+                            {
+                                "_key": "id",
+                                "_value": "loginError",
+                                "_type": "kv",
+                                "_attrDef": "c"
                             }
-                        ],
-                        "46aa95eb-3c1d-06ee-eda6-bd92cc14af5e": {
-                            "paletteKey": "html-editor",
-                            "parentEditorKey": "d02c7bb4-9182-9171-753c-e944d014ef9d",
-                            "isAdvancedChildComponent": true,
-                            "isCommented": "true",
-                            "commentid": "1683040348140",
-                            "designerReference": [
-                                {
-                                    "_key": "style",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "class",
-                                    "_value": "",
-                                    "_type": "dav",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "html",
-                                    "_value": "some server error",
-                                    "_type": "a",
-                                    "_attrDef": "p"
-                                }
-                            ]
-                        }
+                        ]
                     },
                     "ff79a2d2-7801-43b7-1820-455f8d3f03cb": {
                         "paletteKey": "NG-Input",
@@ -1856,7 +1835,7 @@
                             },
                             {
                                 "_key": "buttonname",
-                                "_value": "Forgotton Password?",
+                                "_value": "Forgot Password?",
                                 "_type": "a",
                                 "_attrDef": "p",
                                 "_useAsLabel": true

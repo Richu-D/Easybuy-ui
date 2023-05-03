@@ -27,7 +27,7 @@
         "y": 30,
         "wires": [
             [
-                "sd_3BHkjd7D1OEblJl1"
+                "sd_6rNqYDFFjlNuAhG3"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -47,8 +47,8 @@
         "globalVariables": [],
         "functionName": "sd_3BHkjd7D1OEblJl1",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 245,
+        "y": 40,
         "wires": [
             [
                 "sd_uQwjFC6hVJHOPmkv"
@@ -69,10 +69,67 @@
         "script": "bh.local.profile=['Personal Details','Settings','Contact','Help &FAQs','Sign out']",
         "functionName": "profileItems",
         "category": "Function",
-        "x": 320,
+        "x": 425,
         "y": 40,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6rNqYDFFjlNuAhG3",
+        "type": "PageServiceVariables",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "userData",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "userData"
+                }
+            }
+        ],
+        "functionName": "sd_6rNqYDFFjlNuAhG3",
+        "service": {
+            "type": "tab",
+            "id": "sd_cmZCN81jlvs8Ep2o",
+            "disabled": false,
+            "info": "",
+            "label": "getuserData",
+            "createdDate": "2023-05-03T15:42:17.080Z",
+            "functionSeq": 0,
+            "tabType": "client",
+            "_def": {
+                "defaults": {
+                    "label": {
+                        "value": ""
+                    },
+                    "disabled": {
+                        "value": false
+                    },
+                    "info": {
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "serviceImportPath": "app/sd-services/getuserData",
+        "category": "Function",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "sd_3BHkjd7D1OEblJl1"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

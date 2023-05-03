@@ -8,11 +8,14 @@ import {
   Input,
   Output,
   EventEmitter,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { Scan } from 'app/sd-services/Scan'; //_splitter_
+import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -69,7 +72,7 @@ export class ScanComponent {
       bh.input = { barcodeText: barcodeText };
       bh.local = {};
 
-      bh = this.sd_d06T5jr0TioQgu99(bh);
+      bh = this.sd_ATaSPl9akVKiBLlO(bh);
       //appendnew_next_start
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_DGSaCEfOmCYbPzqH');
@@ -189,34 +192,81 @@ export class ScanComponent {
     }
   }
 
+  sd_ATaSPl9akVKiBLlO(bh) {
+    try {
+      bh.local.backendUrl = bh.system.environment.properties.backendUrl;
+
+      bh = this.sd_ELsIyr5sjW9fzkz2(bh);
+      //appendnew_next_sd_ATaSPl9akVKiBLlO
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ATaSPl9akVKiBLlO');
+    }
+  }
+
+  sd_ELsIyr5sjW9fzkz2(bh) {
+    try {
+      const page = this.page;
+      bh.local.url = `${bh.local.backendUrl}/product/${bh.input.barcodeText}`;
+
+      bh = this.sd_vtAINFg4BIf2oPxo(bh);
+      //appendnew_next_sd_ELsIyr5sjW9fzkz2
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ELsIyr5sjW9fzkz2');
+    }
+  }
+
+  async sd_vtAINFg4BIf2oPxo(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      bh.local.response = await this.sdService.nHttpRequest(requestOptions);
+
+      bh = this.sd_d06T5jr0TioQgu99(bh);
+      //appendnew_next_sd_vtAINFg4BIf2oPxo
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_vtAINFg4BIf2oPxo');
+    }
+  }
+
   sd_d06T5jr0TioQgu99(bh) {
     try {
-      const page = this.page; // alert(bh.input.barcodeText)
+      const page = this.page; // console.log(bh.input.barcodeText,typeof(bh.input.barcodeText))
+      console.log(bh.local.response.result);
+      let productObj = {
+        productId: bh.input.barcodeText,
+        imageUrl: `data:image/jpeg;base64,${bh.local.response.result.image.data}`,
+        productName: bh.local.response.result.name,
+        description: bh.local.response.result.description,
+        weight: `${bh.local.response.result.weight}gm`,
+        rate: bh.local.response.result.price.toFixed(2),
+        count: 1,
+      };
       if (page.products) {
         page.products.push({
-          productId: bh.input.barcodeText,
-          imageUrl: '/Web/Resource/cart1.png',
-          productName: 'Stone Necklace',
-          description:
-            '22ct Gold with Hall Mark tis is snd dklfhjf ladjfksfja  dfkljksfj fjdksfjs fsjkldjsfs',
-          weight: '56gm',
-          rate: '125K',
-          count: 1,
+          productObj,
         });
       } else {
-        page.products = [
-          {
-            productId: bh.input.barcodeText,
-            imageUrl: '/Web/Resource/cart1.png',
-            productName: 'Stone Necklace',
-            description:
-              '22ct Gold with Hall Mark k tis is snd dklfhjf ladjfksfja  dfkljksfj fjdksfjs fsjkldjsfs',
-            weight: '56gm',
-            rate: '125K',
-            count: 1,
-          },
-        ];
+        page.products = [productObj];
       }
+
+      //     {
+      //     productId:bh.input.barcodeText,
+      //     imageUrl:"/Web/Resource/cart1.png",
+      //     productName:"Stone Necklace",
+      //     description:"22ct Gold with Hall Mark k tis is snd dklfhjf ladjfksfja  dfkljksfj fjdksfjs fsjkldjsfs",
+      //     weight:"56gm",
+      //     rate:"125K",
+      //     count:1
+      // }
 
       bh = this.sd_8rpdaykBfCa3IvTX(bh);
       //appendnew_next_sd_d06T5jr0TioQgu99
@@ -310,6 +360,24 @@ export class ScanComponent {
     }
   }
 
+  sd_ZzlXKX18eAiY1z8F(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open(bh.error.error.message, 'ok', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+
+      //appendnew_next_sd_ZzlXKX18eAiY1z8F
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ZzlXKX18eAiY1z8F');
+    }
+  }
+
   //appendnew_node
 
   ngOnDestroy() {
@@ -328,7 +396,8 @@ export class ScanComponent {
     bh.errorSource = src;
     if (
       false ||
-      this.sd_TLYfDeZqyIClHeDL(bh)
+      this.sd_TLYfDeZqyIClHeDL(bh) ||
+      this.sd_lX5Xrxnz5gKzhMgK(bh)
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -341,6 +410,15 @@ export class ScanComponent {
     if (nodes.includes(bh.errorSource)) {
       bh = this.sd_Tbbl0Bg8Ru7td1Wu(bh);
       //appendnew_next_sd_TLYfDeZqyIClHeDL
+      return true;
+    }
+    return false;
+  }
+  sd_lX5Xrxnz5gKzhMgK(bh) {
+    const nodes = ['sd_vtAINFg4BIf2oPxo'];
+    if (nodes.includes(bh.errorSource)) {
+      bh = this.sd_ZzlXKX18eAiY1z8F(bh);
+      //appendnew_next_sd_lX5Xrxnz5gKzhMgK
       return true;
     }
     return false;

@@ -1,3 +1,33 @@
-<div>
-  Cart page
+<bh-SubNavbar subNavTitle="Cart" IconUrl="/Web/Icons/Plus.svg" textColor="black" goto="/ui/scan"></bh-SubNavbar>
+<div class="cart-container">
+  <bh-carrtItem *ngFor="let cart of page.carts" [cart]="cart" (changeCount)="changeCount($event)"></bh-carrtItem>
+</div>
+<div style="padding:20px;">
+  <div>
+    <div>
+      Promo Code</div><input (blur)="applyCoupon()" [(ngModel)]="page.couponValue" style="margin:20px 0px;width:100%; ">
+  </div>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+      <div>
+        Selected Items</div>
+      <div>
+        {{page.total}}
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+      <div>
+        Discount</div>
+      <div>
+        {{page.coupon.percentage}}
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+      <div>
+        Total</div>
+      <div>
+        {{page.grandTotal}}
+      </div>
+    </div>
+  </div><button mat-button style="margin:50px 0px;" class="styled-button" (click)="sendLink()">Send Link</button>
 </div>

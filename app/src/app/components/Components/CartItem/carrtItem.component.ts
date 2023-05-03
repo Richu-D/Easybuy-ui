@@ -14,17 +14,20 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
-import { getuserData } from 'app/sd-services/getuserData'; //_splitter_
 //append_imports_end
 
 @Component({
-  selector: 'bh-Profile',
-  templateUrl: './Profile.template.html',
+  selector: 'bh-carrtItem',
+  templateUrl: './carrtItem.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class ProfileComponent {
+export class carrtItemComponent {
+  @Input('cart')
+  public cart: any = undefined;
+  @Output('changeCount')
+  public changeCount: any = new EventEmitter<any>();
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -41,7 +44,7 @@ export class ProfileComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_jZ3OpMvU6kiDwiVE(bh);
+      this.sd_uaTUTKhetY0l4Fv4(bh);
     }
   }
 
@@ -53,57 +56,83 @@ export class ProfileComponent {
     //append_listeners
   }
 
-  sd_jZ3OpMvU6kiDwiVE(bh) {
+  sd_uaTUTKhetY0l4Fv4(bh) {
     try {
-      bh = this.sd_6rNqYDFFjlNuAhG3(bh);
-      //appendnew_next_sd_jZ3OpMvU6kiDwiVE
+      bh = this.sd_baJ2CV8EskJErTiL(bh);
+      //appendnew_next_sd_uaTUTKhetY0l4Fv4
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_jZ3OpMvU6kiDwiVE');
+      return this.errorHandler(bh, e, 'sd_uaTUTKhetY0l4Fv4');
     }
   }
 
-  //appendnew_flow_ProfileComponent_start
-
-  sd_6rNqYDFFjlNuAhG3(bh) {
+  changeCartCount(
+    operation: any = undefined,
+    productId: any = undefined,
+    ...others
+  ) {
     try {
-      const getuserDataInstance: getuserData =
-        this.__page_injector__.get(getuserData);
-      this.page.userData = getuserDataInstance['userData'];
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { operation: operation, productId: productId };
+      bh.local = {};
 
-      bh = this.sd_3BHkjd7D1OEblJl1(bh);
-      //appendnew_next_sd_6rNqYDFFjlNuAhG3
-      return bh;
+      bh = this.sd_c7ZPISyvr1Aw10Wq(bh);
+      //appendnew_next_changeCartCount
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_6rNqYDFFjlNuAhG3');
+      return this.errorHandler(bh, e, 'sd_srZtqE1hLTdSBxIa');
     }
   }
 
-  sd_3BHkjd7D1OEblJl1(bh) {
-    try {
-      bh = this.profileItems(bh);
-      //appendnew_next_sd_3BHkjd7D1OEblJl1
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_3BHkjd7D1OEblJl1');
-    }
-  }
+  //appendnew_flow_carrtItemComponent_start
 
-  profileItems(bh) {
+  sd_baJ2CV8EskJErTiL(bh) {
     try {
       const page = this.page;
-      bh.local.profile = [
-        'Personal Details',
-        'Settings',
-        'Contact',
-        'Help &FAQs',
-        'Sign out',
-      ];
+      console.log(bh, 'cart item bh');
 
-      //appendnew_next_profileItems
+      bh = this.sd_2E5pNaOCcSbA5Jez(bh);
+      //appendnew_next_sd_baJ2CV8EskJErTiL
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_uQwjFC6hVJHOPmkv');
+      return this.errorHandler(bh, e, 'sd_baJ2CV8EskJErTiL');
+    }
+  }
+
+  sd_2E5pNaOCcSbA5Jez(bh) {
+    try {
+      //appendnew_next_sd_2E5pNaOCcSbA5Jez
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_2E5pNaOCcSbA5Jez');
+    }
+  }
+
+  sd_c7ZPISyvr1Aw10Wq(bh) {
+    try {
+      const page = this.page;
+      bh.local.operation = {
+        operation: bh.input.operation,
+        productId: bh.input.productId,
+      };
+
+      bh = this.sd_rlRzsU0Q686DUAhg(bh);
+      //appendnew_next_sd_c7ZPISyvr1Aw10Wq
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_c7ZPISyvr1Aw10Wq');
+    }
+  }
+
+  sd_rlRzsU0Q686DUAhg(bh) {
+    try {
+      bh.pageOutput.changeCount.emit(bh.local.operation);
+
+      //appendnew_next_sd_rlRzsU0Q686DUAhg
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_rlRzsU0Q686DUAhg');
     }
   }
 
@@ -129,5 +158,5 @@ export class ProfileComponent {
       throw e;
     }
   }
-  //appendnew_flow_ProfileComponent_Catch
+  //appendnew_flow_carrtItemComponent_Catch
 }

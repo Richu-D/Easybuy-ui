@@ -25,6 +25,7 @@ body {
 main {
   // padding: 10px;
   height: 100vh;
+ 
 }
 
 .navbar {
@@ -435,5 +436,24 @@ main {
 }
 .profile-contaier img{
     margin: 0px 25px ;
+}
 
+.cart-container{
+    width: 100%;
+    padding: 10px;
+    max-height: 350px;
+    overflow: auto;
+    margin-top: 25px;
+}
+
+.cart-container-item{
+
+}
+
+.cart-container-item img{
+    height: 100px !important;
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    min-width: 30px !important;
 }

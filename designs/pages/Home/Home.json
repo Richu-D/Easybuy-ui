@@ -17,13 +17,25 @@
         "viewType": "common",
         "nodeType": "start",
         "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [
+            {
+                "key": "phoneNumber",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
         "functionName": "sd_N2o1h0j7eHq1pLnO",
         "category": "Lifecycle Events",
         "x": 30,
         "y": 30,
         "wires": [
             [
-                "sd_JkpIfNfcSWww6PtI"
+                "sd_S4hucp4ZDxORguJE"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -51,7 +63,7 @@
         ],
         "functionName": "sd_xXkRTz1m9f0JjOXD",
         "category": "Function",
-        "x": 285,
+        "x": 485,
         "y": 40,
         "wires": [
             []
@@ -68,10 +80,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.statistics = [\n{\n    \"imageUrl\":\"/Web/Icons/Earning.svg\",\n    \"fxFlex\":\"46\",\n    \"details\":[{\n    \"tittle\":\"Earning\",\n    \"value\":\"₹200.00\"\n    }]\n},\n{\n    \"imageUrl\":\"/Web/Icons/Clients.svg\",\n    \"fxFlex\":\"46\",\n    \"details\":[{\n    \"tittle\":\"Clients\",\n    \"value\":\"20\"\n    }]\n},\n{\n    \"imageUrl\":\"/Web/Icons/PriceGraph.svg\",\n    \"fxFlex\":\"100\",\n    \"details\":[\n    {\n    \"tittle\":\"Gold\",\n    \"value\":\"₹5600\"\n    },\n    {\n    \"tittle\":\"Silver\",\n    \"value\":\"₹5600\"\n    },\n    {\n    \"tittle\":\"Platinum\",\n    \"value\":\"₹5600\"\n    }\n\n    ]\n},\n]",
+        "script": "bh.local.statistics = [\n{\n    \"imageUrl\":\"/Web/Icons/Earning.svg\",\n    \"fxFlex\":\"46\",\n    \"details\":[{\n    \"tittle\":\"Earning\",\n    \"value\":\"₹200.00\"\n    }]\n},\n{\n    \"imageUrl\":\"/Web/Icons/Clients.svg\",\n    \"fxFlex\":\"46\",\n    \"details\":[{\n    \"tittle\":\"Clients\",\n    \"value\":\"20\"\n    }]\n},\n{\n    \"imageUrl\":\"/Web/Icons/PriceGraph.svg\",\n    \"fxFlex\":\"100\",\n    \"details\":[\n    {\n    \"tittle\":\"Gold\",\n    \"value\":\"₹5600\"\n    },\n    {\n    \"tittle\":\"Silver\",\n    \"value\":\"₹5600\"\n    },\n    {\n    \"tittle\":\"Platinum\",\n    \"value\":\"₹5600\"\n    }\n\n    ]\n},\n]\n\n\nconsole.log(page.userData,\"userdata\")",
         "functionName": "sd_JkpIfNfcSWww6PtI",
         "category": "Function",
-        "x": 185,
+        "x": 345,
         "y": 40,
         "wires": [
             [
@@ -100,12 +112,69 @@
         "y": 180,
         "wires": [
             [
-                "sd_OkJIavllgUU1n0M1"
+                "sd_aM1w0sD8kfrb2bNW"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "HomeComponent"
+    },
+    {
+        "id": "sd_S4hucp4ZDxORguJE",
+        "type": "PageServiceVariables",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "userData",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "userData"
+                }
+            }
+        ],
+        "functionName": "sd_S4hucp4ZDxORguJE",
+        "service": {
+            "type": "tab",
+            "id": "sd_cmZCN81jlvs8Ep2o",
+            "disabled": false,
+            "info": "",
+            "label": "getuserData",
+            "createdDate": "2023-05-03T15:42:17.080Z",
+            "functionSeq": 0,
+            "tabType": "client",
+            "_def": {
+                "defaults": {
+                    "label": {
+                        "value": ""
+                    },
+                    "disabled": {
+                        "value": false
+                    },
+                    "info": {
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "serviceImportPath": "app/sd-services/getuserData",
+        "category": "Function",
+        "x": 225,
+        "y": 40,
+        "wires": [
+            [
+                "sd_JkpIfNfcSWww6PtI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
     },
     {
         "id": "sd_OkJIavllgUU1n0M1",
@@ -115,12 +184,110 @@
         "nodeType": "flow",
         "name": "",
         "path": "/ui/scan",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_OkJIavllgUU1n0M1",
         "category": "Navigation",
-        "x": 260,
+        "x": 825,
         "y": 200,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_aM1w0sD8kfrb2bNW",
+        "type": "Script",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.phoneNumber)\nbh.local.isValid=false;\nlet userPhoneNumber=`${page.phoneNumber}`\nconsole.log(userPhoneNumber,typeof userPhoneNumber,userPhoneNumber.length)\nif(userPhoneNumber.length>=10&&userPhoneNumber.length<=13){\n   console.log('valid phone number')\n   bh.local.isValid=true;\n}\nelse{\n    \n     console.log('Invalid phone number')\n     bh.local.isValid=false;\n\n}",
+        "functionName": "sd_aM1w0sD8kfrb2bNW",
+        "category": "Function",
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "sd_hvDLK6DZJLFBUldB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hvDLK6DZJLFBUldB",
+        "type": "PageSwitch",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "isValid",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.isValid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_hvDLK6DZJLFBUldB",
+        "category": "Function",
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "sd_WZb8ssVdQ1gPIyv9"
+            ],
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WZb8ssVdQ1gPIyv9",
+        "type": "Storage",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "userPhoneNumber"
+        },
+        "value": {
+            "type": "this.page",
+            "value": "phoneNumber"
+        },
+        "resultMapping": {},
+        "functionName": "sd_WZb8ssVdQ1gPIyv9",
+        "category": "Storage",
+        "x": 560,
+        "y": 200,
+        "wires": [
+            [
+                "sd_OkJIavllgUU1n0M1"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

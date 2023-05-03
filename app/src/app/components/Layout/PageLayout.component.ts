@@ -8,10 +8,13 @@ import {
   Input,
   Output,
   EventEmitter,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { getuserData } from 'app/sd-services/getuserData'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -52,7 +55,7 @@ export class PageLayoutComponent {
 
   sd_VpBe9MoeaIPRf5vU(bh) {
     try {
-      bh = this.sd_BNNawxsNSmv8nxOk(bh);
+      bh = this.sd_Wq83vQqNMks0JeeU(bh);
       //appendnew_next_sd_VpBe9MoeaIPRf5vU
       return bh;
     } catch (e) {
@@ -61,6 +64,22 @@ export class PageLayoutComponent {
   }
 
   //appendnew_flow_PageLayoutComponent_start
+
+  async sd_Wq83vQqNMks0JeeU(bh) {
+    try {
+      const getuserDataInstance: getuserData =
+        this.__page_injector__.get(getuserData);
+
+      let outputVariables = await getuserDataInstance.getUserData(undefined);
+      this.page.userData = outputVariables.input.userData;
+
+      bh = this.sd_BNNawxsNSmv8nxOk(bh);
+      //appendnew_next_sd_Wq83vQqNMks0JeeU
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Wq83vQqNMks0JeeU');
+    }
+  }
 
   sd_BNNawxsNSmv8nxOk(bh) {
     try {

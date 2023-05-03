@@ -246,6 +246,12 @@
                     "_type": "kv",
                     "_attrDef": "p",
                     "_visibility": false
+                },
+                {
+                    "_key": "routerLink",
+                    "_value": "/ui/cart",
+                    "_type": "kv",
+                    "_attrDef": "c"
                 }
             ],
             "1752cdc9-82dd-71a1-6196-2dd3d04ae918": {
@@ -757,7 +763,7 @@
                         },
                         {
                             "_key": "html",
-                            "_value": "Richu D",
+                            "_value": "{{page.userData.name}}",
                             "_type": "a",
                             "_attrDef": "p"
                         }
@@ -2023,6 +2029,12 @@
                     {
                         "_key": "type",
                         "_value": "number",
+                        "_type": "kv",
+                        "_attrDef": "c"
+                    },
+                    {
+                        "_key": "[(ngModel)]",
+                        "_value": "page.phoneNumber",
                         "_type": "kv",
                         "_attrDef": "c"
                     }

@@ -43,6 +43,12 @@
         "payment-methosd",
         "time",
         "list-text",
-        "profile-contaier"
+        "profile-contaier",
+        "cart-container",
+        "cart-container-item",
+        "mat-button",
+        "mat-icon-button",
+        "mat-stroked-button",
+        "mat-flat-button"
     ]
 }

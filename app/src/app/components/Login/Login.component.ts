@@ -8,10 +8,13 @@ import {
   Input,
   Output,
   EventEmitter,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { getuserData } from 'app/sd-services/getuserData'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
 import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
@@ -71,7 +74,7 @@ export class LoginComponent {
       bh.input = { event: event };
       bh.local = {};
 
-      bh = this.sd_bNa4MVXSFaqAsiRy(bh);
+      bh = this.sd_Tu4jIqEQTZq2ctV4(bh);
       //appendnew_next_login
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_ORiy0So4quwGLeD5');
@@ -122,16 +125,103 @@ export class LoginComponent {
     }
   }
 
+  sd_Tu4jIqEQTZq2ctV4(bh) {
+    try {
+      bh.local.backendUrl = bh.system.environment.properties.backendUrl;
+
+      bh = this.sd_bNa4MVXSFaqAsiRy(bh);
+      //appendnew_next_sd_Tu4jIqEQTZq2ctV4
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Tu4jIqEQTZq2ctV4');
+    }
+  }
+
   sd_bNa4MVXSFaqAsiRy(bh) {
     try {
       const page = this.page;
-      console.log(page.credentials, 'credentials');
+      console.log(page.credentials, bh.local.backendUrl, 'credentials');
+      bh.local.body = {
+        employeeid: page.credentials.EmployeeId,
+        password: page.credentials.Password,
+      };
 
-      bh = this.sd_Fcc6zAGpETqlH7SO(bh);
+      bh.local.url = bh.local.backendUrl + '/employee/login';
+
+      console.log(bh.local.url, 'url');
+
+      console.log(bh.local.body, 'body');
+      // {{BASE_URL}}/employee/login
+
+      bh = this.sd_EEUVUARXxR2413YT(bh);
       //appendnew_next_sd_bNa4MVXSFaqAsiRy
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_bNa4MVXSFaqAsiRy');
+    }
+  }
+
+  async sd_EEUVUARXxR2413YT(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.local.body,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+
+      bh = this.sd_krSNlEEHEQYLAto7(bh);
+      //appendnew_next_sd_EEUVUARXxR2413YT
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_EEUVUARXxR2413YT');
+    }
+  }
+
+  sd_krSNlEEHEQYLAto7(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.local.result, 'result');
+
+      bh = this.sd_V0BZYbMwiwddz5Oo(bh);
+      //appendnew_next_sd_krSNlEEHEQYLAto7
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_krSNlEEHEQYLAto7');
+    }
+  }
+
+  sd_V0BZYbMwiwddz5Oo(bh) {
+    try {
+      localStorage.setItem(
+        'employeeData',
+        JSON.stringify(bh.local.result.data)
+      );
+
+      bh = this.sd_YdxsJJes6d3nl5gC(bh);
+      //appendnew_next_sd_V0BZYbMwiwddz5Oo
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_V0BZYbMwiwddz5Oo');
+    }
+  }
+
+  async sd_YdxsJJes6d3nl5gC(bh) {
+    try {
+      const getuserDataInstance: getuserData =
+        this.__page_injector__.get(getuserData);
+
+      let outputVariables = await getuserDataInstance.getUserData(undefined);
+      this.page.userData = outputVariables.input.userData;
+
+      bh = this.sd_Fcc6zAGpETqlH7SO(bh);
+      //appendnew_next_sd_YdxsJJes6d3nl5gC
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_YdxsJJes6d3nl5gC');
     }
   }
 
@@ -141,7 +231,9 @@ export class LoginComponent {
         this.sdService.getPathAndQParamsObj('/ui/home');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
 
       //appendnew_next_sd_Fcc6zAGpETqlH7SO
       return bh;
@@ -162,6 +254,20 @@ export class LoginComponent {
     }
   }
 
+  sd_s17i3CpiAPwChwat(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.error.error.message, 'login error');
+
+      document.getElementById('loginError').innerText = bh.error.error.message;
+
+      //appendnew_next_sd_s17i3CpiAPwChwat
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_s17i3CpiAPwChwat');
+    }
+  }
+
   //appendnew_node
 
   ngOnDestroy() {
@@ -176,13 +282,23 @@ export class LoginComponent {
     bh.error = e;
     bh.errorSource = src;
     if (
-      false
+      false ||
+      this.sd_5LQGOdnshQ7Pv5YZ(bh)
       /*appendnew_next_Catch*/
     ) {
       return bh;
     } else {
       throw e;
     }
+  }
+  sd_5LQGOdnshQ7Pv5YZ(bh) {
+    const nodes = ['sd_EEUVUARXxR2413YT'];
+    if (nodes.includes(bh.errorSource)) {
+      bh = this.sd_s17i3CpiAPwChwat(bh);
+      //appendnew_next_sd_5LQGOdnshQ7Pv5YZ
+      return true;
+    }
+    return false;
   }
   //appendnew_flow_LoginComponent_Catch
 }

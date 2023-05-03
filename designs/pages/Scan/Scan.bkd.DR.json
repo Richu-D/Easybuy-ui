@@ -55,13 +55,42 @@
                 "attrType": "INPUT",
                 "inValid": false,
                 "message": ""
+            },
+            {
+                "_key": "textColor",
+                "_value": "white",
+                "_type": "kv",
+                "_attrDef": "c"
+            },
+            {
+                "_key": "goto",
+                "_value": "/ui/cart",
+                "_type": "kv",
+                "_attrDef": "c"
+            },
+            {
+                "_key": "[textColor]",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_complexity": "advanced",
+                "displayAs": "textColor",
+                "attrType": "INPUT"
+            },
+            {
+                "_key": "[goto]",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_complexity": "advanced",
+                "displayAs": "goto",
+                "attrType": "INPUT"
             }
         ]
     },
     "7d275639-0612-366f-e243-20e95f5aa15d": {
         "paletteKey": "Html5",
         "isAdvancedComponent": true,
-        "isCommented": "false",
         "commentid": null,
         "designerReference": [
             {
@@ -251,7 +280,6 @@
             "paletteKey": "Html5",
             "parentEditorKey": "7d275639-0612-366f-e243-20e95f5aa15d",
             "isAdvancedComponent": true,
-            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -442,7 +470,6 @@
             "paletteKey": "Html5",
             "parentEditorKey": "7d275639-0612-366f-e243-20e95f5aa15d",
             "isAdvancedComponent": true,
-            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {

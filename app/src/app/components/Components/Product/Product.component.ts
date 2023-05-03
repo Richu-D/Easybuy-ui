@@ -8,6 +8,8 @@ import {
   Input,
   Output,
   EventEmitter,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -100,6 +102,21 @@ export class ProductComponent {
     }
   }
 
+  addToCart(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+
+      bh = this.sd_87DM7vH3ufaL2oLl(bh);
+      //appendnew_next_addToCart
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_KxAG0YltYEsGROT2');
+    }
+  }
+
   //appendnew_flow_ProductComponent_start
 
   sd_mqjGan12odfyv6VY(bh) {
@@ -146,6 +163,177 @@ export class ProductComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_CaKMW7spAdQW572V');
+    }
+  }
+
+  sd_87DM7vH3ufaL2oLl(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.pageInput.product);
+      console.log(bh);
+
+      bh.local.product = bh.pageInput.product;
+
+      bh = this.sd_oegt35CunD4syGvm(bh);
+      //appendnew_next_sd_87DM7vH3ufaL2oLl
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_87DM7vH3ufaL2oLl');
+    }
+  }
+
+  sd_oegt35CunD4syGvm(bh) {
+    try {
+      bh.local.cartItems = JSON.parse(localStorage.getItem('cartItems'));
+
+      bh = this.sd_iBNXHphdO23SKxKT(bh);
+      //appendnew_next_sd_oegt35CunD4syGvm
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_oegt35CunD4syGvm');
+    }
+  }
+
+  async sd_iBNXHphdO23SKxKT(bh) {
+    try {
+      let otherwiseFlag = true;
+      if (
+        this.sdService.operators['null'](
+          bh.local.cartItems,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_4pjTA4cDeNvqokwC(bh);
+        otherwiseFlag = false;
+      }
+      if (
+        this.sdService.operators['else'](
+          otherwiseFlag,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_DCFtGgvTCYjGlvDM(bh);
+        otherwiseFlag = false;
+      }
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_iBNXHphdO23SKxKT');
+    }
+  }
+
+  sd_4pjTA4cDeNvqokwC(bh) {
+    try {
+      const page = this.page;
+      bh.local.product = [bh.local.product];
+
+      bh = this.sd_VrW5k87vqbaVjWdL(bh);
+      //appendnew_next_sd_4pjTA4cDeNvqokwC
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_4pjTA4cDeNvqokwC');
+    }
+  }
+
+  sd_VrW5k87vqbaVjWdL(bh) {
+    try {
+      localStorage.setItem('cartItems', JSON.stringify(bh.local.product));
+
+      bh = this.sd_Fp51eoQc7WG1aYhz(bh);
+      //appendnew_next_sd_VrW5k87vqbaVjWdL
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_VrW5k87vqbaVjWdL');
+    }
+  }
+
+  sd_Fp51eoQc7WG1aYhz(bh) {
+    try {
+      let outputVariables = this.removeProduct(bh.pageInput.product.productId);
+
+      //appendnew_next_sd_Fp51eoQc7WG1aYhz
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Fp51eoQc7WG1aYhz');
+    }
+  }
+
+  sd_DCFtGgvTCYjGlvDM(bh) {
+    try {
+      const page = this.page;
+      bh.local.cartItems;
+      bh.pageInput.product;
+
+      bh.local.exist = false;
+      bh.local.cartItems.map((product) => {
+        if (product.productId == bh.pageInput.product.productId) {
+          bh.local.exist = true;
+        }
+      });
+
+      bh = this.sd_4O2LLLyPevHEfrAr(bh);
+      //appendnew_next_sd_DCFtGgvTCYjGlvDM
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_DCFtGgvTCYjGlvDM');
+    }
+  }
+
+  sd_4O2LLLyPevHEfrAr(bh) {
+    try {
+      if (
+        this.sdService.operators['true'](
+          bh.local.exist,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_Fp51eoQc7WG1aYhz(bh);
+      } else if (
+        this.sdService.operators['false'](
+          bh.local.exist,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_cvdLjA11i7Gvdo4G(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_4O2LLLyPevHEfrAr');
+    }
+  }
+
+  sd_cvdLjA11i7Gvdo4G(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.local.cartItems);
+      bh.local.cartItems.push(bh.local.product);
+
+      bh = this.sd_WUjr35uDnFEUac0n(bh);
+      //appendnew_next_sd_cvdLjA11i7Gvdo4G
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_cvdLjA11i7Gvdo4G');
+    }
+  }
+
+  sd_WUjr35uDnFEUac0n(bh) {
+    try {
+      localStorage.setItem('cartItems', JSON.stringify(bh.local.cartItems));
+
+      bh = this.sd_Fp51eoQc7WG1aYhz(bh);
+      //appendnew_next_sd_WUjr35uDnFEUac0n
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_WUjr35uDnFEUac0n');
     }
   }
 

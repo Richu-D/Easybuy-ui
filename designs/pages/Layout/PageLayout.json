@@ -23,7 +23,7 @@
         "y": 30,
         "wires": [
             [
-                "sd_BNNawxsNSmv8nxOk"
+                "sd_Wq83vQqNMks0JeeU"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -43,10 +43,73 @@
         "globalVariables": [],
         "functionName": "sd_BNNawxsNSmv8nxOk",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 245,
+        "y": 40,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "PageLayoutComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Wq83vQqNMks0JeeU",
+        "type": "PageCallService",
+        "z": "sd_z77lTQE7w90WoGlD",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_cmZCN81jlvs8Ep2o",
+            "type": "tab",
+            "createdDate": "2023-05-03T15:42:17.080Z",
+            "label": "getuserData",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_7RJyLkLl7kzx7EEv",
+            "flowName": "getUserData"
+        },
+        "inputVariables": [
+            {
+                "key": "userData",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "userData",
+                "valueType": "this.page",
+                "value": "userData",
+                "mapVarName": "userData",
+                "localVar": "this.page.userData"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/getuserData",
+        "startName": "getUserData",
+        "inputParams": [
+            null
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_Wq83vQqNMks0JeeU",
+        "category": "General",
+        "x": 145,
+        "y": 40,
+        "wires": [
+            [
+                "sd_BNNawxsNSmv8nxOk"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

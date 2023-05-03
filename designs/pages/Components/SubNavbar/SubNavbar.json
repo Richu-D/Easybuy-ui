@@ -31,6 +31,20 @@
                     "type": "any",
                     "value": ""
                 }
+            },
+            {
+                "key": "textColor",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            },
+            {
+                "key": "goto",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
             }
         ],
         "localVariables": [],

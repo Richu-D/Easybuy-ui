@@ -1,0 +1,194 @@
+[
+    {
+        "id": "sd_cpRe7gZmn8J6SKw0",
+        "type": "tab",
+        "createdDate": "2023-05-03T08:05:48.996Z",
+        "label": "carrtItem",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "carrtItemComponent"
+    },
+    {
+        "id": "sd_uaTUTKhetY0l4Fv4",
+        "type": "OnInit",
+        "z": "sd_cpRe7gZmn8J6SKw0",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [
+            {
+                "key": "cart",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
+            }
+        ],
+        "localVariables": [],
+        "outputVariables": [
+            {
+                "key": "changeCount",
+                "defaultValue": {
+                    "type": "any",
+                    "value": null
+                }
+            }
+        ],
+        "pageVariables": [],
+        "functionName": "sd_uaTUTKhetY0l4Fv4",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_baJ2CV8EskJErTiL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "carrtItemComponent"
+    },
+    {
+        "id": "sd_2E5pNaOCcSbA5Jez",
+        "type": "PageVariables",
+        "z": "sd_cpRe7gZmn8J6SKw0",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_2E5pNaOCcSbA5Jez",
+        "category": "Function",
+        "x": 345,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "carrtItemComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_baJ2CV8EskJErTiL",
+        "type": "Script",
+        "z": "sd_cpRe7gZmn8J6SKw0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh,\"cart item bh\")",
+        "functionName": "sd_baJ2CV8EskJErTiL",
+        "category": "Function",
+        "x": 205,
+        "y": 40,
+        "wires": [
+            [
+                "sd_2E5pNaOCcSbA5Jez"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "carrtItemComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_srZtqE1hLTdSBxIa",
+        "type": "PageStart",
+        "z": "sd_cpRe7gZmn8J6SKw0",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "changeCartCount",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "operation",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "productId",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "changeCartCount",
+        "category": "General",
+        "x": 65,
+        "y": 220,
+        "wires": [
+            [
+                "sd_c7ZPISyvr1Aw10Wq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "carrtItemComponent"
+    },
+    {
+        "id": "sd_rlRzsU0Q686DUAhg",
+        "type": "Output",
+        "z": "sd_cpRe7gZmn8J6SKw0",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "eventName": "bh.pageOutput.changeCount",
+        "data": "bh.local.operation",
+        "functionName": "sd_rlRzsU0Q686DUAhg",
+        "category": "Function",
+        "x": 385,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "eventName": {
+                "type": "bh.pageOutput",
+                "value": "changeCount",
+                "constant": false
+            },
+            "data": {
+                "type": "bh.local",
+                "value": "operation",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "carrtItemComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_c7ZPISyvr1Aw10Wq",
+        "type": "Script",
+        "z": "sd_cpRe7gZmn8J6SKw0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.operation = {\n    \"operation\":bh.input.operation,\n    \"productId\":bh.input.productId\n}",
+        "functionName": "sd_c7ZPISyvr1Aw10Wq",
+        "category": "Function",
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "sd_rlRzsU0Q686DUAhg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "carrtItemComponent",
+        "generated": true
+    }
+]
