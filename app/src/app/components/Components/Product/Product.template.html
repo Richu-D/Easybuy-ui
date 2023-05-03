@@ -1,24 +1,13 @@
-<div fxLayout="row wrap" class="product-container" fxFlex="100" fxLayoutAlign="space-between space-between" [fxShow]="true"><img imgSrc="{{product.imageUrl}}" style="height:100px;width:90px;">
-  <div fxLayout="column wrap" style="width:180px" fxLayoutAlign="start stretch" [fxShow]="true">
+<div fxLayout="row " style="padding:10px;" class="product-container" fxFlex="100" fxLayoutAlign="none center" [fxShow]="true"><img imgSrc="{{product.imageUrl}}" style="    height: 100%;object-fit: contain;     margin-right: 10px;border-radius: 10px;">
+  <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true">
     <h3>
       {{product.productName}}
     </h3>
-    <p>
-      {{product.description}}Weight:{{product.weight}}
-    </p><span style="color:var(--main-color);font-size:24px;font-weight:700px;">
-    {{product.rate}}</span>
-  </div>
-  <div fxLayout="column wrap" fxLayoutAlign="space-around stretch" [fxShow]="true">
-    <div fxLayout="row wrap" class="product-count-container" fxLayoutAlign="center center" [fxShow]="true"><button mat-button (click)="changeProductCount(&apos;-&apos;,product.productId)" [disabled]="!(product.count-1)"><svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.808594 1H10.705" stroke="#979491" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg></button>
-      <div>
-        {{product.count}}
-      </div><button mat-button (click)="changeProductCount(&apos;+&apos;,product.productId)"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6.2802 1V11" stroke="#979491" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M1.33203 6.00003H11.2284" stroke="#979491" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg></button>
-    </div><button mat-button class="product-add-button">Add</button>
+    <p style="line-height: 1.5;    font-size: 10px;     font-weight: 400;">
+      {{product.description}}
+    </p>
+    <div fxLayout="row wrap" style="margin-top:5px;" fxLayoutAlign="space-between stretch" [fxShow]="true"><span style="color:var(--main-color);font-size:24px;font-weight:700px;">
+      {{product.rate}}</span><button mat-button class="product-add-button">+ Add </button></div>
   </div><button mat-button class="close-button" (click)="removeProduct(product.productId)"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M1.73105 1.7838L10.2689 10.2162M1.78375 10.2689L10.2162 1.7311" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg></button>

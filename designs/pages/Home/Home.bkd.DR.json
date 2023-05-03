@@ -65,7 +65,6 @@
             "paletteKey": "Html5",
             "parentEditorKey": "6e08257b-e11f-8d85-b967-34b1a93f7dae",
             "isAdvancedComponent": true,
-            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -253,7 +252,6 @@
                 "paletteKey": "html-editor",
                 "parentEditorKey": "1f11cdde-4772-bb58-127e-a4a7f451802d",
                 "isAdvancedChildComponent": true,
-                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {
@@ -2064,9 +2062,16 @@
                     },
                     {
                         "_key": "(click)",
-                        "_value": "",
+                        "_value": "gotoScan()",
                         "_type": "kv",
-                        "_attrDef": "p"
+                        "_attrDef": "p",
+                        "objValue": {
+                            "nodeID": "sd_XwRbDoPq89pHCBbR",
+                            "functionName": "gotoScan",
+                            "activeTree": "pages",
+                            "z": "sd_URpkX7LTG2Vf46Pb",
+                            "input": []
+                        }
                     },
                     {
                         "_key": "[disabled]",

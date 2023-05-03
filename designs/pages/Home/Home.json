@@ -82,5 +82,49 @@
         "generateNext": false,
         "serviceName": "HomeComponent",
         "generated": true
+    },
+    {
+        "id": "sd_XwRbDoPq89pHCBbR",
+        "type": "PageStart",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "gotoScan",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "gotoScan",
+        "category": "General",
+        "x": 80,
+        "y": 180,
+        "wires": [
+            [
+                "sd_OkJIavllgUU1n0M1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "HomeComponent"
+    },
+    {
+        "id": "sd_OkJIavllgUU1n0M1",
+        "type": "Navigation",
+        "z": "sd_URpkX7LTG2Vf46Pb",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/ui/scan",
+        "functionName": "sd_OkJIavllgUU1n0M1",
+        "category": "Navigation",
+        "x": 260,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
     }
 ]

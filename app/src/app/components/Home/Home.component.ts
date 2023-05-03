@@ -12,6 +12,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -57,6 +58,21 @@ export class HomeComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_N2o1h0j7eHq1pLnO');
+    }
+  }
+
+  gotoScan(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+
+      bh = this.sd_OkJIavllgUU1n0M1(bh);
+      //appendnew_next_gotoScan
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_XwRbDoPq89pHCBbR');
     }
   }
 
@@ -122,6 +138,21 @@ export class HomeComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_xXkRTz1m9f0JjOXD');
+    }
+  }
+
+  async sd_OkJIavllgUU1n0M1(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/ui/scan');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+
+      //appendnew_next_sd_OkJIavllgUU1n0M1
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_OkJIavllgUU1n0M1');
     }
   }
 

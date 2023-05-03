@@ -197,7 +197,8 @@ export class ScanComponent {
           productId: bh.input.barcodeText,
           imageUrl: '/Web/Resource/cart1.png',
           productName: 'Stone Necklace',
-          description: '22ct Gold with Hall Mark',
+          description:
+            '22ct Gold with Hall Mark tis is snd dklfhjf ladjfksfja  dfkljksfj fjdksfjs fsjkldjsfs',
           weight: '56gm',
           rate: '125K',
           count: 1,
@@ -208,7 +209,8 @@ export class ScanComponent {
             productId: bh.input.barcodeText,
             imageUrl: '/Web/Resource/cart1.png',
             productName: 'Stone Necklace',
-            description: '22ct Gold with Hall Mark',
+            description:
+              '22ct Gold with Hall Mark k tis is snd dklfhjf ladjfksfja  dfkljksfj fjdksfjs fsjkldjsfs',
             weight: '56gm',
             rate: '125K',
             count: 1,

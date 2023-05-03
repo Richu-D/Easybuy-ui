@@ -24,7 +24,7 @@
         "functionName": "sd_zrAR33Ye7lx66Zgj",
         "category": "Lifecycle Events",
         "x": 45,
-        "y": 60,
+        "y": 40,
         "wires": [
             [
                 "sd_yGxv4THYziNBSaz7"
@@ -47,7 +47,7 @@
         "globalVariables": [],
         "functionName": "sd_yGxv4THYziNBSaz7",
         "category": "Function",
-        "x": 145,
+        "x": 185,
         "y": 60,
         "wires": [
             [
@@ -348,7 +348,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "// alert(bh.input.barcodeText)\nif(page.products){\n    page.products.push({\n    productId:bh.input.barcodeText,\n    imageUrl:\"/Web/Resource/cart1.png\",\n    productName:\"Stone Necklace\",\n    description:\"22ct Gold with Hall Mark\",\n    weight:\"56gm\",\n    rate:\"125K\",\n    count:1\n    })\n}else{\n\npage.products = [\n    {\n    productId:bh.input.barcodeText,\n    imageUrl:\"/Web/Resource/cart1.png\",\n    productName:\"Stone Necklace\",\n    description:\"22ct Gold with Hall Mark\",\n    weight:\"56gm\",\n    rate:\"125K\",\n    count:1\n}\n]\n\n\n}",
+        "script": "// alert(bh.input.barcodeText)\nif(page.products){\n    page.products.push({\n    productId:bh.input.barcodeText,\n    imageUrl:\"/Web/Resource/cart1.png\",\n    productName:\"Stone Necklace\",\n    description:\"22ct Gold with Hall Mark tis is snd dklfhjf ladjfksfja  dfkljksfj fjdksfjs fsjkldjsfs\",\n    weight:\"56gm\",\n    rate:\"125K\",\n    count:1\n    })\n}else{\n\npage.products = [\n    {\n    productId:bh.input.barcodeText,\n    imageUrl:\"/Web/Resource/cart1.png\",\n    productName:\"Stone Necklace\",\n    description:\"22ct Gold with Hall Mark k tis is snd dklfhjf ladjfksfja  dfkljksfj fjdksfjs fsjkldjsfs\",\n    weight:\"56gm\",\n    rate:\"125K\",\n    count:1\n}\n]\n\n\n}",
         "functionName": "sd_d06T5jr0TioQgu99",
         "category": "Function",
         "x": 265,
@@ -533,7 +533,7 @@
         "accept_csd": true,
         "functionName": "sd_OLogPnkIXIvbzjaW",
         "category": "General",
-        "x": 245,
+        "x": 325,
         "y": 60,
         "wires": [
             [
@@ -555,7 +555,7 @@
         "script": "// console.log(bh.local.scanner,\"bh.local.scanner\")\n\nbh.local.scanner.onUniqueRead = (txt, result) => {\n    // alert(txt)\n    this.start(txt)\n};\n\nawait bh.local.scanner.setUIElement((document.querySelector('.dce-video-container') as HTMLElement).parentElement as HTMLElement);\nawait bh.local.scanner.open();\n\n\n",
         "functionName": "tempscanscript",
         "category": "Function",
-        "x": 470,
+        "x": 765,
         "y": 60,
         "wires": [
             []
@@ -610,7 +610,7 @@
         },
         "serviceImportPath": "app/sd-services/Scan",
         "category": "Function",
-        "x": 365,
+        "x": 525,
         "y": 60,
         "wires": [
             [

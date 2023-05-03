@@ -61,6 +61,7 @@
     "7d275639-0612-366f-e243-20e95f5aa15d": {
         "paletteKey": "Html5",
         "isAdvancedComponent": true,
+        "isCommented": "false",
         "commentid": null,
         "designerReference": [
             {
@@ -441,6 +442,7 @@
             "paletteKey": "Html5",
             "parentEditorKey": "7d275639-0612-366f-e243-20e95f5aa15d",
             "isAdvancedComponent": true,
+            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -630,7 +632,8 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "37e9829c-59ab-a820-5383-576bf2236938",
                 "isAdvancedComponent": true,
-                "commentid": null,
+                "isCommented": "true",
+                "commentid": "1683099012406",
                 "designerReference": [
                     {
                         "_key": "style",

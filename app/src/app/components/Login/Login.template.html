@@ -6,8 +6,6 @@
       <div fxLayout="column wrap" style="height:100%" fxLayoutAlign="space-around center" [fxShow]="true">
         <h2>
           LOGIN</h2>
-        <p style="color:red;">
-          some server error</p>
         <mat-form-field style="display: block !important; margin:10px 0px !important;width: auto !important;" class="styled-input" [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
           <input matInput [(ngModel)]="page.credentials.EmployeeId" name="EmployeeId" type="text" placeholder="Employee ID" [required]="true" #EmployeeID="ngModel">
           <mat-error align="start" *ngIf="EmployeeID.errors?.required &amp;&amp; EmployeeID.touched &amp;&amp; EmployeeID.dirty">Employee id is required</mat-error>

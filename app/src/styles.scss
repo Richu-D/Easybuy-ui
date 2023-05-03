@@ -367,6 +367,7 @@ main {
   width: 4rem;
   height: 4rem;
   margin-left: 2rem;
+  margin-right: 10px;
 }
 
 .profile-section {
@@ -381,7 +382,6 @@ main {
   text-align: center;
   display: block;
   font-family: "Source Sans Pro", sans-serif;
-  margin-left: 2rem;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -426,4 +426,14 @@ main {
   display: block;
   text-align: center;
   padding-top: 1rem;
+}
+
+// profile
+.profile-contaier{
+    width:100%;
+    padding: 25px;
+}
+.profile-contaier img{
+    margin: 0px 25px ;
+
 }
