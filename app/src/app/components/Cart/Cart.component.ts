@@ -8,12 +8,14 @@ import {
   Input,
   Output,
   EventEmitter,
-  SimpleChanges,
-  OnChanges,
+  AfterViewInit,
+  ViewChild,
+  ViewChildren,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 //append_imports_end
 
@@ -313,11 +315,23 @@ export class CartComponent {
     try {
       bh.local.coupon = JSON.parse(localStorage.getItem('coupon'));
 
-      bh = this.sd_B55fi9rCcStvBlym(bh);
+      bh = this.sd_Wio5wsYGWvmXEUpB(bh);
       //appendnew_next_sd_gqmfN2eLGzlVnj3C
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_gqmfN2eLGzlVnj3C');
+    }
+  }
+
+  sd_Wio5wsYGWvmXEUpB(bh) {
+    try {
+      bh.local.backendUrl = bh.system.environment.properties.backendUrl;
+
+      bh = this.sd_B55fi9rCcStvBlym(bh);
+      //appendnew_next_sd_Wio5wsYGWvmXEUpB
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Wio5wsYGWvmXEUpB');
     }
   }
 
@@ -339,14 +353,89 @@ export class CartComponent {
         userPhoneNumber: bh.local.userPhoneNumber,
         products: bh.local.carts,
         couponcode: bh.local.coupon?.couponcode,
+        total: page.total,
+        grandTotal: page.grandTotal,
       };
 
+      bh.local.url = `${bh.local.backendUrl}/order`;
       console.log(bh.local.body);
 
+      bh = this.placeOrderReq(bh);
       //appendnew_next_sd_B55fi9rCcStvBlym
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_B55fi9rCcStvBlym');
+    }
+  }
+
+  async placeOrderReq(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.local.body,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+
+      bh = this.sd_lzLoT21CqrPmNnDa(bh);
+      //appendnew_next_placeOrderReq
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_F6VH95gcjVloGbOm');
+    }
+  }
+
+  sd_lzLoT21CqrPmNnDa(bh) {
+    try {
+      localStorage.removeItem('cartItems');
+
+      bh = this.sd_lHmAuz5oVpjPEUN0(bh);
+      //appendnew_next_sd_lzLoT21CqrPmNnDa
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_lzLoT21CqrPmNnDa');
+    }
+  }
+
+  sd_lHmAuz5oVpjPEUN0(bh) {
+    try {
+      localStorage.removeItem('userPhoneNumber');
+
+      bh = this.sd_QT776AQa48jorxmO(bh);
+      //appendnew_next_sd_lHmAuz5oVpjPEUN0
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_lHmAuz5oVpjPEUN0');
+    }
+  }
+
+  sd_QT776AQa48jorxmO(bh) {
+    try {
+      localStorage.removeItem('coupon');
+
+      bh = this.sd_wQSQUd880o9yvGfZ(bh);
+      //appendnew_next_sd_QT776AQa48jorxmO
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_QT776AQa48jorxmO');
+    }
+  }
+
+  async sd_wQSQUd880o9yvGfZ(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/ui/home');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+
+      //appendnew_next_sd_wQSQUd880o9yvGfZ
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_wQSQUd880o9yvGfZ');
     }
   }
 
@@ -490,6 +579,18 @@ export class CartComponent {
     }
   }
 
+  sd_OE6sFWz9PGLCVMet(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.error);
+
+      //appendnew_next_sd_OE6sFWz9PGLCVMet
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_OE6sFWz9PGLCVMet');
+    }
+  }
+
   //appendnew_node
 
   ngOnDestroy() {
@@ -505,7 +606,8 @@ export class CartComponent {
     bh.errorSource = src;
     if (
       false ||
-      this.sd_PpdEotEDavykbNoS(bh)
+      this.sd_PpdEotEDavykbNoS(bh) ||
+      this.sd_1v4343ZRV3LVMejg(bh)
       /*appendnew_next_Catch*/
     ) {
       return bh;
@@ -518,6 +620,15 @@ export class CartComponent {
     if (nodes.includes(bh.errorSource)) {
       bh = this.sd_muS3dsU0dZmv2Crt(bh);
       //appendnew_next_sd_PpdEotEDavykbNoS
+      return true;
+    }
+    return false;
+  }
+  sd_1v4343ZRV3LVMejg(bh) {
+    const nodes = ['sd_F6VH95gcjVloGbOm'];
+    if (nodes.includes(bh.errorSource)) {
+      bh = this.sd_OE6sFWz9PGLCVMet(bh);
+      //appendnew_next_sd_1v4343ZRV3LVMejg
       return true;
     }
     return false;

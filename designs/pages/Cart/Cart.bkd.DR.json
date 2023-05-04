@@ -75,7 +75,9 @@
                 "_attrDef": "p",
                 "_complexity": "advanced",
                 "displayAs": "textColor",
-                "attrType": "INPUT"
+                "attrType": "INPUT",
+                "inValid": false,
+                "message": ""
             },
             {
                 "_key": "[goto]",
@@ -84,7 +86,9 @@
                 "_attrDef": "p",
                 "_complexity": "advanced",
                 "displayAs": "goto",
-                "attrType": "INPUT"
+                "attrType": "INPUT",
+                "inValid": false,
+                "message": ""
             }
         ]
     },
@@ -521,7 +525,6 @@
             "paletteKey": "Html5",
             "parentEditorKey": "cf3e3635-c2f0-1506-9b91-e9fbad53ed22",
             "isAdvancedComponent": true,
-            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -709,7 +712,6 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "0eaa2348-1f7c-351f-9c6e-990ffeb617f5",
                 "isAdvancedComponent": true,
-                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {
@@ -897,7 +899,6 @@
                     "paletteKey": "html-editor",
                     "parentEditorKey": "0b4d8edf-907c-dbce-8265-b3428bc681fe",
                     "isAdvancedChildComponent": true,
-                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -925,7 +926,6 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "0eaa2348-1f7c-351f-9c6e-990ffeb617f5",
                 "isAdvancedComponent": true,
-                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {
