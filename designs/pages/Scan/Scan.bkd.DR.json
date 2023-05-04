@@ -97,7 +97,9 @@
                 "_attrDef": "p",
                 "_complexity": "advanced",
                 "displayAs": "backgroundColor",
-                "attrType": "INPUT"
+                "attrType": "INPUT",
+                "inValid": false,
+                "message": ""
             },
             {
                 "_key": "backgroundColor",

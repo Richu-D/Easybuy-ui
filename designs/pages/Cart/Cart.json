@@ -696,7 +696,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.total=page.carts.reduce((acc,cartItem)=>{\n    acc=acc+(cartItem.count*cartItem.rate)\n    return acc;\n},0)\n\npage.total=page.total.toFixed(2)\n\n\nif(page.coupon){\n    page.grandTotal= page.total-(page.total*(page.coupon?.percentage/100))\n}else\n\n{\n    page.coupon={\n        percentage:0\n    }\n    page.grandTotal= page.total;\n}\n\n\n\n\n// page.grandTotal=page.grandTotal.toFixed(2)\n",
+        "script": "page.total=page?.carts?.reduce((acc,cartItem)=>{\n    acc=acc+(cartItem.count*cartItem.rate)\n    return acc;\n},0)\n\npage.total=page.total?.toFixed(2)\n\n\nif(page.coupon){\n    page.grandTotal= page?.total-(page.total*(page.coupon?.percentage/100))\n}else\n\n{\n    page.coupon={\n        percentage:0\n    }\n    page.grandTotal= page?.total;\n}\n\n\n\n\n// page.grandTotal=page.grandTotal.toFixed(2)\n",
         "functionName": "sd_8rWlThcTPSk7AezS",
         "category": "Function",
         "x": 945,

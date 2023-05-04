@@ -2930,10 +2930,17 @@
                     "_attrDef": "p"
                 },
                 {
-                    "_key": "routerLink",
-                    "_value": "/login",
+                    "_key": "(click)",
+                    "_value": "logout()",
                     "_type": "kv",
-                    "_attrDef": "c"
+                    "_attrDef": "c",
+                    "objValue": {
+                        "nodeID": "sd_ywsg8F2p8YSdfrjJ",
+                        "functionName": "logout",
+                        "activeTree": "pages",
+                        "z": "sd_hLsSiBwL5l8nKVYk",
+                        "input": []
+                    }
                 }
             ],
             "de88f683-06c4-1dc3-3414-29127dc4d9b0": {

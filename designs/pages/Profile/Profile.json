@@ -135,5 +135,197 @@
         "generateNext": false,
         "serviceName": "ProfileComponent",
         "generated": true
+    },
+    {
+        "id": "sd_ywsg8F2p8YSdfrjJ",
+        "type": "PageStart",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "logout",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "logout",
+        "category": "General",
+        "x": 105,
+        "y": 240,
+        "wires": [
+            [
+                "sd_pRMPzfjO5NcWqqIG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProfileComponent"
+    },
+    {
+        "id": "sd_VDbXXUV3Pnf3xamq",
+        "type": "HttpRequest",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_VDbXXUV3Pnf3xamq",
+        "category": "HTTP",
+        "x": 425,
+        "y": 240,
+        "wires": [
+            [
+                "sd_I36PRPeuFtNglPsm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_I36PRPeuFtNglPsm",
+        "type": "Navigation",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/login",
+        "functionName": "sd_I36PRPeuFtNglPsm",
+        "category": "Navigation",
+        "x": 520,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ykpeHW8VfJfmCM3r",
+        "type": "Catch",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_VDbXXUV3Pnf3xamq"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_ykpeHW8VfJfmCM3r",
+        "category": "General",
+        "x": 240,
+        "y": 380,
+        "wires": [
+            [
+                "sd_PUTU5FN77oTPMcXq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "ProfileComponent"
+    },
+    {
+        "id": "sd_PUTU5FN77oTPMcXq",
+        "type": "Script",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.error)",
+        "functionName": "sd_PUTU5FN77oTPMcXq",
+        "category": "Function",
+        "x": 400,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lQ4xqcE9PiRAGJew",
+        "type": "Script",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.url = `${bh.local.backendUrl}/employee/logout`",
+        "functionName": "sd_lQ4xqcE9PiRAGJew",
+        "category": "Function",
+        "x": 325,
+        "y": 240,
+        "wires": [
+            [
+                "sd_VDbXXUV3Pnf3xamq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_pRMPzfjO5NcWqqIG",
+        "type": "Environment",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "backendUrl"
+                },
+                "envProperty": "backendUrl"
+            }
+        ],
+        "functionName": "sd_pRMPzfjO5NcWqqIG",
+        "category": "General",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "sd_lQ4xqcE9PiRAGJew"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
     }
 ]

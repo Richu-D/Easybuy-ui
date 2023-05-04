@@ -249,9 +249,7 @@ export class ScanComponent {
         count: 1,
       };
       if (page.products) {
-        page.products.push({
-          productObj,
-        });
+        page.products.push(productObj);
       } else {
         page.products = [productObj];
       }

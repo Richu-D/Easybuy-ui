@@ -8,13 +8,12 @@ import {
   Input,
   Output,
   EventEmitter,
-  SimpleChanges,
-  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { getuserData } from 'app/sd-services/getuserData'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -63,6 +62,21 @@ export class ProfileComponent {
     }
   }
 
+  logout(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+
+      bh = this.sd_pRMPzfjO5NcWqqIG(bh);
+      //appendnew_next_logout
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ywsg8F2p8YSdfrjJ');
+    }
+  }
+
   //appendnew_flow_ProfileComponent_start
 
   sd_6rNqYDFFjlNuAhG3(bh) {
@@ -107,6 +121,78 @@ export class ProfileComponent {
     }
   }
 
+  sd_pRMPzfjO5NcWqqIG(bh) {
+    try {
+      bh.local.backendUrl = bh.system.environment.properties.backendUrl;
+
+      bh = this.sd_lQ4xqcE9PiRAGJew(bh);
+      //appendnew_next_sd_pRMPzfjO5NcWqqIG
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_pRMPzfjO5NcWqqIG');
+    }
+  }
+
+  sd_lQ4xqcE9PiRAGJew(bh) {
+    try {
+      const page = this.page;
+      bh.local.url = `${bh.local.backendUrl}/employee/logout`;
+
+      bh = this.sd_VDbXXUV3Pnf3xamq(bh);
+      //appendnew_next_sd_lQ4xqcE9PiRAGJew
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_lQ4xqcE9PiRAGJew');
+    }
+  }
+
+  async sd_VDbXXUV3Pnf3xamq(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+
+      bh = this.sd_I36PRPeuFtNglPsm(bh);
+      //appendnew_next_sd_VDbXXUV3Pnf3xamq
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_VDbXXUV3Pnf3xamq');
+    }
+  }
+
+  async sd_I36PRPeuFtNglPsm(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/login');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+
+      //appendnew_next_sd_I36PRPeuFtNglPsm
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_I36PRPeuFtNglPsm');
+    }
+  }
+
+  sd_PUTU5FN77oTPMcXq(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.error);
+
+      //appendnew_next_sd_PUTU5FN77oTPMcXq
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_PUTU5FN77oTPMcXq');
+    }
+  }
+
   //appendnew_node
 
   ngOnDestroy() {
@@ -121,13 +207,23 @@ export class ProfileComponent {
     bh.error = e;
     bh.errorSource = src;
     if (
-      false
+      false ||
+      this.sd_ykpeHW8VfJfmCM3r(bh)
       /*appendnew_next_Catch*/
     ) {
       return bh;
     } else {
       throw e;
     }
+  }
+  sd_ykpeHW8VfJfmCM3r(bh) {
+    const nodes = ['sd_VDbXXUV3Pnf3xamq'];
+    if (nodes.includes(bh.errorSource)) {
+      bh = this.sd_PUTU5FN77oTPMcXq(bh);
+      //appendnew_next_sd_ykpeHW8VfJfmCM3r
+      return true;
+    }
+    return false;
   }
   //appendnew_flow_ProfileComponent_Catch
 }

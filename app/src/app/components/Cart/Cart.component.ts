@@ -144,21 +144,21 @@ export class CartComponent {
   sd_8rWlThcTPSk7AezS(bh) {
     try {
       const page = this.page;
-      page.total = page.carts.reduce((acc, cartItem) => {
+      page.total = page?.carts?.reduce((acc, cartItem) => {
         acc = acc + cartItem.count * cartItem.rate;
         return acc;
       }, 0);
 
-      page.total = page.total.toFixed(2);
+      page.total = page.total?.toFixed(2);
 
       if (page.coupon) {
         page.grandTotal =
-          page.total - page.total * (page.coupon?.percentage / 100);
+          page?.total - page.total * (page.coupon?.percentage / 100);
       } else {
         page.coupon = {
           percentage: 0,
         };
-        page.grandTotal = page.total;
+        page.grandTotal = page?.total;
       }
 
       // page.grandTotal=page.grandTotal.toFixed(2)

@@ -296,7 +296,9 @@
                     "_attrDef": "p",
                     "_complexity": "advanced",
                     "displayAs": "backgroundColor",
-                    "attrType": "INPUT"
+                    "attrType": "INPUT",
+                    "inValid": false,
+                    "message": ""
                 }
             ]
         },
@@ -3179,9 +3181,10 @@
                     },
                     {
                         "_key": "[disabled]",
-                        "_value": "",
+                        "_value": "!page.carts",
                         "_type": "kv",
-                        "_attrDef": "p"
+                        "_attrDef": "p",
+                        "_customAttributeFlag": "customInput"
                     },
                     {
                         "_key": "[disableRipple]",

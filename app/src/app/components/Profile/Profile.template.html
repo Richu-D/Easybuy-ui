@@ -17,6 +17,6 @@
                 Help &amp; FAQs</span></div>
   <div fxLayout="row wrap" class="profile-options" fxLayoutAlign="none stretch" [fxShow]="true"><img imgSrc="/Web/Icons/settings.svg"><span>
                 Settings</span></div>
-  <div fxLayout="row wrap" class="profile-options" fxLayoutAlign="none stretch" [fxShow]="true" routerLink="/login"><img imgSrc="/Web/Icons/logout.svg"><span>
+  <div fxLayout="row wrap" class="profile-options" fxLayoutAlign="none stretch" [fxShow]="true" (click)="logout()"><img imgSrc="/Web/Icons/logout.svg"><span>
                 Sign Out</span></div>
 </div>

@@ -86,7 +86,7 @@ export class HomeComponent {
         this.__page_injector__.get(getuserData);
       this.page.userData = getuserDataInstance['userData'];
 
-      bh = this.sd_JkpIfNfcSWww6PtI(bh);
+      bh = this.sd_gVLh6gee5TPrxtk7(bh);
       //appendnew_next_sd_S4hucp4ZDxORguJE
       return bh;
     } catch (e) {
@@ -94,9 +94,69 @@ export class HomeComponent {
     }
   }
 
+  sd_gVLh6gee5TPrxtk7(bh) {
+    try {
+      bh.local.backendUrl = bh.system.environment.properties.backendUrl;
+
+      bh = this.sd_1l91Kpg2m1xWQdfS(bh);
+      //appendnew_next_sd_gVLh6gee5TPrxtk7
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_gVLh6gee5TPrxtk7');
+    }
+  }
+
+  sd_1l91Kpg2m1xWQdfS(bh) {
+    try {
+      bh.local.employeeData = JSON.parse(localStorage.getItem('employeeData'));
+
+      bh = this.sd_3AsD6H2H09nUoEN4(bh);
+      //appendnew_next_sd_1l91Kpg2m1xWQdfS
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_1l91Kpg2m1xWQdfS');
+    }
+  }
+
+  sd_3AsD6H2H09nUoEN4(bh) {
+    try {
+      const page = this.page;
+      bh.local.url = `${bh.local.backendUrl}/dashboard/${bh.local.employeeData.employeeid}`;
+
+      bh = this.sd_Ha6huPWSnuDcK5kK(bh);
+      //appendnew_next_sd_3AsD6H2H09nUoEN4
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_3AsD6H2H09nUoEN4');
+    }
+  }
+
+  async sd_Ha6huPWSnuDcK5kK(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      bh.local.response = await this.sdService.nHttpRequest(requestOptions);
+
+      bh = this.sd_JkpIfNfcSWww6PtI(bh);
+      //appendnew_next_sd_Ha6huPWSnuDcK5kK
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Ha6huPWSnuDcK5kK');
+    }
+  }
+
   sd_JkpIfNfcSWww6PtI(bh) {
     try {
       const page = this.page;
+      bh.local.response.earnings = bh.local.response?.earnings || 0;
+      bh.local.response.clients = bh.local.response?.clients || 0;
+
       bh.local.statistics = [
         {
           imageUrl: '/Web/Icons/Earning.svg',
@@ -104,7 +164,7 @@ export class HomeComponent {
           details: [
             {
               tittle: 'Earning',
-              value: '₹200.00',
+              value: '₹' + bh.local.response.earnings.toFixed(2),
             },
           ],
         },
@@ -114,7 +174,7 @@ export class HomeComponent {
           details: [
             {
               tittle: 'Clients',
-              value: '20',
+              value: bh.local.response.clients,
             },
           ],
         },
@@ -124,21 +184,24 @@ export class HomeComponent {
           details: [
             {
               tittle: 'Gold',
-              value: '₹5600',
+              value: '₹' + bh.local.response.gold.toFixed(2),
             },
             {
               tittle: 'Silver',
-              value: '₹5600',
+              value: '₹' + bh.local.response.silver.toFixed(2),
             },
             {
               tittle: 'Platinum',
-              value: '₹5600',
+              value: '₹' + bh.local.response.platinum.toFixed(2),
             },
           ],
         },
       ];
 
       console.log(page.userData, 'userdata');
+      console.log('response');
+      console.log(bh.local.response);
+      console.log('response');
 
       bh = this.sd_xXkRTz1m9f0JjOXD(bh);
       //appendnew_next_sd_JkpIfNfcSWww6PtI
