@@ -191,7 +191,6 @@
             "paletteKey": "Html5",
             "parentEditorKey": "a888014a-069c-d909-b77e-ac754879f6f0",
             "isAdvancedComponent": true,
-            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -381,7 +380,6 @@
                 "paletteKey": "html-editor",
                 "parentEditorKey": "87ba6338-5ccb-9dc8-e757-7a08cf997ca0",
                 "isAdvancedChildComponent": true,
-                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {
@@ -1123,7 +1121,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "{{user.userPhoneNumber}}",
+                                    "_value": "{{user.customerNumber}}",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -1766,7 +1764,7 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": "{{user.grandTotal}}",
+                                "_value": "{{user.totalAmount}}",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }

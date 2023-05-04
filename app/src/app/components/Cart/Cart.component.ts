@@ -12,6 +12,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 //append_imports_end
 
@@ -338,7 +339,7 @@ export class CartComponent {
       console.log(bh.local.carts);
       bh.local.carts = bh.local.carts.map((cartItem) => {
         return {
-          productId: cartItem.productId,
+          productid: cartItem.productId,
           count: cartItem.count,
         };
       });
@@ -358,15 +359,100 @@ export class CartComponent {
       document.getElementById('cart-container').style.display = 'none';
       document.getElementById('loading').style.display = 'flex';
 
-      setTimeout(() => {
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('success').style.display = 'flex';
-      }, 3000);
-
+      bh = this.placeOrderReq(bh);
       //appendnew_next_sd_B55fi9rCcStvBlym
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_B55fi9rCcStvBlym');
+    }
+  }
+
+  async placeOrderReq(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.local.body,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+
+      bh = this.sd_LFzuFR9StdsciGnH(bh);
+      //appendnew_next_placeOrderReq
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_F6VH95gcjVloGbOm');
+    }
+  }
+
+  sd_LFzuFR9StdsciGnH(bh) {
+    try {
+      const page = this.page;
+      setTimeout(() => {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('success').style.display = 'flex';
+      }, 2000);
+
+      bh = this.sd_lzLoT21CqrPmNnDa(bh);
+      //appendnew_next_sd_LFzuFR9StdsciGnH
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_LFzuFR9StdsciGnH');
+    }
+  }
+
+  sd_lzLoT21CqrPmNnDa(bh) {
+    try {
+      localStorage.removeItem('cartItems');
+
+      bh = this.sd_lHmAuz5oVpjPEUN0(bh);
+      //appendnew_next_sd_lzLoT21CqrPmNnDa
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_lzLoT21CqrPmNnDa');
+    }
+  }
+
+  sd_lHmAuz5oVpjPEUN0(bh) {
+    try {
+      localStorage.removeItem('userPhoneNumber');
+
+      bh = this.sd_QT776AQa48jorxmO(bh);
+      //appendnew_next_sd_lHmAuz5oVpjPEUN0
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_lHmAuz5oVpjPEUN0');
+    }
+  }
+
+  sd_QT776AQa48jorxmO(bh) {
+    try {
+      localStorage.removeItem('coupon');
+
+      bh = this.sd_wQSQUd880o9yvGfZ(bh);
+      //appendnew_next_sd_QT776AQa48jorxmO
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_QT776AQa48jorxmO');
+    }
+  }
+
+  async sd_wQSQUd880o9yvGfZ(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/ui/home');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
+
+      //appendnew_next_sd_wQSQUd880o9yvGfZ
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_wQSQUd880o9yvGfZ');
     }
   }
 
@@ -516,6 +602,9 @@ export class CartComponent {
     try {
       const page = this.page;
       console.log(bh.error);
+
+      document.getElementById('cart-container').style.display = 'block';
+      document.getElementById('loading').style.display = 'none';
 
       //appendnew_next_sd_OE6sFWz9PGLCVMet
       return bh;

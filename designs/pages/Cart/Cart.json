@@ -355,13 +355,15 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\nconsole.log(bh.local.carts)\nbh.local.carts=bh.local.carts.map(cartItem=>{\n    return {\n       \"productId\": cartItem.productId,\n        \"count\":cartItem.count\n    }\n})\nconsole.log(bh.local.carts)\nconsole.log(bh.local.employeeData)\n\nbh.local.body={\n    employeeId:bh.local.employeeData.employeeid,\n    userPhoneNumber:bh.local.userPhoneNumber,\n    product:bh.local.carts,\n    couponcode:bh.local.coupon?.couponcode,\n    \n}\n\nbh.local.url = `${bh.local.backendUrl}/place-order`\nconsole.log(bh.local.body)\n\ndocument.getElementById('cart-container').style.display='none'\ndocument.getElementById('loading').style.display='flex'\n\nsetTimeout(()=>{\ndocument.getElementById('loading').style.display='none'\ndocument.getElementById('success').style.display='flex'\n},3000)\n",
+        "script": "\nconsole.log(bh.local.carts)\nbh.local.carts=bh.local.carts.map(cartItem=>{\n    return {\n       \"productid\": cartItem.productId,\n        \"count\":cartItem.count\n    }\n})\nconsole.log(bh.local.carts)\nconsole.log(bh.local.employeeData)\n\nbh.local.body={\n    employeeId:bh.local.employeeData.employeeid,\n    userPhoneNumber:bh.local.userPhoneNumber,\n    product:bh.local.carts,\n    couponcode:bh.local.coupon?.couponcode,\n    \n}\n\nbh.local.url = `${bh.local.backendUrl}/place-order`\nconsole.log(bh.local.body)\n\ndocument.getElementById('cart-container').style.display='none'\ndocument.getElementById('loading').style.display='flex'\n",
         "functionName": "sd_B55fi9rCcStvBlym",
         "category": "Function",
         "x": 845,
         "y": 920,
         "wires": [
-            []
+            [
+                "sd_F6VH95gcjVloGbOm"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -828,6 +830,7 @@
         "nodeType": "flow",
         "name": "placeOrderReq",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.local.url",
         "urlMappingObj": {
@@ -835,8 +838,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -852,22 +857,25 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "placeOrderReq",
         "category": "HTTP",
-        "x": 1045,
+        "x": 945,
         "y": 920,
         "wires": [
             [
-                "sd_lzLoT21CqrPmNnDa"
+                "sd_LFzuFR9StdsciGnH"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "CartComponent"
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
     },
     {
         "id": "sd_Wio5wsYGWvmXEUpB",
@@ -933,7 +941,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.error)",
+        "script": "console.log(bh.error)\n\ndocument.getElementById('cart-container').style.display='block'\ndocument.getElementById('loading').style.display='none'\n",
         "functionName": "sd_OE6sFWz9PGLCVMet",
         "category": "Function",
         "x": 720,
@@ -972,8 +980,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "CartComponent"
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
     },
     {
         "id": "sd_QT776AQa48jorxmO",
@@ -1001,8 +1010,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "CartComponent"
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
     },
     {
         "id": "sd_lHmAuz5oVpjPEUN0",
@@ -1030,8 +1040,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "CartComponent"
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
     },
     {
         "id": "sd_wQSQUd880o9yvGfZ",
@@ -1056,7 +1067,30 @@
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "CartComponent"
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_LFzuFR9StdsciGnH",
+        "type": "Script",
+        "z": "sd_9ZjPtBKfbO30PeGO",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nsetTimeout(()=>{\ndocument.getElementById('loading').style.display='none'\ndocument.getElementById('success').style.display='flex'\n},2000)\n",
+        "functionName": "sd_LFzuFR9StdsciGnH",
+        "category": "Function",
+        "x": 1060,
+        "y": 920,
+        "wires": [
+            [
+                "sd_lzLoT21CqrPmNnDa"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CartComponent",
+        "generated": true
     }
 ]

@@ -128,6 +128,7 @@ export class CustomerListComponent {
 
       page.users = bh.local.result.map((user) => {
         user.productDetails.image = `data:image/jpeg;base64,${user.productDetails.image[0].buffer}`;
+        user.totalAmount = user.totalAmount.toFixed(2);
         return user;
       });
       console.log(page.users);
