@@ -8,8 +8,6 @@ import {
   Input,
   Output,
   EventEmitter,
-  SimpleChanges,
-  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -70,6 +68,21 @@ export class SubNavbarComponent {
     }
   }
 
+  goBack(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+
+      bh = this.sd_RP0f37fpoDtDDrXt(bh);
+      //appendnew_next_goBack
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_uBO7tmHli7rIhExE');
+    }
+  }
+
   //appendnew_flow_SubNavbarComponent_start
 
   sd_RzS97LYGg8cM2Usj(bh) {
@@ -78,6 +91,19 @@ export class SubNavbarComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_RzS97LYGg8cM2Usj');
+    }
+  }
+
+  sd_RP0f37fpoDtDDrXt(bh) {
+    try {
+      const page = this.page; // bh.local.location.back()
+
+      window.history.back();
+
+      //appendnew_next_sd_RP0f37fpoDtDDrXt
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_RP0f37fpoDtDDrXt');
     }
   }
 

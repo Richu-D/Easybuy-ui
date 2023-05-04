@@ -85,5 +85,49 @@
         "generateNext": false,
         "serviceName": "SubNavbarComponent",
         "generated": true
+    },
+    {
+        "id": "sd_uBO7tmHli7rIhExE",
+        "type": "PageStart",
+        "z": "sd_eY4JBxBmMQGPRTvM",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "goBack",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "goBack",
+        "category": "General",
+        "x": 80,
+        "y": 180,
+        "wires": [
+            [
+                "sd_RP0f37fpoDtDDrXt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "SubNavbarComponent"
+    },
+    {
+        "id": "sd_RP0f37fpoDtDDrXt",
+        "type": "Script",
+        "z": "sd_eY4JBxBmMQGPRTvM",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// bh.local.location.back()\n\nwindow.history.back()",
+        "functionName": "sd_RP0f37fpoDtDDrXt",
+        "category": "Function",
+        "x": 225,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "SubNavbarComponent",
+        "generated": true
     }
 ]

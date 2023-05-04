@@ -249,6 +249,19 @@
                     "_type": "kv",
                     "_attrDef": "p",
                     "_visibility": false
+                },
+                {
+                    "_key": "(click)",
+                    "_value": "goBack()",
+                    "_type": "kv",
+                    "_attrDef": "c",
+                    "objValue": {
+                        "nodeID": "sd_uBO7tmHli7rIhExE",
+                        "functionName": "goBack",
+                        "activeTree": "pages",
+                        "z": "sd_eY4JBxBmMQGPRTvM",
+                        "input": []
+                    }
                 }
             ],
             "0826fb8d-009e-d5ff-b8a8-b6ac6418893a": {
