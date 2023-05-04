@@ -1,31 +1,35 @@
-<bh-SubNavbar subNavTitle="Cart" IconUrl="/Web/Icons/Plus.svg" textColor="black" goto="/ui/scan"></bh-SubNavbar>
+<bh-SubNavbar subNavTitle="Cart" IconUrl="/Web/Icons/Plus.svg" textColor="black" goto="/ui/scan" backgroundColor="white"></bh-SubNavbar>
 <div class="cart-container">
   <bh-carrtItem *ngFor="let cart of page.carts" [cart]="cart" (changeCount)="changeCount($event)"></bh-carrtItem>
 </div>
 <div style="padding:20px;">
   <div>
     <div>
-      Promo Code</div><input (blur)="applyCoupon()" [(ngModel)]="page.couponValue" style="margin:20px 0px;width:100%; ">
+      Promo Code</div>
+    <div style="position:relative;">
+      <input (blur)="applyCoupon()" [(ngModel)]="page.couponValue" style="margin:20px 0px;width:100%; color: #979491;" class="styled-input">
+      <img imgSrc="/Web/Icons/tick.svg" style="    position: absolute;     right: 0px;     transform: translate(-10px,-225%);display:{{page.verify}}">
+    </div>
   </div>
-  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
-      <div>
+  <div fxLayout="column wrap" style="box-shadow: 0px 2px 48px rgba(0, 0, 0, 0.04); border-radius: 10px;" fxLayoutAlign="space-between stretch" [fxShow]="true">
+    <div fxLayout="row wrap" style="padding:10px 5px;border-bottom:1px solid  #F4F4F4;" fxLayoutAlign="space-between stretch" [fxShow]="true">
+      <div style="font-weight: 500; font-size: 12px;color: #979491;">
         Selected Items</div>
-      <div>
+      <div style="font-weight: 700; font-size: 18px;color: #484541;">
         {{page.total}}
       </div>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
-      <div>
+    <div fxLayout="row wrap" style="padding:10px 5px;border-bottom:1px solid  #F4F4F4" fxLayoutAlign="space-between stretch" [fxShow]="true">
+      <div style="font-weight: 500; font-size: 12px;color: #979491;">
         Discount</div>
-      <div>
+      <div style="font-weight: 700; font-size: 18px;color: #484541;">
         {{page.coupon.percentage}}
       </div>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
-      <div>
+    <div fxLayout="row wrap" style="padding:10px 5px;" fxLayoutAlign="space-between stretch" [fxShow]="true">
+      <div style="font-weight: 500; font-size: 14px;color: #484541;">
         Total</div>
-      <div>
+      <div style="color: var(--main-color);">
         {{page.grandTotal}}
       </div>
     </div>

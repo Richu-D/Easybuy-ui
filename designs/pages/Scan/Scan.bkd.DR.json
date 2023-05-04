@@ -75,7 +75,9 @@
                 "_attrDef": "p",
                 "_complexity": "advanced",
                 "displayAs": "textColor",
-                "attrType": "INPUT"
+                "attrType": "INPUT",
+                "inValid": false,
+                "message": ""
             },
             {
                 "_key": "[goto]",
@@ -84,7 +86,24 @@
                 "_attrDef": "p",
                 "_complexity": "advanced",
                 "displayAs": "goto",
+                "attrType": "INPUT",
+                "inValid": false,
+                "message": ""
+            },
+            {
+                "_key": "[backgroundColor]",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_complexity": "advanced",
+                "displayAs": "backgroundColor",
                 "attrType": "INPUT"
+            },
+            {
+                "_key": "backgroundColor",
+                "_value": "transparent",
+                "_type": "kv",
+                "_attrDef": "c"
             }
         ]
     },

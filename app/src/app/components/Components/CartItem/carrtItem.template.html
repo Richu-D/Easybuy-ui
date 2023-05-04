@@ -1,11 +1,11 @@
-<div fxLayout="row " style="padding:15px;" class="shadow-box cart-container-item" fxFlex="100" fxLayoutAlign="center center" [fxShow]="true"><img [src]="cart.imageUrl" style="    height: 100%;object-fit: contain;     margin-right: 10px;border-radius: 10px;">
+<div fxLayout="row " style="padding:15px;" class="shadow-box cart-container-item" fxFlex="100" fxLayoutAlign="center center" [fxShow]="true"><img [src]="cart.imageUrl" style="height: 100%;object-fit: cover;margin-right: 10px;border-radius: 15px;width:100px;">
   <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true">
     <h3>
       {{cart.productName}}
     </h3>
     <p style="line-height: 1.5;    font-size: 10px;     font-weight: 400;">
       {{cart.description}}
-    </p><span style="color:var(--main-color);font-size:24px;font-weight:700px;">
+    </p><span style="color:var(--main-color);font-size:17px;font-weight:700px;">
                 &#x20B9;{{cart.rate}}</span>
   </div>
   <div fxLayout="column wrap" fxLayoutAlign="none none" [fxShow]="true">

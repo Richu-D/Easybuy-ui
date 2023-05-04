@@ -76,7 +76,7 @@
                 },
                 {
                     "_key": "style",
-                    "_value": "    height: 100%;object-fit: contain;     margin-right: 10px;border-radius: 10px;",
+                    "_value": "height: 100%;object-fit: cover;margin-right: 10px;border-radius: 15px;width:100px;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -653,7 +653,7 @@
                 "designerReference": [
                     {
                         "_key": "style",
-                        "_value": "color:var(--main-color);font-size:24px;font-weight:700px;",
+                        "_value": "color:var(--main-color);font-size:17px;font-weight:700px;",
                         "_type": "kv",
                         "_attrDef": "p"
                     },

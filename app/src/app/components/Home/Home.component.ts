@@ -8,8 +8,6 @@ import {
   Input,
   Output,
   EventEmitter,
-  SimpleChanges,
-  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -178,6 +176,8 @@ export class HomeComponent {
       } else {
         console.log('Invalid phone number');
         bh.local.isValid = false;
+        document.getElementById('phoneNumberError').innerText =
+          'Invalid phone number';
       }
 
       bh = this.sd_hvDLK6DZJLFBUldB(bh);

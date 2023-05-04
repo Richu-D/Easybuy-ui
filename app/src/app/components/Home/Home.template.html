@@ -24,6 +24,8 @@
       Jewellery</h1>
   </mat-card-content>
 
-  <mat-card-actions style="margin:10px;"><input placeholder="Customer Number" type="number" [(ngModel)]="page.phoneNumber" style="margin:10px 0px !important;" class="styled-input">
-    <button mat-button style="margin:0px;" class="styled-button" (click)="gotoScan()">NEXT</button></mat-card-actions>
+  <mat-card-actions style="margin:10px;"><input placeholder="Customer Number" type="number" [(ngModel)]="page.phoneNumber" style="margin:10px 0px  10px 0px !important;" class="styled-input">
+    <p id="phoneNumberError" style="margin-bottom:10px;" class="error-text">
+    </p><button mat-button style="margin:0px;" class="styled-button" (click)="gotoScan()">NEXT</button>
+  </mat-card-actions>
 </mat-card>

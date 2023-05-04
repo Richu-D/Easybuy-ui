@@ -45,6 +45,13 @@
                     "type": "any",
                     "value": ""
                 }
+            },
+            {
+                "key": "backgroundColor",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                }
             }
         ],
         "localVariables": [],

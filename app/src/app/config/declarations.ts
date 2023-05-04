@@ -116,8 +116,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
-//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-getuserData
-getuserData,
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-getuserData
+  getuserData,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-Scan
   Scan,
 ];

@@ -55,7 +55,6 @@ main {
   position: fixed;
   top: 0;
   padding: 5px 10px;
-  background-color: transparent;
   z-index: 100;
   color: white;
   width: 100%;
@@ -447,9 +446,9 @@ main {
 .cart-container{
     width: 100%;
     padding: 10px;
-    max-height: 350px;
+    height: 40vh;
     overflow: auto;
-    margin-top: 25px;
+    margin-top: 50px;
 }
 
 .cart-container-item{
@@ -463,3 +462,30 @@ main {
 .mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
     min-width: 30px !important;
 }
+
+.error-text{
+     color: #f44336 ;
+  font-size: small ;
+  
+   
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+

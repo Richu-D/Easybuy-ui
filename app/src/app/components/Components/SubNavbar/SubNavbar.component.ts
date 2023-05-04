@@ -30,6 +30,8 @@ export class SubNavbarComponent {
   public textColor: any = undefined;
   @Input('goto')
   public goto: any = undefined;
+  @Input('backgroundColor')
+  public backgroundColor: any = undefined;
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,

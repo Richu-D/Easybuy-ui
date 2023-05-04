@@ -8,9 +8,6 @@ import {
   Input,
   Output,
   EventEmitter,
-  AfterViewInit,
-  ViewChild,
-  ViewChildren,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -57,6 +54,7 @@ export class CartComponent {
       discount: undefined,
       grandTotal: undefined,
       couponValue: undefined,
+      verify: 'none',
     });
 
     //append_listeners
@@ -430,7 +428,9 @@ export class CartComponent {
         this.sdService.getPathAndQParamsObj('/ui/home');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
 
       //appendnew_next_sd_wQSQUd880o9yvGfZ
       return bh;
@@ -540,6 +540,8 @@ export class CartComponent {
     try {
       const page = this.page;
       console.log(bh.local.result, 'result');
+
+      page.verify = 'block';
 
       bh = this.sd_GRjYUxtyjm0gaywq(bh);
       //appendnew_next_sd_3uU4UeAGKnhBzj89

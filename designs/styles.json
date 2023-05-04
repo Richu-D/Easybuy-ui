@@ -49,6 +49,8 @@
         "mat-button",
         "mat-icon-button",
         "mat-stroked-button",
-        "mat-flat-button"
+        "mat-flat-button",
+        "error-text",
+        "loader"
     ]
 }

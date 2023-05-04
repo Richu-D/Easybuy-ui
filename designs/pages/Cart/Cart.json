@@ -55,6 +55,13 @@
                     "type": "any",
                     "value": ""
                 }
+            },
+            {
+                "key": "verify",
+                "defaultValue": {
+                    "type": "str",
+                    "value": "none"
+                }
             }
         ],
         "functionName": "sd_fMJI52IasnqLbnVf",
@@ -568,7 +575,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.local.result,\"result\")\n\n",
+        "script": "console.log(bh.local.result,\"result\")\n\npage.verify=\"block\"",
         "functionName": "sd_3uU4UeAGKnhBzj89",
         "category": "Function",
         "x": 865,
@@ -823,6 +830,7 @@
         "nodeType": "flow",
         "name": "placeOrderReq",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.local.url",
         "urlMappingObj": {
@@ -830,8 +838,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -847,9 +857,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "placeOrderReq",
         "category": "HTTP",
@@ -1040,6 +1052,13 @@
         "nodeType": "flow",
         "name": "",
         "path": "/ui/home",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_wQSQUd880o9yvGfZ",
         "category": "Navigation",
         "x": 1565,

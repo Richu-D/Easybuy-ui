@@ -210,7 +210,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(page.phoneNumber)\nbh.local.isValid=false;\nlet userPhoneNumber=`${page.phoneNumber}`\nconsole.log(userPhoneNumber,typeof userPhoneNumber,userPhoneNumber.length)\nif(userPhoneNumber.length>=10&&userPhoneNumber.length<=13){\n   console.log('valid phone number')\n   bh.local.isValid=true;\n}\nelse{\n    \n     console.log('Invalid phone number')\n     bh.local.isValid=false;\n\n}",
+        "script": "console.log(page.phoneNumber)\nbh.local.isValid=false;\nlet userPhoneNumber=`${page.phoneNumber}`\nconsole.log(userPhoneNumber,typeof userPhoneNumber,userPhoneNumber.length)\nif(userPhoneNumber.length>=10&&userPhoneNumber.length<=13){\n   console.log('valid phone number')\n   bh.local.isValid=true;\n}\nelse{\n    \n     console.log('Invalid phone number')\n     bh.local.isValid=false;\n     document.getElementById(\"phoneNumberError\").innerText='Invalid phone number'\n\n}",
         "functionName": "sd_aM1w0sD8kfrb2bNW",
         "category": "Function",
         "x": 180,
