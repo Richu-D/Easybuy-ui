@@ -52,7 +52,7 @@ export class CustomerListComponent {
 
   sd_39NrMEvzsFL0i3EB(bh) {
     try {
-      bh = this.sd_8NOXt2BLdzfCzBKj(bh);
+      bh = this.sd_RhgNBPEPRAOgxrtV(bh);
       //appendnew_next_sd_39NrMEvzsFL0i3EB
       return bh;
     } catch (e) {
@@ -62,12 +62,102 @@ export class CustomerListComponent {
 
   //appendnew_flow_CustomerListComponent_start
 
+  sd_RhgNBPEPRAOgxrtV(bh) {
+    try {
+      bh.local.backendUrl = bh.system.environment.properties.backendUrl;
+
+      bh = this.sd_sgwAlQZPEyN6fcrv(bh);
+      //appendnew_next_sd_RhgNBPEPRAOgxrtV
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_RhgNBPEPRAOgxrtV');
+    }
+  }
+
+  sd_sgwAlQZPEyN6fcrv(bh) {
+    try {
+      bh.local.employeeData = JSON.parse(localStorage.getItem('employeeData'));
+
+      bh = this.sd_hbQdxVpROxWFNQ1u(bh);
+      //appendnew_next_sd_sgwAlQZPEyN6fcrv
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_sgwAlQZPEyN6fcrv');
+    }
+  }
+
+  sd_hbQdxVpROxWFNQ1u(bh) {
+    try {
+      const page = this.page;
+      bh.local.url = `${bh.local.backendUrl}/customer-list/${bh.local.employeeData.employeeid}`;
+
+      bh = this.sd_Vbo8JBBxy3ap2Jea(bh);
+      //appendnew_next_sd_hbQdxVpROxWFNQ1u
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_hbQdxVpROxWFNQ1u');
+    }
+  }
+
+  async sd_Vbo8JBBxy3ap2Jea(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+
+      bh = this.sd_xqwYQv97OZxgX007(bh);
+      //appendnew_next_sd_Vbo8JBBxy3ap2Jea
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Vbo8JBBxy3ap2Jea');
+    }
+  }
+
+  sd_xqwYQv97OZxgX007(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.local.result, 'result');
+
+      // data:image/jpeg;base64,${bh.local.response.result.image.data}`
+
+      page.users = bh.local.result.map((user) => {
+        user.productDetails.image = `data:image/jpeg;base64,${user.productDetails.image[0].buffer}`;
+        return user;
+      });
+      console.log(page.users);
+
+      bh = this.sd_8NOXt2BLdzfCzBKj(bh);
+      //appendnew_next_sd_xqwYQv97OZxgX007
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_xqwYQv97OZxgX007');
+    }
+  }
+
   sd_8NOXt2BLdzfCzBKj(bh) {
     try {
       //appendnew_next_sd_8NOXt2BLdzfCzBKj
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_8NOXt2BLdzfCzBKj');
+    }
+  }
+
+  sd_sabQEuuHPmj9gLfw(bh) {
+    try {
+      const page = this.page;
+      console.log(bh.error, 'error');
+
+      //appendnew_next_sd_sabQEuuHPmj9gLfw
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_sabQEuuHPmj9gLfw');
     }
   }
 
@@ -85,13 +175,23 @@ export class CustomerListComponent {
     bh.error = e;
     bh.errorSource = src;
     if (
-      false
+      false ||
+      this.sd_UQjh7TWH8eOh40Lg(bh)
       /*appendnew_next_Catch*/
     ) {
       return bh;
     } else {
       throw e;
     }
+  }
+  sd_UQjh7TWH8eOh40Lg(bh) {
+    const nodes = ['sd_Vbo8JBBxy3ap2Jea'];
+    if (nodes.includes(bh.errorSource)) {
+      bh = this.sd_sabQEuuHPmj9gLfw(bh);
+      //appendnew_next_sd_UQjh7TWH8eOh40Lg
+      return true;
+    }
+    return false;
   }
   //appendnew_flow_CustomerListComponent_Catch
 }

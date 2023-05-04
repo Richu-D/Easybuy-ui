@@ -51,6 +51,7 @@
         "mat-stroked-button",
         "mat-flat-button",
         "error-text",
-        "loader"
+        "mat-progress-spinner",
+        "mat-spinner"
     ]
 }

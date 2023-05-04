@@ -23,7 +23,7 @@
         "y": 30,
         "wires": [
             [
-                "sd_8NOXt2BLdzfCzBKj"
+                "sd_RhgNBPEPRAOgxrtV"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -43,8 +43,211 @@
         "globalVariables": [],
         "functionName": "sd_8NOXt2BLdzfCzBKj",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 585,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Vbo8JBBxy3ap2Jea",
+        "type": "HttpRequest",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_Vbo8JBBxy3ap2Jea",
+        "category": "HTTP",
+        "x": 425,
+        "y": 40,
+        "wires": [
+            [
+                "sd_xqwYQv97OZxgX007"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_RhgNBPEPRAOgxrtV",
+        "type": "Environment",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "backendUrl"
+                },
+                "envProperty": "backendUrl"
+            }
+        ],
+        "functionName": "sd_RhgNBPEPRAOgxrtV",
+        "category": "General",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "sd_sgwAlQZPEyN6fcrv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hbQdxVpROxWFNQ1u",
+        "type": "Script",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.url=`${bh.local.backendUrl}/customer-list/${bh.local.employeeData.employeeid}`\n",
+        "functionName": "sd_hbQdxVpROxWFNQ1u",
+        "category": "Function",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            [
+                "sd_Vbo8JBBxy3ap2Jea"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_sgwAlQZPEyN6fcrv",
+        "type": "Storage",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "employeeData"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "bh.local",
+            "value": "employeeData"
+        },
+        "functionName": "sd_sgwAlQZPEyN6fcrv",
+        "category": "Storage",
+        "x": 225,
+        "y": 40,
+        "wires": [
+            [
+                "sd_hbQdxVpROxWFNQ1u"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_xqwYQv97OZxgX007",
+        "type": "Script",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.result,\"result\")\n\n// data:image/jpeg;base64,${bh.local.response.result.image.data}`\n\n\n\npage.users=bh.local.result.map(user=>{\n    user.productDetails.image=`data:image/jpeg;base64,${user.productDetails.image[0].buffer}`\n    return user;\n})\nconsole.log(page.users)\n",
+        "functionName": "sd_xqwYQv97OZxgX007",
+        "category": "Function",
+        "x": 505,
+        "y": 40,
+        "wires": [
+            [
+                "sd_8NOXt2BLdzfCzBKj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_UQjh7TWH8eOh40Lg",
+        "type": "Catch",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_Vbo8JBBxy3ap2Jea"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_UQjh7TWH8eOh40Lg",
+        "category": "General",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "sd_sabQEuuHPmj9gLfw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CustomerListComponent"
+    },
+    {
+        "id": "sd_sabQEuuHPmj9gLfw",
+        "type": "Script",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.error,\"error\")",
+        "functionName": "sd_sabQEuuHPmj9gLfw",
+        "category": "Function",
+        "x": 380,
+        "y": 240,
         "wires": [
             []
         ],

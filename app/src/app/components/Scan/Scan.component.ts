@@ -161,7 +161,7 @@ export class ScanComponent {
       const page = this.page; // console.log(bh.local.scanner,"bh.local.scanner")
 
       bh.local.scanner.onUniqueRead = (txt, result) => {
-        // alert(txt)
+        console.log(txt);
         this.start(txt);
       };
 

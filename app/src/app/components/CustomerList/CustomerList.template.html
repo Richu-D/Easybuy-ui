@@ -1,18 +1,20 @@
 <div style="padding-bottom:120px;" class="list-container">
   <span class="list-text">
                 Customer List</span>
-  <div style="width:100;padding:10px;">
-    <div fxLayout="row wrap" style="height:100px;width:100%;padding:10px;" class="shadow-box" fxFlex="100" fxLayoutAlign="space-between center" [fxShow]="true"><img imgSrc="/Web/Resource/cart1.png" style="height:100%;border-radius:10px;">
+  <div *ngFor="let user of page.users" style="width:100;padding:10px;">
+    <div fxLayout="row wrap" style="height:100px;width:100%;padding:10px;" class="shadow-box" fxFlex="100" fxLayoutAlign="space-between center" [fxShow]="true"><img [src]="user.productDetails.image" style="height:100%;border-radius:10px;">
       <div>
         <div style="font-weight: 600; font-size: 16px;">
-          +91 54564564</div>
+          {{user.userPhoneNumber}}
+        </div>
         <div style="font-weight: 400; font-size: 10px;">
           Mode of paymetn: Phonepay</div>
         <div style="font-weight: 400; font-size: 10px;">
           Time: 3:45pm</div>
       </div>
       <div>
-        &#x20B9;400K</div>
+        {{user.grandTotal}}
+      </div>
     </div>
   </div>
 </div>

@@ -552,7 +552,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "tempscanscript",
-        "script": "// console.log(bh.local.scanner,\"bh.local.scanner\")\n\nbh.local.scanner.onUniqueRead = (txt, result) => {\n    // alert(txt)\n    this.start(txt)\n};\n\nawait bh.local.scanner.setUIElement((document.querySelector('.dce-video-container') as HTMLElement).parentElement as HTMLElement);\nawait bh.local.scanner.open();\n\n\n",
+        "script": "// console.log(bh.local.scanner,\"bh.local.scanner\")\n\nbh.local.scanner.onUniqueRead = (txt, result) => {\n    console.log(txt)\n    this.start(txt)\n};\n\nawait bh.local.scanner.setUIElement((document.querySelector('.dce-video-container') as HTMLElement).parentElement as HTMLElement);\nawait bh.local.scanner.open();\n\n\n",
         "functionName": "tempscanscript",
         "category": "Function",
         "x": 765,
