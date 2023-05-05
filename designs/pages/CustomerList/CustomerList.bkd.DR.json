@@ -1549,7 +1549,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Time: 3:45pm",
+                                    "_value": "Time: {{user.time}}",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }

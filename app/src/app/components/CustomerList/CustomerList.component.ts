@@ -126,11 +126,28 @@ export class CustomerListComponent {
 
       // data:image/jpeg;base64,${bh.local.response.result.image.data}`
 
-      page.users = bh.local.result.map((user) => {
-        user.productDetails.image = `data:image/jpeg;base64,${user.productDetails.image[0].buffer}`;
-        user.totalAmount = user.totalAmount.toFixed(2);
-        return user;
-      });
+      page.users = bh.local.result
+        .map((user) => {
+          user.productDetails.image = `data:image/jpeg;base64,${user.productDetails.image[0].buffer}`;
+          user.totalAmount = user.totalAmount.toFixed(2);
+          const timestamp = new Date(
+            parseInt(user._id.substring(0, 8), 16) * 1000
+          );
+          const hours = timestamp.getHours();
+          const minutes = timestamp.getMinutes();
+          let formattedHours = hours % 12;
+          if (formattedHours === 0) {
+            formattedHours = 12;
+          }
+          const ampm = hours >= 12 ? 'PM' : 'AM';
+          const timeString = `${formattedHours}:${
+            minutes < 10 ? '0' : ''
+          }${minutes} ${ampm}`;
+          console.log(timeString);
+          user.time = timeString;
+          return user;
+        })
+        .reverse();
       console.log(page.users);
 
       bh = this.sd_8NOXt2BLdzfCzBKj(bh);
