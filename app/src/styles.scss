@@ -257,6 +257,27 @@ main {
   user-select: none;
 }
 
+@keyframes turn {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        25% {
+            transform: rotate(90deg);
+        }
+
+        50% {
+            transform: rotate(180deg);
+        }
+
+        75% {
+            transform: rotate(270deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 // @keyframes turn {
 //     0% {
 //         transform: rotate(0deg);
@@ -296,7 +317,7 @@ main {
   z-index: 98;
   max-height: 320px;
   width: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   padding: 5px;
 }
