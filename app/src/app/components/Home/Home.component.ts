@@ -121,7 +121,7 @@ export class HomeComponent {
   sd_3AsD6H2H09nUoEN4(bh) {
     try {
       const page = this.page;
-      bh.local.url = `${bh.local.backendUrl}/dashboard/${bh.local.employeeData.employeeid}`;
+      bh.local.url = `${bh.local?.backendUrl}/dashboard/${bh.local?.employeeData?.employeeid}`;
 
       bh = this.sd_Ha6huPWSnuDcK5kK(bh);
       //appendnew_next_sd_3AsD6H2H09nUoEN4
@@ -310,6 +310,58 @@ export class HomeComponent {
     }
   }
 
+  sd_ykUzjkqZLV19dnXi(bh) {
+    try {
+      const page = this.page;
+      bh.local.statistics = [
+        {
+          imageUrl: '/Web/Icons/Earning.svg',
+          fxFlex: '46',
+          details: [
+            {
+              tittle: 'Earning',
+              value: 'N/A',
+            },
+          ],
+        },
+        {
+          imageUrl: '/Web/Icons/Clients.svg',
+          fxFlex: '46',
+          details: [
+            {
+              tittle: 'Clients',
+              value: 'N/A',
+            },
+          ],
+        },
+        {
+          imageUrl: '/Web/Icons/PriceGraph.svg',
+          fxFlex: '100',
+          details: [
+            {
+              tittle: 'Gold',
+              value: 'N/A',
+            },
+            {
+              tittle: 'Silver',
+              value: 'N/A',
+            },
+            {
+              tittle: 'Platinum',
+              value: 'N/A',
+            },
+          ],
+        },
+      ];
+
+      bh = this.sd_xXkRTz1m9f0JjOXD(bh);
+      //appendnew_next_sd_ykUzjkqZLV19dnXi
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ykUzjkqZLV19dnXi');
+    }
+  }
+
   //appendnew_node
 
   ngOnDestroy() {
@@ -324,13 +376,23 @@ export class HomeComponent {
     bh.error = e;
     bh.errorSource = src;
     if (
-      false
+      false ||
+      this.sd_cWx3T0wkeaF90Xc9(bh)
       /*appendnew_next_Catch*/
     ) {
       return bh;
     } else {
       throw e;
     }
+  }
+  sd_cWx3T0wkeaF90Xc9(bh) {
+    const nodes = ['sd_Ha6huPWSnuDcK5kK'];
+    if (nodes.includes(bh.errorSource)) {
+      bh = this.sd_ykUzjkqZLV19dnXi(bh);
+      //appendnew_next_sd_cWx3T0wkeaF90Xc9
+      return true;
+    }
+    return false;
   }
   //appendnew_flow_HomeComponent_Catch
 }

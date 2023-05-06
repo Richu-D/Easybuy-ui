@@ -8,7 +8,7 @@
 </span>
   <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><span style="color:var(--main-color);">
                 Welcome,</span><span style="font-size:24px;font-weight:600;">
-    {{page.userData.name}}</span></div>
+    {{page.userData?.name || &quot;N/A&quot;}}</span></div>
   <div fxLayout="row wrap" fxLayoutGap="2" fxLayoutAlign="space-between center" [fxShow]="true">
     <div fxLayout="row wrap" class="statistic shadow-box" fxFlex="{{statistic.fxFlex}}" fxLayoutAlign="space-around center" [fxShow]="true" *ngFor="let statistic of page.statistics"><img imgSrc="{{statistic.imageUrl}}">
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let detail of statistic.details"><span class="statistic-title">

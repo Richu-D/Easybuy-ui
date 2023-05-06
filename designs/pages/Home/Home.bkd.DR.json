@@ -763,7 +763,7 @@
                         },
                         {
                             "_key": "html",
-                            "_value": "{{page.userData.name}}",
+                            "_value": "{{page.userData?.name || \"N/A\"}}",
                             "_type": "a",
                             "_attrDef": "p"
                         }
