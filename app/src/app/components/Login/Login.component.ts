@@ -8,8 +8,6 @@ import {
   Input,
   Output,
   EventEmitter,
-  SimpleChanges,
-  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -259,7 +257,8 @@ export class LoginComponent {
       const page = this.page;
       console.log(bh.error.error.message, 'login error');
 
-      document.getElementById('loginError').innerText = bh.error.error.message;
+      document.getElementById('loginError').innerText =
+        bh.error.error?.message || 'something went wrong';
 
       //appendnew_next_sd_s17i3CpiAPwChwat
       return bh;
