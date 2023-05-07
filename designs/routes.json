@@ -6,7 +6,11 @@
             "children": [
                 {
                     "path": "home",
-                    "component": "HomeComponent"
+                    "component": "HomeComponent",
+                    "canActivate": {
+                        "edited": true,
+                        "value": ""
+                    }
                 },
                 {
                     "path": "scan",
@@ -25,7 +29,11 @@
                     "component": "CustomerListComponent"
                 }
             ],
-            "pathMatch": ""
+            "pathMatch": "",
+            "canActivate": {
+                "edited": false,
+                "name": "isEmployeeLoggedIn"
+            }
         },
         {
             "path": "login",
@@ -37,7 +45,7 @@
             "redirectTo": "",
             "canDeactivate": {
                 "edited": true,
-                "value": ""
+                "value": "false"
             }
         },
         {

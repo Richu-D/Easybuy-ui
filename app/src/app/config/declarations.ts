@@ -15,6 +15,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-isEmployeeLoggedIn
+import { isEmployeeLoggedIn } from '../canActivate/isEmployeeLoggedIn.canActivate';
 //CORE_REFERENCE_IMPORT-getuserData
 import { getuserData } from '../sd-services/getuserData';
 //CORE_REFERENCE_IMPORT-carrtItemComponent
@@ -116,6 +118,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-isEmployeeLoggedIn
+isEmployeeLoggedIn,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-getuserData
   getuserData,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-Scan
@@ -131,6 +135,7 @@ export const appRoutes = [
   {
     path: 'ui',
     component: PageLayoutComponent,
+    canActivate: [isEmployeeLoggedIn],
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'scan', component: ScanComponent },
@@ -139,7 +144,7 @@ export const appRoutes = [
       { path: 'customer-list', component: CustomerListComponent },
     ],
   },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canDeactivate: [false] },
   { path: 'boarding', component: BoardingComponent },
   { path: '', redirectTo: '/boarding', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
