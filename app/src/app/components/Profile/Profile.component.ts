@@ -158,11 +158,23 @@ export class ProfileComponent {
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
 
-      bh = this.sd_I36PRPeuFtNglPsm(bh);
+      bh = this.sd_9rpWp5qIfluyeX8x(bh);
       //appendnew_next_sd_VDbXXUV3Pnf3xamq
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_VDbXXUV3Pnf3xamq');
+    }
+  }
+
+  sd_9rpWp5qIfluyeX8x(bh) {
+    try {
+      localStorage.removeItem('employeeData');
+
+      bh = this.sd_I36PRPeuFtNglPsm(bh);
+      //appendnew_next_sd_9rpWp5qIfluyeX8x
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_9rpWp5qIfluyeX8x');
     }
   }
 
@@ -172,9 +184,7 @@ export class ProfileComponent {
         this.sdService.getPathAndQParamsObj('/login');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
 
       //appendnew_next_sd_I36PRPeuFtNglPsm
       return bh;

@@ -207,7 +207,7 @@
         "y": 240,
         "wires": [
             [
-                "sd_I36PRPeuFtNglPsm"
+                "sd_9rpWp5qIfluyeX8x"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -223,16 +223,9 @@
         "nodeType": "flow",
         "name": "",
         "path": "/login",
-        "pathMap": "",
-        "pathparams": "",
-        "pathparamsMap": "",
-        "qparams": "",
-        "qparamsMap": "",
-        "qparamsArray": "",
-        "resultMapping": "",
         "functionName": "sd_I36PRPeuFtNglPsm",
         "category": "Navigation",
-        "x": 520,
+        "x": 645,
         "y": 240,
         "wires": [
             []
@@ -334,6 +327,36 @@
         "wires": [
             [
                 "sd_lQ4xqcE9PiRAGJew"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ProfileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_9rpWp5qIfluyeX8x",
+        "type": "Storage",
+        "z": "sd_hLsSiBwL5l8nKVYk",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "removeItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "employeeData"
+        },
+        "value": {},
+        "resultMapping": {},
+        "functionName": "sd_9rpWp5qIfluyeX8x",
+        "category": "Storage",
+        "x": 525,
+        "y": 240,
+        "wires": [
+            [
+                "sd_I36PRPeuFtNglPsm"
             ]
         ],
         "__n_excludedFromValidation__": {},
