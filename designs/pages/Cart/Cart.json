@@ -355,7 +355,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\nconsole.log(bh.local.carts)\nbh.local.carts=bh.local.carts.map(cartItem=>{\n    return {\n       \"productid\": cartItem.productId,\n        \"count\":cartItem.count\n    }\n})\nconsole.log(bh.local.carts)\nconsole.log(bh.local.employeeData)\n\nbh.local.body={\n    employeeId:bh.local.employeeData.employeeid,\n    userPhoneNumber:bh.local.userPhoneNumber,\n    product:bh.local.carts,\n    couponcode:bh.local.coupon?.couponcode,\n    \n}\n\nbh.local.url = `${bh.local.backendUrl}/place-order`\nconsole.log(bh.local.body)\n\ndocument.getElementById('cart-container').style.display='none'\ndocument.getElementById('loading').style.display='flex'\n",
+        "script": "\nconsole.log(bh.local.carts)\nbh.local.carts=bh.local.carts.map(cartItem=>{\n    return {\n       \"productid\": cartItem.productId,\n        \"count\":cartItem.count\n    }\n})\nconsole.log(bh.local.carts)\nconsole.log(bh.local.employeeData)\n\nbh.local.body={\n    employeeId:bh.local.employeeData.employeeid,\n    userPhoneNumber:bh.local.userPhoneNumber,\n    product:bh.local.carts,\n    couponcode:bh.local.coupon?.couponcode,\n    \n}\n\nbh.local.url = `${bh.local.backendUrl}/place-order`\nconsole.log(bh.local.body)\n\ndocument.getElementById('cart-container').style.display='none'\ndocument.getElementById('loading').style.display='flex'\n\n",
         "functionName": "sd_B55fi9rCcStvBlym",
         "category": "Function",
         "x": 845,
@@ -830,7 +830,6 @@
         "nodeType": "flow",
         "name": "placeOrderReq",
         "method": "post",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.local.url",
         "urlMappingObj": {
@@ -838,10 +837,8 @@
             "mapVarValue": "url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -857,19 +854,17 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "placeOrderReq",
         "category": "HTTP",
-        "x": 945,
+        "x": 965,
         "y": 920,
         "wires": [
             [
-                "sd_LFzuFR9StdsciGnH"
+                "sd_lzLoT21CqrPmNnDa"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -972,7 +967,7 @@
         "resultMapping": {},
         "functionName": "sd_lzLoT21CqrPmNnDa",
         "category": "Storage",
-        "x": 1180,
+        "x": 1065,
         "y": 920,
         "wires": [
             [
@@ -1002,11 +997,11 @@
         "resultMapping": {},
         "functionName": "sd_QT776AQa48jorxmO",
         "category": "Storage",
-        "x": 1405,
+        "x": 1290,
         "y": 920,
         "wires": [
             [
-                "sd_wQSQUd880o9yvGfZ"
+                "sd_LFzuFR9StdsciGnH"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -1032,39 +1027,12 @@
         "resultMapping": {},
         "functionName": "sd_lHmAuz5oVpjPEUN0",
         "category": "Storage",
-        "x": 1285,
+        "x": 1170,
         "y": 920,
         "wires": [
             [
                 "sd_QT776AQa48jorxmO"
             ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "CartComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_wQSQUd880o9yvGfZ",
-        "type": "Navigation",
-        "z": "sd_9ZjPtBKfbO30PeGO",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "path": "/ui/home",
-        "pathMap": "",
-        "pathparams": "",
-        "pathparamsMap": "",
-        "qparams": "",
-        "qparamsMap": "",
-        "qparamsArray": "",
-        "resultMapping": "",
-        "functionName": "sd_wQSQUd880o9yvGfZ",
-        "category": "Navigation",
-        "x": 1565,
-        "y": 920,
-        "wires": [
-            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -1078,15 +1046,13 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\nsetTimeout(()=>{\ndocument.getElementById('loading').style.display='none'\ndocument.getElementById('success').style.display='flex'\n},2000)\n",
+        "script": "document.getElementById('loading').style.display='none'\ndocument.getElementById('success').style.display='flex'\n\n",
         "functionName": "sd_LFzuFR9StdsciGnH",
         "category": "Function",
-        "x": 1060,
+        "x": 1385,
         "y": 920,
         "wires": [
-            [
-                "sd_lzLoT21CqrPmNnDa"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

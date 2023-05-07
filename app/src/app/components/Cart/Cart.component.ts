@@ -12,7 +12,6 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
-import { Router } from '@angular/router'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 //append_imports_end
 
@@ -379,27 +378,11 @@ export class CartComponent {
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
 
-      bh = this.sd_LFzuFR9StdsciGnH(bh);
+      bh = this.sd_lzLoT21CqrPmNnDa(bh);
       //appendnew_next_placeOrderReq
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_F6VH95gcjVloGbOm');
-    }
-  }
-
-  sd_LFzuFR9StdsciGnH(bh) {
-    try {
-      const page = this.page;
-      setTimeout(() => {
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('success').style.display = 'flex';
-      }, 2000);
-
-      bh = this.sd_lzLoT21CqrPmNnDa(bh);
-      //appendnew_next_sd_LFzuFR9StdsciGnH
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_LFzuFR9StdsciGnH');
     }
   }
 
@@ -431,7 +414,7 @@ export class CartComponent {
     try {
       localStorage.removeItem('coupon');
 
-      bh = this.sd_wQSQUd880o9yvGfZ(bh);
+      bh = this.sd_LFzuFR9StdsciGnH(bh);
       //appendnew_next_sd_QT776AQa48jorxmO
       return bh;
     } catch (e) {
@@ -439,20 +422,16 @@ export class CartComponent {
     }
   }
 
-  async sd_wQSQUd880o9yvGfZ(bh) {
+  sd_LFzuFR9StdsciGnH(bh) {
     try {
-      const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/ui/home');
-      await this.__page_injector__
-        .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
+      const page = this.page;
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('success').style.display = 'flex';
 
-      //appendnew_next_sd_wQSQUd880o9yvGfZ
+      //appendnew_next_sd_LFzuFR9StdsciGnH
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_wQSQUd880o9yvGfZ');
+      return this.errorHandler(bh, e, 'sd_LFzuFR9StdsciGnH');
     }
   }
 
