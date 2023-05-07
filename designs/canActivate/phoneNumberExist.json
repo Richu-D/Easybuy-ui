@@ -88,7 +88,10 @@
         "propertyGv": "bh.local.userPhoneNumber",
         "rules": [
             {
-                "t": "null"
+                "t": "istype",
+                "v": "\"number\"",
+                "vt": "\"number\"",
+                "gv": "\"number\""
             },
             {
                 "t": "else"
@@ -103,10 +106,10 @@
         "y": 180,
         "wires": [
             [
-                "sd_TQsoBNEfvwnPAwQX"
+                "sd_xI0L1SFg0tyB9GDB"
             ],
             [
-                "sd_xI0L1SFg0tyB9GDB"
+                "sd_TQsoBNEfvwnPAwQX"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -125,7 +128,7 @@
         "functionName": "sd_xI0L1SFg0tyB9GDB",
         "category": "Function",
         "x": 465,
-        "y": 220,
+        "y": 100,
         "wires": [
             []
         ],
@@ -144,8 +147,8 @@
         "path": "/ui/home",
         "functionName": "sd_TQsoBNEfvwnPAwQX",
         "category": "Navigation",
-        "x": 450,
-        "y": 100,
+        "x": 465,
+        "y": 200,
         "wires": [
             []
         ],

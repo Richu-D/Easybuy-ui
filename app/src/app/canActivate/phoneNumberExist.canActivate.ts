@@ -74,14 +74,14 @@ export class phoneNumberExist {
     try {
       let otherwiseFlag = true;
       if (
-        this.sdService.operators['null'](
+        this.sdService.operators['istype'](
           bh.local.userPhoneNumber,
-          undefined,
+          'number',
           undefined,
           undefined
         )
       ) {
-        bh = await this.sd_TQsoBNEfvwnPAwQX(bh);
+        bh = await this.sd_xI0L1SFg0tyB9GDB(bh);
         otherwiseFlag = false;
       }
       if (
@@ -92,13 +92,24 @@ export class phoneNumberExist {
           undefined
         )
       ) {
-        bh = await this.sd_xI0L1SFg0tyB9GDB(bh);
+        bh = await this.sd_TQsoBNEfvwnPAwQX(bh);
         otherwiseFlag = false;
       }
 
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_k7vFNOd1Lp23LgJn');
+    }
+  }
+
+  async sd_xI0L1SFg0tyB9GDB(bh) {
+    try {
+      bh.local.status = true;
+
+      //appendnew_next_sd_xI0L1SFg0tyB9GDB
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_xI0L1SFg0tyB9GDB');
     }
   }
 
@@ -114,17 +125,6 @@ export class phoneNumberExist {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_TQsoBNEfvwnPAwQX');
-    }
-  }
-
-  async sd_xI0L1SFg0tyB9GDB(bh) {
-    try {
-      bh.local.status = true;
-
-      //appendnew_next_sd_xI0L1SFg0tyB9GDB
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_xI0L1SFg0tyB9GDB');
     }
   }
 

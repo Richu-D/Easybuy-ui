@@ -32,7 +32,7 @@
         ],
         "functionName": "canActivate",
         "category": "Navigation",
-        "x": 145,
+        "x": 45,
         "y": 140,
         "wires": [
             [
@@ -64,11 +64,11 @@
         },
         "functionName": "sd_1EIDCEWqqHGrORja",
         "category": "Storage",
-        "x": 260,
+        "x": 160,
         "y": 140,
         "wires": [
             [
-                "sd_fODMtVlBN5Mr4ry2"
+                "sd_enyDGI9iKrbpFJ2s"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -103,7 +103,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_qmXTsB4gk4UPpV5y"
+                "sd_CelaTOm1mifB7Z0Q"
             ],
             [
                 "sd_ZanpjHFzqa0ObUXO"
@@ -124,8 +124,8 @@
         "script": "bh.local.status = true",
         "functionName": "sd_ODm9JZC5je8aqp3J",
         "category": "Function",
-        "x": 570,
-        "y": 240,
+        "x": 525,
+        "y": 340,
         "wires": [
             []
         ],
@@ -144,8 +144,8 @@
         "path": "/login",
         "functionName": "sd_qmXTsB4gk4UPpV5y",
         "category": "Navigation",
-        "x": 470,
-        "y": 60,
+        "x": 525,
+        "y": 140,
         "wires": [
             []
         ],
@@ -180,8 +180,8 @@
         "outputs": 2,
         "functionName": "sd_ZanpjHFzqa0ObUXO",
         "category": "Function",
-        "x": 465,
-        "y": 180,
+        "x": 420,
+        "y": 280,
         "wires": [
             [
                 "sd_6XP5wJO5wn4Pb6L3"
@@ -205,10 +205,93 @@
         "path": "/ui/home",
         "functionName": "sd_6XP5wJO5wn4Pb6L3",
         "category": "Navigation",
-        "x": 585,
-        "y": 120,
+        "x": 540,
+        "y": 220,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_enyDGI9iKrbpFJ2s",
+        "type": "Script",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.employeeData,\"employeeData\")",
+        "functionName": "sd_enyDGI9iKrbpFJ2s",
+        "category": "Function",
+        "x": 245,
+        "y": 140,
+        "wires": [
+            [
+                "sd_fODMtVlBN5Mr4ry2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_OZ3NY49obBYLmF85",
+        "type": "Script",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.status = true",
+        "functionName": "sd_OZ3NY49obBYLmF85",
+        "category": "Function",
+        "x": 545,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_CelaTOm1mifB7Z0Q",
+        "type": "Switch",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "navigationRouteState.url",
+        "propertyType": "bh",
+        "propertyGv": "bh.navigationRouteState.url",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/login",
+                "vt": "str",
+                "gv": "\"/login\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_CelaTOm1mifB7Z0Q",
+        "category": "Function",
+        "x": 445,
+        "y": 100,
+        "wires": [
+            [
+                "sd_OZ3NY49obBYLmF85"
+            ],
+            [
+                "sd_qmXTsB4gk4UPpV5y"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

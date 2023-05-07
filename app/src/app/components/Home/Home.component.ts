@@ -48,7 +48,6 @@ export class HomeComponent {
     let bh = this.__page_injector__
       .get(SDPageCommonService)
       .constructFlowObject(this);
-    Object.assign(this.page, { phoneNumber: undefined });
 
     //append_listeners
   }
@@ -110,7 +109,7 @@ export class HomeComponent {
     try {
       bh.local.employeeData = JSON.parse(localStorage.getItem('employeeData'));
 
-      bh = this.sd_3AsD6H2H09nUoEN4(bh);
+      bh = this.sd_R1prXmuXbNVjTV5R(bh);
       //appendnew_next_sd_1l91Kpg2m1xWQdfS
       return bh;
     } catch (e) {
@@ -118,10 +117,26 @@ export class HomeComponent {
     }
   }
 
+  sd_R1prXmuXbNVjTV5R(bh) {
+    try {
+      bh.local.userPhoneNumber = JSON.parse(
+        localStorage.getItem('userPhoneNumber')
+      );
+
+      bh = this.sd_3AsD6H2H09nUoEN4(bh);
+      //appendnew_next_sd_R1prXmuXbNVjTV5R
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_R1prXmuXbNVjTV5R');
+    }
+  }
+
   sd_3AsD6H2H09nUoEN4(bh) {
     try {
       const page = this.page;
       bh.local.url = `${bh.local?.backendUrl}/dashboard/${bh.local?.employeeData?.employeeid}`;
+      console.log(bh.local.userPhoneNumber, 'bh.local.userPhoneNumber');
+      page.phoneNumber = bh.local.userPhoneNumber || '';
 
       bh = this.sd_Ha6huPWSnuDcK5kK(bh);
       //appendnew_next_sd_3AsD6H2H09nUoEN4

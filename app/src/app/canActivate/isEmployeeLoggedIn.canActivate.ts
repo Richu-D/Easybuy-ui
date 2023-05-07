@@ -60,11 +60,23 @@ export class isEmployeeLoggedIn {
     try {
       bh.local.employeeData = JSON.parse(localStorage.getItem('employeeData'));
 
-      bh = await this.sd_fODMtVlBN5Mr4ry2(bh);
+      bh = await this.sd_enyDGI9iKrbpFJ2s(bh);
       //appendnew_next_sd_1EIDCEWqqHGrORja
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_1EIDCEWqqHGrORja');
+    }
+  }
+
+  async sd_enyDGI9iKrbpFJ2s(bh) {
+    try {
+      console.log(bh.local.employeeData, 'employeeData');
+
+      bh = await this.sd_fODMtVlBN5Mr4ry2(bh);
+      //appendnew_next_sd_enyDGI9iKrbpFJ2s
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_enyDGI9iKrbpFJ2s');
     }
   }
 
@@ -79,7 +91,7 @@ export class isEmployeeLoggedIn {
           undefined
         )
       ) {
-        bh = await this.sd_qmXTsB4gk4UPpV5y(bh);
+        bh = await this.sd_CelaTOm1mifB7Z0Q(bh);
         otherwiseFlag = false;
       }
       if (
@@ -97,6 +109,49 @@ export class isEmployeeLoggedIn {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_fODMtVlBN5Mr4ry2');
+    }
+  }
+
+  async sd_CelaTOm1mifB7Z0Q(bh) {
+    try {
+      let otherwiseFlag = true;
+      if (
+        this.sdService.operators['eq'](
+          bh.navigationRouteState.url,
+          '/login',
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_OZ3NY49obBYLmF85(bh);
+        otherwiseFlag = false;
+      }
+      if (
+        this.sdService.operators['else'](
+          otherwiseFlag,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_qmXTsB4gk4UPpV5y(bh);
+        otherwiseFlag = false;
+      }
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_CelaTOm1mifB7Z0Q');
+    }
+  }
+
+  async sd_OZ3NY49obBYLmF85(bh) {
+    try {
+      bh.local.status = true;
+
+      //appendnew_next_sd_OZ3NY49obBYLmF85
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_OZ3NY49obBYLmF85');
     }
   }
 
