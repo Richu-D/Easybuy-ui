@@ -15,6 +15,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-phoneNumberExist
+import { phoneNumberExist } from '../canActivate/phoneNumberExist.canActivate';
 //CORE_REFERENCE_IMPORT-isEmployeeLoggedIn
 import { isEmployeeLoggedIn } from '../canActivate/isEmployeeLoggedIn.canActivate';
 //CORE_REFERENCE_IMPORT-getuserData
@@ -118,6 +120,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-phoneNumberExist
+phoneNumberExist,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-isEmployeeLoggedIn
 isEmployeeLoggedIn,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-getuserData
@@ -138,7 +142,11 @@ export const appRoutes = [
     canActivate: [isEmployeeLoggedIn],
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'scan', component: ScanComponent },
+      {
+        path: 'scan',
+        component: ScanComponent,
+        canActivate: [phoneNumberExist],
+      },
       { path: 'cart', component: CartComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'customer-list', component: CustomerListComponent },

@@ -14,7 +14,11 @@
                 },
                 {
                     "path": "scan",
-                    "component": "ScanComponent"
+                    "component": "ScanComponent",
+                    "canActivate": {
+                        "edited": false,
+                        "name": "phoneNumberExist"
+                    }
                 },
                 {
                     "path": "cart",
