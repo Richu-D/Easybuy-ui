@@ -60,52 +60,6 @@
         "generated": true
     },
     {
-        "id": "sd_Tbbl0Bg8Ru7td1Wu",
-        "type": "Script",
-        "z": "sd_LIDAnDbHw9UbxkCR",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "console.log(bh.local.error,\"Error is here\")",
-        "functionName": "sd_Tbbl0Bg8Ru7td1Wu",
-        "category": "Function",
-        "x": 365,
-        "y": 300,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "ScanComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_TLYfDeZqyIClHeDL",
-        "type": "Catch",
-        "z": "sd_LIDAnDbHw9UbxkCR",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "",
-        "selectedNodes": [],
-        "selectCatchType": "allnodes",
-        "masternodeList": "",
-        "ignoreList": [
-            "sd_Tbbl0Bg8Ru7td1Wu"
-        ],
-        "functionName": "sd_TLYfDeZqyIClHeDL",
-        "category": "General",
-        "x": 245,
-        "y": 300,
-        "wires": [
-            [
-                "sd_Tbbl0Bg8Ru7td1Wu"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "ScanComponent"
-    },
-    {
         "id": "sd_DGSaCEfOmCYbPzqH",
         "type": "PageStart",
         "z": "sd_LIDAnDbHw9UbxkCR",
@@ -643,7 +597,7 @@
         "y": 260,
         "wires": [
             [
-                "sd_ZzlXKX18eAiY1z8F"
+                "sd_0WbKbjwrzgtO4tLY"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -658,8 +612,8 @@
         "nodeType": "flow",
         "name": "",
         "message": {
-            "type": "bh",
-            "value": "error.error.message"
+            "type": "bh.local",
+            "value": "message"
         },
         "action": {
             "type": "str",
@@ -670,9 +624,7 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -680,10 +632,32 @@
         "direction": "ltr",
         "functionName": "sd_ZzlXKX18eAiY1z8F",
         "category": "General",
-        "x": 1020,
+        "x": 1145,
         "y": 260,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "ScanComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0WbKbjwrzgtO4tLY",
+        "type": "Script",
+        "z": "sd_LIDAnDbHw9UbxkCR",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.message = bh.error.error.message || \"something went wrong\"",
+        "functionName": "sd_0WbKbjwrzgtO4tLY",
+        "category": "Function",
+        "x": 1000,
+        "y": 260,
+        "wires": [
+            [
+                "sd_ZzlXKX18eAiY1z8F"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

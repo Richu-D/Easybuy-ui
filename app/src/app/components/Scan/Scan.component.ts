@@ -178,18 +178,6 @@ export class ScanComponent {
     }
   }
 
-  sd_Tbbl0Bg8Ru7td1Wu(bh) {
-    try {
-      const page = this.page;
-      console.log(bh.local.error, 'Error is here');
-
-      //appendnew_next_sd_Tbbl0Bg8Ru7td1Wu
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Tbbl0Bg8Ru7td1Wu');
-    }
-  }
-
   sd_ATaSPl9akVKiBLlO(bh) {
     try {
       bh.local.backendUrl = bh.system.environment.properties.backendUrl;
@@ -356,16 +344,27 @@ export class ScanComponent {
     }
   }
 
+  sd_0WbKbjwrzgtO4tLY(bh) {
+    try {
+      const page = this.page;
+      bh.local.message = bh.error.error.message || 'something went wrong';
+
+      bh = this.sd_ZzlXKX18eAiY1z8F(bh);
+      //appendnew_next_sd_0WbKbjwrzgtO4tLY
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_0WbKbjwrzgtO4tLY');
+    }
+  }
+
   sd_ZzlXKX18eAiY1z8F(bh) {
     try {
-      this.__page_injector__
-        .get(MatSnackBar)
-        .open(bh.error.error.message, 'ok', {
-          duration: 3000,
-          direction: 'ltr',
-          horizontalPosition: 'center',
-          verticalPosition: 'bottom',
-        });
+      this.__page_injector__.get(MatSnackBar).open(bh.local.message, 'ok', {
+        duration: 3000,
+        direction: 'ltr',
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
 
       //appendnew_next_sd_ZzlXKX18eAiY1z8F
       return bh;
@@ -392,7 +391,6 @@ export class ScanComponent {
     bh.errorSource = src;
     if (
       false ||
-      this.sd_TLYfDeZqyIClHeDL(bh) ||
       this.sd_lX5Xrxnz5gKzhMgK(bh)
       /*appendnew_next_Catch*/
     ) {
@@ -401,19 +399,10 @@ export class ScanComponent {
       throw e;
     }
   }
-  sd_TLYfDeZqyIClHeDL(bh) {
-    const nodes = [];
-    if (nodes.includes(bh.errorSource)) {
-      bh = this.sd_Tbbl0Bg8Ru7td1Wu(bh);
-      //appendnew_next_sd_TLYfDeZqyIClHeDL
-      return true;
-    }
-    return false;
-  }
   sd_lX5Xrxnz5gKzhMgK(bh) {
     const nodes = ['sd_vtAINFg4BIf2oPxo'];
     if (nodes.includes(bh.errorSource)) {
-      bh = this.sd_ZzlXKX18eAiY1z8F(bh);
+      bh = this.sd_0WbKbjwrzgtO4tLY(bh);
       //appendnew_next_sd_lX5Xrxnz5gKzhMgK
       return true;
     }

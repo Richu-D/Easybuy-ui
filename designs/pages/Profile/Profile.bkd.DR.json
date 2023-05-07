@@ -187,32 +187,6 @@
                 "_visibility": false
             }
         ],
-        "090b0ced-bb13-5938-1b25-62a3cc3f624c": {
-            "paletteKey": "html-editor",
-            "parentEditorKey": "277b40bd-b9e4-28ca-bfd1-c98430b9c66d",
-            "isAdvancedChildComponent": true,
-            "commentid": null,
-            "designerReference": [
-                {
-                    "_key": "style",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "class",
-                    "_value": "",
-                    "_type": "dav",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "html",
-                    "_value": "",
-                    "_type": "a",
-                    "_attrDef": "p"
-                }
-            ]
-        },
         "5743527e-03b3-54c2-3f43-a8c7d0f932a6": {
             "paletteKey": "Html5",
             "parentEditorKey": "277b40bd-b9e4-28ca-bfd1-c98430b9c66d",
@@ -619,32 +593,6 @@
                     "_visibility": false
                 }
             ],
-            "6c789671-32fc-4c8e-f700-9c257b4ec1f6": {
-                "paletteKey": "html-editor",
-                "parentEditorKey": "c17d4e51-274a-1593-f5d9-db0e65970103",
-                "isAdvancedChildComponent": true,
-                "commentid": null,
-                "designerReference": [
-                    {
-                        "_key": "style",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "html",
-                        "_value": "",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    }
-                ]
-            },
             "b1ded16c-76dc-0164-3c76-0d43102f639d": {
                 "paletteKey": "Html5",
                 "parentEditorKey": "c17d4e51-274a-1593-f5d9-db0e65970103",
@@ -1070,7 +1018,7 @@
                         },
                         {
                             "_key": "html",
-                            "_value": "{{page.userData.name}}",
+                            "_value": "{{page.userData?.name||\"N/A\"}}",
                             "_type": "a",
                             "_attrDef": "p"
                         }

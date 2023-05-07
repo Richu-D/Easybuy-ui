@@ -89,7 +89,7 @@ export class CustomerListComponent {
   sd_hbQdxVpROxWFNQ1u(bh) {
     try {
       const page = this.page;
-      bh.local.url = `${bh.local.backendUrl}/customer-list/${bh.local.employeeData.employeeid}`;
+      bh.local.url = `${bh.local?.backendUrl}/customer-list/${bh.local?.employeeData?.employeeid}`;
 
       bh = this.sd_Vbo8JBBxy3ap2Jea(bh);
       //appendnew_next_sd_hbQdxVpROxWFNQ1u
@@ -126,10 +126,10 @@ export class CustomerListComponent {
 
       // data:image/jpeg;base64,${bh.local.response.result.image.data}`
 
-      page.users = bh.local.result
-        .map((user) => {
-          user.productDetails.image = `data:image/jpeg;base64,${user.productDetails.image[0].buffer}`;
-          user.totalAmount = user.totalAmount.toFixed(2);
+      page.users = bh.local?.result
+        ?.map((user) => {
+          user.productDetails.image = `data:image/jpeg;base64,${user?.productDetails?.image[0]?.buffer}`;
+          user.totalAmount = user?.totalAmount?.toFixed(2);
           const timestamp = new Date(
             parseInt(user._id.substring(0, 8), 16) * 1000
           );
