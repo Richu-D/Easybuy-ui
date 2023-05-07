@@ -39,13 +39,13 @@
             "path": "login",
             "component": "LoginComponent",
             "canActivate": {
-                "edited": true,
-                "value": ""
+                "edited": false,
+                "name": "isEmployeeLoggedIn"
             },
             "redirectTo": "",
             "canDeactivate": {
                 "edited": true,
-                "value": "false"
+                "value": ""
             }
         },
         {

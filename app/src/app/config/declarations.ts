@@ -144,7 +144,11 @@ export const appRoutes = [
       { path: 'customer-list', component: CustomerListComponent },
     ],
   },
-  { path: 'login', component: LoginComponent, canDeactivate: [false] },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [isEmployeeLoggedIn],
+  },
   { path: 'boarding', component: BoardingComponent },
   { path: '', redirectTo: '/boarding', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },

@@ -68,7 +68,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_p8yQbx8vgjmxp0NZ"
+                "sd_fODMtVlBN5Mr4ry2"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -99,36 +99,14 @@
         "outputs": 2,
         "functionName": "sd_fODMtVlBN5Mr4ry2",
         "category": "Function",
-        "x": 460,
+        "x": 365,
         "y": 140,
         "wires": [
             [
                 "sd_qmXTsB4gk4UPpV5y"
             ],
             [
-                "sd_ODm9JZC5je8aqp3J"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "isEmployeeLoggedIn",
-        "generated": true
-    },
-    {
-        "id": "sd_p8yQbx8vgjmxp0NZ",
-        "type": "Script",
-        "z": "sd_jWzl2CWnPJ2JCXm6",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "console.log(bh.local.employeeData,\"employeeData\")\nconsole.log(typeof(bh.local.employeeData),\"typeof employeeData\")",
-        "functionName": "sd_p8yQbx8vgjmxp0NZ",
-        "category": "Function",
-        "x": 360,
-        "y": 140,
-        "wires": [
-            [
-                "sd_fODMtVlBN5Mr4ry2"
+                "sd_ZanpjHFzqa0ObUXO"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -146,8 +124,8 @@
         "script": "bh.local.status = true",
         "functionName": "sd_ODm9JZC5je8aqp3J",
         "category": "Function",
-        "x": 560,
-        "y": 180,
+        "x": 570,
+        "y": 240,
         "wires": [
             []
         ],
@@ -166,8 +144,69 @@
         "path": "/login",
         "functionName": "sd_qmXTsB4gk4UPpV5y",
         "category": "Navigation",
-        "x": 560,
-        "y": 100,
+        "x": 470,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_ZanpjHFzqa0ObUXO",
+        "type": "Switch",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "navigationRouteState.url",
+        "propertyType": "bh",
+        "propertyGv": "bh.navigationRouteState.url",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/login",
+                "vt": "str",
+                "gv": "\"/login\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_ZanpjHFzqa0ObUXO",
+        "category": "Function",
+        "x": 465,
+        "y": 180,
+        "wires": [
+            [
+                "sd_6XP5wJO5wn4Pb6L3"
+            ],
+            [
+                "sd_ODm9JZC5je8aqp3J"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "isEmployeeLoggedIn",
+        "generated": true
+    },
+    {
+        "id": "sd_6XP5wJO5wn4Pb6L3",
+        "type": "Navigation",
+        "z": "sd_jWzl2CWnPJ2JCXm6",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/ui/home",
+        "functionName": "sd_6XP5wJO5wn4Pb6L3",
+        "category": "Navigation",
+        "x": 585,
+        "y": 120,
         "wires": [
             []
         ],
