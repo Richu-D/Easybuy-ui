@@ -657,6 +657,21 @@
                         "_value": "true",
                         "_type": "kv",
                         "_attrDef": "p"
+                    },
+                    {
+                        "_key": "(click)",
+                        "_value": "gotoInvoice(user._id)",
+                        "_type": "kv",
+                        "_attrDef": "c",
+                        "objValue": {
+                            "nodeID": "sd_6m24YOPttcGRENOb",
+                            "functionName": "gotoInvoice",
+                            "activeTree": "pages",
+                            "z": "sd_yHq7n4h5khv1JbdZ",
+                            "input": [
+                                "user._id"
+                            ]
+                        }
                     }
                 ],
                 "fc0341a3-fa00-f74c-d8f8-280b947acf0a": {

@@ -12,6 +12,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -57,6 +58,21 @@ export class CustomerListComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_39NrMEvzsFL0i3EB');
+    }
+  }
+
+  gotoInvoice(Id: any = undefined, ...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { Id: Id };
+      bh.local = {};
+
+      bh = this.sd_oOdRrfUJa3HlMZtE(bh);
+      //appendnew_next_gotoInvoice
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6m24YOPttcGRENOb');
     }
   }
 
@@ -177,6 +193,33 @@ export class CustomerListComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_sabQEuuHPmj9gLfw');
+    }
+  }
+
+  sd_oOdRrfUJa3HlMZtE(bh) {
+    try {
+      localStorage.setItem('purchaseId', JSON.stringify(bh.input.Id));
+
+      bh = this.sd_FCJhsqv5Xu6DTOLD(bh);
+      //appendnew_next_sd_oOdRrfUJa3HlMZtE
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_oOdRrfUJa3HlMZtE');
+    }
+  }
+
+  async sd_FCJhsqv5Xu6DTOLD(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/ui/invoice');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+
+      //appendnew_next_sd_FCJhsqv5Xu6DTOLD
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_FCJhsqv5Xu6DTOLD');
     }
   }
 

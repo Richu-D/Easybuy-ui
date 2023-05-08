@@ -2,7 +2,7 @@
   <span class="list-text">
                 Customer List</span>
   <div *ngFor="let user of page.users" style="width:100;padding:10px;">
-    <div fxLayout="row wrap" style="height:100px;width:100%;padding:10px;" class="shadow-box" fxFlex="100" fxLayoutAlign="space-between center" [fxShow]="true"><img [src]="user.productDetails.image" style="height:100%;border-radius:10px;">
+    <div fxLayout="row wrap" style="height:100px;width:100%;padding:10px;" class="shadow-box" fxFlex="100" fxLayoutAlign="space-between center" [fxShow]="true" (click)="gotoInvoice(user._id)"><img [src]="user.productDetails.image" style="height:100%;border-radius:10px;">
       <div>
         <div style="font-weight: 600; font-size: 16px;">
           {{user.customerNumber}}

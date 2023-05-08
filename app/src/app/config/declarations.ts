@@ -15,6 +15,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-invoiceComponent
+import { invoiceComponent } from '../components/Invoice/invoice.component';
 //CORE_REFERENCE_IMPORT-phoneNumberExist
 import { phoneNumberExist } from '../canActivate/phoneNumberExist.canActivate';
 //CORE_REFERENCE_IMPORT-isEmployeeLoggedIn
@@ -79,6 +81,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-invoiceComponent
+  invoiceComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-carrtItemComponent
   carrtItemComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-ProductComponent
@@ -120,10 +124,10 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
-//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-phoneNumberExist
-phoneNumberExist,
-//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-isEmployeeLoggedIn
-isEmployeeLoggedIn,
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-phoneNumberExist
+  phoneNumberExist,
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-isEmployeeLoggedIn
+  isEmployeeLoggedIn,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-getuserData
   getuserData,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-Scan
@@ -150,6 +154,7 @@ export const appRoutes = [
       { path: 'cart', component: CartComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'customer-list', component: CustomerListComponent },
+      { path: 'invoice', component: invoiceComponent },
     ],
   },
   {
