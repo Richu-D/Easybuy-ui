@@ -69,10 +69,25 @@ export class invoiceComponent {
       bh.input = {};
       bh.local = {};
 
-      bh = this.sd_zpJtUdWMxIBgzDQo(bh);
+      bh = this.sd_8HiKVRFvW90g1Kpo(bh);
       //appendnew_next_sendInvoice
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_8INTktWBVBwSwDa9');
+    }
+  }
+
+  printInvoice(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+
+      bh = this.sd_Lm397VaWSyQW2XIE(bh);
+      //appendnew_next_printInvoice
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_BkRQvgOxr9S183Ru');
     }
   }
 
@@ -197,15 +212,79 @@ export class invoiceComponent {
     }
   }
 
+  sd_8HiKVRFvW90g1Kpo(bh) {
+    try {
+      bh.local.backendUrl = bh.system.environment.properties.backendUrl;
+
+      bh = this.sd_zpJtUdWMxIBgzDQo(bh);
+      //appendnew_next_sd_8HiKVRFvW90g1Kpo
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_8HiKVRFvW90g1Kpo');
+    }
+  }
+
   sd_zpJtUdWMxIBgzDQo(bh) {
     try {
       const page = this.page;
-      alert('invoice send');
+      document.getElementById('invoiceOperations').style.display = 'none';
+      let invoice = document.documentElement.innerHTML;
+      bh.local.data = {
+        invoice: invoice,
+        email: page.email,
+      };
 
+      bh.local.url = `${bh.local.backendUrl}/invoice`;
+
+      bh = this.sendInvoicerequest(bh);
       //appendnew_next_sd_zpJtUdWMxIBgzDQo
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_zpJtUdWMxIBgzDQo');
+    }
+  }
+
+  async sendInvoicerequest(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.local.data,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+
+      bh = this.sd_qvnPI7ZbnHBaHJtp(bh);
+      //appendnew_next_sendInvoicerequest
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_BetG4oms67TPSFKL');
+    }
+  }
+
+  sd_qvnPI7ZbnHBaHJtp(bh) {
+    try {
+      const page = this.page;
+      document.getElementById('invoiceOperations').style.display = 'block';
+
+      //appendnew_next_sd_qvnPI7ZbnHBaHJtp
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_qvnPI7ZbnHBaHJtp');
+    }
+  }
+
+  sd_Lm397VaWSyQW2XIE(bh) {
+    try {
+      const page = this.page;
+      window.print();
+
+      //appendnew_next_sd_Lm397VaWSyQW2XIE
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Lm397VaWSyQW2XIE');
     }
   }
 
@@ -223,13 +302,23 @@ export class invoiceComponent {
     bh.error = e;
     bh.errorSource = src;
     if (
-      false
+      false ||
+      this.sd_muIWGTUTAmHJDtsM(bh)
       /*appendnew_next_Catch*/
     ) {
       return bh;
     } else {
       throw e;
     }
+  }
+  sd_muIWGTUTAmHJDtsM(bh) {
+    const nodes = ['sd_BetG4oms67TPSFKL'];
+    if (nodes.includes(bh.errorSource)) {
+      bh = this.sd_qvnPI7ZbnHBaHJtp(bh);
+      //appendnew_next_sd_muIWGTUTAmHJDtsM
+      return true;
+    }
+    return false;
   }
   //appendnew_flow_invoiceComponent_Catch
 }

@@ -242,11 +242,11 @@
         "flow_type": "sync",
         "functionName": "sendInvoice",
         "category": "General",
-        "x": 160,
+        "x": 65,
         "y": 240,
         "wires": [
             [
-                "sd_zpJtUdWMxIBgzDQo"
+                "sd_8HiKVRFvW90g1Kpo"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -260,11 +260,57 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "alert('invoice send')",
+        "script": "document.getElementById(\"invoiceOperations\").style.display=\"none\"\nlet invoice = document.documentElement.innerHTML;\n  bh.local.data ={\n    'invoice':invoice,\n    'email':page.email\n  }\n  \n\n  bh.local.url=`${bh.local.backendUrl}/invoice`",
         "functionName": "sd_zpJtUdWMxIBgzDQo",
         "category": "Function",
         "x": 380,
         "y": 260,
+        "wires": [
+            [
+                "sd_BetG4oms67TPSFKL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "invoiceComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_BkRQvgOxr9S183Ru",
+        "type": "PageStart",
+        "z": "sd_ik5TR3OtYtzgEoA1",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "printInvoice",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "printInvoice",
+        "category": "General",
+        "x": 165,
+        "y": 380,
+        "wires": [
+            [
+                "sd_Lm397VaWSyQW2XIE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "invoiceComponent"
+    },
+    {
+        "id": "sd_Lm397VaWSyQW2XIE",
+        "type": "Script",
+        "z": "sd_ik5TR3OtYtzgEoA1",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nwindow.print()",
+        "functionName": "sd_Lm397VaWSyQW2XIE",
+        "category": "Function",
+        "x": 385,
+        "y": 400,
         "wires": [
             []
         ],
@@ -272,5 +318,132 @@
         "generateNext": false,
         "serviceName": "invoiceComponent",
         "generated": true
+    },
+    {
+        "id": "sd_BetG4oms67TPSFKL",
+        "type": "HttpRequest",
+        "z": "sd_ik5TR3OtYtzgEoA1",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "sendInvoicerequest",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.local.data",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "data"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sendInvoicerequest",
+        "category": "HTTP",
+        "x": 525,
+        "y": 280,
+        "wires": [
+            [
+                "sd_qvnPI7ZbnHBaHJtp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "invoiceComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8HiKVRFvW90g1Kpo",
+        "type": "Environment",
+        "z": "sd_ik5TR3OtYtzgEoA1",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "bh.local",
+                    "value": "backendUrl"
+                },
+                "envProperty": "backendUrl"
+            }
+        ],
+        "functionName": "sd_8HiKVRFvW90g1Kpo",
+        "category": "General",
+        "x": 185,
+        "y": 240,
+        "wires": [
+            [
+                "sd_zpJtUdWMxIBgzDQo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "invoiceComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_qvnPI7ZbnHBaHJtp",
+        "type": "Script",
+        "z": "sd_ik5TR3OtYtzgEoA1",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "document.getElementById(\"invoiceOperations\").style.display=\"block\"\n",
+        "functionName": "sd_qvnPI7ZbnHBaHJtp",
+        "category": "Function",
+        "x": 740,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "invoiceComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_muIWGTUTAmHJDtsM",
+        "type": "Catch",
+        "z": "sd_ik5TR3OtYtzgEoA1",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_BetG4oms67TPSFKL"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_muIWGTUTAmHJDtsM",
+        "category": "General",
+        "x": 605,
+        "y": 400,
+        "wires": [
+            [
+                "sd_qvnPI7ZbnHBaHJtp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "invoiceComponent"
     }
 ]

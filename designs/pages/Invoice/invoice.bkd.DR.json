@@ -460,6 +460,12 @@
                     "_value": "true",
                     "_type": "kv",
                     "_attrDef": "p"
+                },
+                {
+                    "_key": "id",
+                    "_value": "invoiceOperations",
+                    "_type": "kv",
+                    "_attrDef": "c"
                 }
             ],
             "b78261e2-dd82-fafb-4f78-a94b3eaf6669": {
@@ -874,7 +880,7 @@
                     }
                 ]
             },
-            "ce41c67e-30f5-7426-c950-fa74174e17ba": {
+            "c50a3486-b08d-a588-8368-00e2954bc7c9": {
                 "paletteKey": "NG-button",
                 "parentEditorKey": "7f46f44d-3a19-dc82-e8ca-89685f568fc5",
                 "commentid": null,
@@ -914,6 +920,77 @@
                         "objValue": {
                             "nodeID": "sd_8INTktWBVBwSwDa9",
                             "functionName": "sendInvoice",
+                            "activeTree": "pages",
+                            "z": "sd_ik5TR3OtYtzgEoA1",
+                            "input": []
+                        }
+                    },
+                    {
+                        "_key": "[disabled]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[disableRipple]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "type",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "routerLink",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ]
+            },
+            "ce41c67e-30f5-7426-c950-fa74174e17ba": {
+                "paletteKey": "NG-button",
+                "parentEditorKey": "7f46f44d-3a19-dc82-e8ca-89685f568fc5",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "style",
+                        "_value": "margin:20px 0px;",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": [
+                            "styled-button"
+                        ],
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "buttonname",
+                        "_value": "Print Invoice",
+                        "_type": "a",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "color",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "(click)",
+                        "_value": "printInvoice()",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "objValue": {
+                            "nodeID": "sd_BkRQvgOxr9S183Ru",
+                            "functionName": "printInvoice",
                             "activeTree": "pages",
                             "z": "sd_ik5TR3OtYtzgEoA1",
                             "input": []

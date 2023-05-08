@@ -503,3 +503,13 @@ main {
 table {
     font-size: 12px;
 }
+
+@media print{
+    .navbar,.styled-input{
+        display: none;
+    }
+    .styled-button{
+        visibility: hidden;
+    }
+}
+

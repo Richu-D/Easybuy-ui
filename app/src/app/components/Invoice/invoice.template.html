@@ -52,8 +52,8 @@
     </div>
 
   </div>
-  <div fxLayout="column wrap" style="width:100%" fxLayoutAlign="start stretch" [fxShow]="true"><input placeholder="Name" [(ngModel)]="page.name" class="styled-input">
+  <div fxLayout="column wrap" style="width:100%" fxLayoutAlign="start stretch" [fxShow]="true" id="invoiceOperations"><input placeholder="Name" [(ngModel)]="page.name" class="styled-input">
     <input placeholder="Email" type="email" [(ngModel)]="page.email" class="styled-input">
-    <button mat-button style="margin:20px 0px;" class="styled-button" (click)="sendInvoice()">Send Invoice</button>
+    <button mat-button style="margin:20px 0px;" class="styled-button" (click)="sendInvoice()">Send Invoice</button><button mat-button style="margin:20px 0px;" class="styled-button" (click)="printInvoice()">Print Invoice</button>
   </div>
 </div>
