@@ -89,7 +89,8 @@ export class CustomerListComponent {
   sd_hbQdxVpROxWFNQ1u(bh) {
     try {
       const page = this.page;
-      bh.local.url = `${bh.local?.backendUrl}/customer-list/${bh.local?.employeeData?.employeeid}`;
+      console.log(bh.local.employeeData.employeeid);
+      bh.local.url = `${bh.local?.backendUrl}/customer-list/${bh.local.employeeData.employeeid}`;
 
       bh = this.sd_Vbo8JBBxy3ap2Jea(bh);
       //appendnew_next_sd_hbQdxVpROxWFNQ1u
