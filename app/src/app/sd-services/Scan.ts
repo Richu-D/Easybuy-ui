@@ -148,15 +148,15 @@ export class Scan {
       await bh.local.scanner.updateScanSettings(scanSettings);
 
       bh.local.scanner.setVideoFit('cover');
-      let settings = await bh.local.scanner.getRuntimeSettings();
-      settings.region = {
-        regionLeft: 20,
-        regionTop: 20,
-        regionRight: 80,
-        regionBottom: 40,
-        regionMeasuredByPercentage: 1,
-      };
-      await bh.local.scanner.updateRuntimeSettings(settings);
+      // let settings = await bh.local.scanner.getRuntimeSettings()
+      //                 settings.region = {
+      //                     regionLeft: 20,
+      //                     regionTop: 20,
+      //                     regionRight: 80,
+      //                     regionBottom: 40,
+      //                     regionMeasuredByPercentage: 1
+      //                 };
+      // await bh.local.scanner.updateRuntimeSettings(settings);
 
       bh = await this.sd_dM2ee0yvoqs9rbKm(bh);
       //appendnew_next_sd_LziYPpVhliX5kTWA

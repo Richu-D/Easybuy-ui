@@ -46,7 +46,7 @@ main {
   stroke: black;
 }
 
-.navbar svg:hover,
+// .navbar svg:hover,
 .active {
   stroke: var(--main-color);
 }
@@ -199,6 +199,10 @@ main {
 }
 
 // Home
+
+.home-container{
+    padding-bottom: 100px;
+}
 .dashboard span svg {
   float: right;
   margin-right: 5px;
