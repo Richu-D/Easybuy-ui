@@ -201,7 +201,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.local.result,\"result\")\n\n// data:image/jpeg;base64,${bh.local.response.result.image.data}`\n\n\n\npage.users=bh.local?.result?.map(user=>{\n    user.productDetails.image=`data:image/jpeg;base64,${user?.productDetails?.image[0]?.buffer}`\n    user.totalAmount=user?.totalAmount?.toFixed(2)\nconst timestamp = new Date(parseInt(user._id.substring(0, 8), 16) * 1000);\nconst hours = timestamp.getHours();\nconst minutes = timestamp.getMinutes();\nlet formattedHours = hours % 12;\nif (formattedHours === 0) {\n  formattedHours = 12;\n}\nconst ampm = hours >= 12 ? 'PM' : 'AM';\nconst timeString = `${formattedHours}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`;\nconsole.log(timeString);\n    user.time = timeString\n    return user;\n}).reverse();\nconsole.log(page.users)\n",
+        "script": "console.log(bh.local.result,\"result\")\n\n// data:image/jpeg;base64,${bh.local.response.result.image.data}`\n\n\n\npage.users=bh.local?.result?.map(user=>{\n  // console.log(user.payment?.payments[0]?.status,\"status\")\n    user.productDetails.image=`data:image/jpeg;base64,${user?.productDetails?.image[0]?.buffer}`\n    user.totalAmount=user?.totalAmount?.toFixed(2)\n if(user.payment?.payments[0]?.status==\"captured\"){\n   user.color='green'\n }\n else if(user.payment?.payments[0]?.status==\"failure\"){\n   user.color='red'\n }\n else{\n   user.color='orange'\n }\nconst timestamp = new Date(parseInt(user._id.substring(0, 8), 16) * 1000);\nconst hours = timestamp.getHours();\nconst minutes = timestamp.getMinutes();\nlet formattedHours = hours % 12;\nif (formattedHours === 0) {\n  formattedHours = 12;\n}\nconst ampm = hours >= 12 ? 'PM' : 'AM';\nconst timeString = `${formattedHours}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`;\n// console.log(timeString);\n    user.time = timeString\n    return user;\n}).reverse();\nconsole.log(page.users)\n",
         "functionName": "sd_xqwYQv97OZxgX007",
         "category": "Function",
         "x": 505,
@@ -285,10 +285,10 @@
         "functionName": "gotoInvoice",
         "category": "General",
         "x": 205,
-        "y": 420,
+        "y": 460,
         "wires": [
             [
-                "sd_oOdRrfUJa3HlMZtE"
+                "sd_nXtjso9Hj9EQqCin"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -303,10 +303,17 @@
         "nodeType": "flow",
         "name": "",
         "path": "/ui/invoice",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_FCJhsqv5Xu6DTOLD",
         "category": "Navigation",
-        "x": 560,
-        "y": 440,
+        "x": 845,
+        "y": 340,
         "wires": [
             []
         ],
@@ -336,12 +343,110 @@
         "resultMapping": {},
         "functionName": "sd_oOdRrfUJa3HlMZtE",
         "category": "Storage",
-        "x": 360,
-        "y": 440,
+        "x": 625,
+        "y": 340,
         "wires": [
             [
                 "sd_FCJhsqv5Xu6DTOLD"
             ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_nXtjso9Hj9EQqCin",
+        "type": "Script",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.local.isInvoice=false;\npage.users.some((product)=>{\n    if(product._id==bh.input.Id){\n        if(product.color=='green'){\n           return bh.local.isInvoice=true;\n        }\n    }\n    // console.log(product.color,product._id,\"prdouct\")\n})",
+        "functionName": "sd_nXtjso9Hj9EQqCin",
+        "category": "Function",
+        "x": 305,
+        "y": 460,
+        "wires": [
+            [
+                "sd_B7okmLyBeZ7vP4f8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_B7okmLyBeZ7vP4f8",
+        "type": "PageSwitch",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "isInvoice",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.isInvoice",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_B7okmLyBeZ7vP4f8",
+        "category": "Function",
+        "x": 485,
+        "y": 460,
+        "wires": [
+            [
+                "sd_oOdRrfUJa3HlMZtE"
+            ],
+            [
+                "sd_7kZaeO75AIhl8Wpm"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CustomerListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_7kZaeO75AIhl8Wpm",
+        "type": "SnackBar",
+        "z": "sd_yHq7n4h5khv1JbdZ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "No invoice available"
+        },
+        "action": {
+            "type": "str",
+            "value": ""
+        },
+        "duration": {
+            "type": "num",
+            "value": ""
+        },
+        "horizontalPosition": "center",
+        "verticalPosition": "bottom",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_7kZaeO75AIhl8Wpm",
+        "category": "General",
+        "x": 700,
+        "y": 520,
+        "wires": [
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

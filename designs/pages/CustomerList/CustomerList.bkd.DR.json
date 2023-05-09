@@ -1580,7 +1580,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "",
+                            "_value": "color:{{user.color}}",
                             "_type": "kv",
                             "_attrDef": "p"
                         },

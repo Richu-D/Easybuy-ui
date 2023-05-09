@@ -13,6 +13,7 @@ import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
+import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -69,7 +70,7 @@ export class CustomerListComponent {
       bh.input = { Id: Id };
       bh.local = {};
 
-      bh = this.sd_oOdRrfUJa3HlMZtE(bh);
+      bh = this.sd_nXtjso9Hj9EQqCin(bh);
       //appendnew_next_gotoInvoice
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_6m24YOPttcGRENOb');
@@ -145,8 +146,16 @@ export class CustomerListComponent {
 
       page.users = bh.local?.result
         ?.map((user) => {
+          // console.log(user.payment?.payments[0]?.status,"status")
           user.productDetails.image = `data:image/jpeg;base64,${user?.productDetails?.image[0]?.buffer}`;
           user.totalAmount = user?.totalAmount?.toFixed(2);
+          if (user.payment?.payments[0]?.status == 'captured') {
+            user.color = 'green';
+          } else if (user.payment?.payments[0]?.status == 'failure') {
+            user.color = 'red';
+          } else {
+            user.color = 'orange';
+          }
           const timestamp = new Date(
             parseInt(user._id.substring(0, 8), 16) * 1000
           );
@@ -160,7 +169,7 @@ export class CustomerListComponent {
           const timeString = `${formattedHours}:${
             minutes < 10 ? '0' : ''
           }${minutes} ${ampm}`;
-          console.log(timeString);
+          // console.log(timeString);
           user.time = timeString;
           return user;
         })
@@ -196,6 +205,55 @@ export class CustomerListComponent {
     }
   }
 
+  sd_nXtjso9Hj9EQqCin(bh) {
+    try {
+      const page = this.page;
+      bh.local.isInvoice = false;
+      page.users.some((product) => {
+        if (product._id == bh.input.Id) {
+          if (product.color == 'green') {
+            return (bh.local.isInvoice = true);
+          }
+        }
+        // console.log(product.color,product._id,"prdouct")
+      });
+
+      bh = this.sd_B7okmLyBeZ7vP4f8(bh);
+      //appendnew_next_sd_nXtjso9Hj9EQqCin
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_nXtjso9Hj9EQqCin');
+    }
+  }
+
+  sd_B7okmLyBeZ7vP4f8(bh) {
+    try {
+      if (
+        this.sdService.operators['true'](
+          bh.local.isInvoice,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_oOdRrfUJa3HlMZtE(bh);
+      } else if (
+        this.sdService.operators['false'](
+          bh.local.isInvoice,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_7kZaeO75AIhl8Wpm(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_B7okmLyBeZ7vP4f8');
+    }
+  }
+
   sd_oOdRrfUJa3HlMZtE(bh) {
     try {
       localStorage.setItem('purchaseId', JSON.stringify(bh.input.Id));
@@ -214,12 +272,30 @@ export class CustomerListComponent {
         this.sdService.getPathAndQParamsObj('/ui/invoice');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
 
       //appendnew_next_sd_FCJhsqv5Xu6DTOLD
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_FCJhsqv5Xu6DTOLD');
+    }
+  }
+
+  sd_7kZaeO75AIhl8Wpm(bh) {
+    try {
+      this.__page_injector__.get(MatSnackBar).open('No invoice available', '', {
+        duration: 1000,
+        direction: 'ltr',
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
+
+      //appendnew_next_sd_7kZaeO75AIhl8Wpm
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_7kZaeO75AIhl8Wpm');
     }
   }
 
