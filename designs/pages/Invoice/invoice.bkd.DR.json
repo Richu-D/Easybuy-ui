@@ -958,7 +958,7 @@
                 "designerReference": [
                     {
                         "_key": "style",
-                        "_value": "margin:20px 0px;",
+                        "_value": "margin:0px 0px 20px 0px;background-color:'green'",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
