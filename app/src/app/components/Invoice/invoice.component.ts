@@ -229,6 +229,10 @@ export class invoiceComponent {
       const page = this.page;
       document.getElementById('invoiceOperations').style.display = 'none';
       let invoice = document.documentElement.innerHTML;
+
+      // let img = new Image();
+      // img.src = 'data:text/html;charset=utf-8,' + encodeURIComponent(invoice);
+
       bh.local.data = {
         invoice: invoice,
         email: page.email,

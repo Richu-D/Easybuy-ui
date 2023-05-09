@@ -266,7 +266,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "document.getElementById(\"invoiceOperations\").style.display=\"none\"\nlet invoice = document.documentElement.innerHTML;\n  bh.local.data ={\n    'invoice':invoice,\n    'email':page.email\n  }\n  \n\n  bh.local.url=`${bh.local.backendUrl}/invoice`",
+        "script": "document.getElementById(\"invoiceOperations\").style.display=\"none\"\nlet invoice = document.documentElement.innerHTML;\n\n// let img = new Image();\n// img.src = 'data:text/html;charset=utf-8,' + encodeURIComponent(invoice);\n\n  bh.local.data ={\n    'invoice':invoice,\n    'email':page.email\n  }\n  \n\n  bh.local.url=`${bh.local.backendUrl}/invoice`",
         "functionName": "sd_zpJtUdWMxIBgzDQo",
         "category": "Function",
         "x": 380,
